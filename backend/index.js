@@ -7,9 +7,8 @@ const app = express()
 
 
 // Set CORS 
-const origin = process.env.ORIGIN
 var corsOptions = {
-  origin: origin,
+  origin: process.env.ORIGIN,
   credentials:  true
 }
 app.use(cors(corsOptions))
@@ -44,14 +43,16 @@ require('./app/routes/public.routes')(app)
 
 
 // Start server
+//HTTPS
 /*https.createServer({
   key: fs.readFileSync('backend/certificates/server.key'),
   cert: fs.readFileSync('backend/certificates/server.cert')
 }, app).listen(process.env.PORT, () => {
-  console.log(`Server is running on port ${process.env.PORT} over HTTPS in ${process.env.NODE_ENV} mode. Accepting requests from ${origin}.`)
+  console.log(`Server is running on port ${process.env.PORT} over HTTPS in ${process.env.NODE_ENV} mode.\nAccepting requests from ${process.env.ORIGIN}.`)
 })*/
+//HTTP
 http.createServer(app).listen(process.env.PORT, () => {
-  console.log(`Server is running on port ${process.env.PORT} over HTTP in ${process.env.NODE_ENV} mode. Accepting requests from ${origin}.`)
+  console.log(`Server is running on port ${process.env.PORT} over HTTP in ${process.env.NODE_ENV} mode.\nAccepting requests from ${process.env.ORIGIN}.`)
 })
 
 module.exports = app
