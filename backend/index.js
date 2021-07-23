@@ -1,7 +1,6 @@
 const express = require('express')
 const cors = require('cors')
-const https = require('https')
-const fs = require('fs')
+const http = require('http')
 require('dotenv').config()
 
 const app = express()
@@ -45,11 +44,14 @@ require('./app/routes/public.routes')(app)
 
 
 // Start server
-https.createServer({
+/*https.createServer({
   key: fs.readFileSync('backend/certificates/server.key'),
   cert: fs.readFileSync('backend/certificates/server.cert')
 }, app).listen(process.env.PORT, () => {
   console.log(`Server is running on port ${process.env.PORT} over HTTPS in ${process.env.NODE_ENV} mode. Accepting requests from ${origin}.`)
+})*/
+http.createServer(app).listen(process.env.PORT, () => {
+  console.log(`Server is running on port ${process.env.PORT} over HTTP in ${process.env.NODE_ENV} mode. Accepting requests from ${origin}.`)
 })
 
 module.exports = app
