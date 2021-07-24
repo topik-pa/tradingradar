@@ -6,7 +6,7 @@ db.dropDatabase()
 
 adminUserTest = {
   user: 'tr_admin_test',
-  pwd: 'testdb', //passwordPrompt()
+  pwd: 'testdb',
   customData: {},
   roles: [
     {
@@ -23,12 +23,12 @@ db.createUser(adminUserTest)
 
 
 /* DEVELOPMENT */
-db = new Mongo().getDB('tradingradar-dev')
+db = new Mongo().getDB('tradingradar_dev')
 db.dropDatabase()
 
 adminUserDev = {
   user: 'tr_admin_dev',
-  pwd: 'devdb', //passwordPrompt()
+  pwd: 'devdb',
   customData: {},
   roles: [
     {
@@ -45,12 +45,12 @@ db.createUser(adminUserDev)
 
 
 /* PRODUCTION */
-db = new Mongo().getDB('tradingradar')
+/*db = new Mongo().getDB('tradingradar')
 db.dropDatabase()
 
 adminUserProd = {
   user: 'tr_admin_prod',
-  pwd: 'rxqZOno8YheFURYY', //passwordPrompt()
+  pwd: 'rxqZOno8YheFURYY',
   customData: {},
   roles: [
     {
@@ -60,6 +60,6 @@ adminUserProd = {
   ]
 }
 
-db.createUser(adminUserProd)
+db.createUser(adminUserProd)*/
 //mongodb://tr_admin_prod:proddb@localhost:27017/?authSource=tradingradar_prod&readPreference=primary&appname=MongoDB%20Compass&ssl=false
 
