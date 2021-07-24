@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "postinstall": "cd ./frontend && npm install && npm run build",
-    "start": "NODE_ENV=heroku node backend/index.js",
+    "start": "NODE_ENV=heroku node backend/index.js && npm run serve --prefix ./frontend",
     "dev": "NODE_ENV=development nodemon backend/index.js",
     "test": "NODE_ENV=test mocha backend/app/test/**/*.*"
   },
