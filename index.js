@@ -45,14 +45,14 @@ require('./app/routes/public.routes')(app)
 // Start server
 //HTTPS
 /*https.createServer({
-  key: fs.readFileSync('backend/certificates/server.key'),
-  cert: fs.readFileSync('backend/certificates/server.cert')
+  key: fs.readFileSync('certificates/server.key'),
+  cert: fs.readFileSync('certificates/server.cert')
 }, app).listen(process.env.PORT, () => {
   console.log(`Server is running on port ${process.env.PORT} over HTTPS in ${process.env.NODE_ENV} mode.\nAccepting requests from ${process.env.ORIGIN}.`)
 })*/
 //HTTP
-http.createServer(app).listen(80, () => {
-  console.log(`Server is running on port 80 over HTTP in ${process.env.NODE_ENV} mode.\nAccepting requests from ${process.env.ORIGIN}.`)
+http.createServer(app).listen(process.env.PORT, () => {
+  console.log(`Server is running on port ${process.env.PORT} over HTTP in ${process.env.NODE_ENV} mode.\nAccepting requests from ${process.env.ORIGIN}.`)
 })
 
 module.exports = app

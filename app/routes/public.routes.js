@@ -4,9 +4,7 @@ module.exports = app => {
 
   //Login user
   router.get('/', public.index)
-  router.get('/test', public.index)
-  router.post('/test', public.index)
 
-  app.use('/api', router)
+  app.use('', router)
 
 }
