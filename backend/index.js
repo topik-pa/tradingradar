@@ -51,8 +51,9 @@ require('./app/routes/public.routes')(app)
   console.log(`Server is running on port ${process.env.PORT} over HTTPS in ${process.env.NODE_ENV} mode.\nAccepting requests from ${process.env.ORIGIN}.`)
 })*/
 //HTTP
-http.createServer(app).listen(process.env.PORT, () => {
-  console.log(`Server is running on port ${process.env.PORT} over HTTP in ${process.env.NODE_ENV} mode.\nAccepting requests from ${process.env.ORIGIN}.`)
+const port = 3000
+http.createServer(app).listen(port, () => {
+  console.log(`Server is running on port ${port} over HTTP in ${process.env.NODE_ENV} mode.\nAccepting requests from ${process.env.ORIGIN}.`)
 })
 
 module.exports = app
