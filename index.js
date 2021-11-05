@@ -40,6 +40,7 @@ db.mongoose
 
 //Routes
 require('./app/routes/public.routes')(app)
+require('./app/routes/news.routes')(app)
 
 
 // Start server
@@ -52,7 +53,7 @@ require('./app/routes/public.routes')(app)
 })*/
 //HTTP
 http.createServer(app).listen(process.env.PORT, () => {
-  console.log(`Server is running on port ${process.env.PORT} over HTTP in ${process.env.NODE_ENV} mode.\nAccepting requests from ${process.env.ORIGIN}.`)
+  console.log(`Server is running on port ${process.env.PORT} in ${process.env.NODE_ENV} mode.\nAccepting requests from ${process.env.ORIGIN}.`)
 })
 
 module.exports = app
