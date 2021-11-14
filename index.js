@@ -23,6 +23,7 @@ app.use(express.urlencoded({
 
 
 //DATABASE 
+/*
 const db = require('./app/models')
 db.mongoose
   .connect(db.url, {
@@ -37,11 +38,13 @@ db.mongoose
     console.log('Cannot connect to the database!', err)
     process.exit()
   })
+*/
 
 //Routes
-require('./app/routes/public.routes')(app)
+require('./app/routes/info.routes')(app)
+require('./app/routes/analysis.routes')(app)
 require('./app/routes/news.routes')(app)
-
+require('./app/routes/stocks.routes')(app)
 
 // Start server
 //HTTPS
