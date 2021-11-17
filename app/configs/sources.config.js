@@ -65,6 +65,13 @@ module.exports = [
         name: 'evaluation',
         type: 'html',
         path: '.cnt-summary > div:nth-of-type(4) > article:nth-of-type(3) > div > div'
+      },
+      {
+        name: 'rating',
+        type: 'html',
+        path: '.-md-5 .m-img',
+        attribute: 'src',
+        clean: ['/media/img/technicalanalysis/rank-fta', '.gif']
       }
     ]
   },
@@ -142,6 +149,18 @@ module.exports = [
   },
   {
     id: 5,
+    code: 'milano-finanza',
+    name: 'Milano Finanza',
+    url: 'https://www.milanofinanza.it/Mercati/BoxNewsTitolo?isin=%isin%&numNews=12',
+    news: {
+      type: 'json',
+      title: 'TitoloNoHtml',
+      url: 'UrlNews',
+      domain: 'https://www.milanofinanza.it'
+    }
+  },
+  {
+    id: 6,
     code: 'soldionline',
     name: 'Soldionline',
     url: 'https://www.soldionline.it/quotazioni/dettaglio/%isin%.html',
@@ -176,5 +195,91 @@ module.exports = [
       type: 'html',
       path: '.news-list-azioni > li > a'
     }
+  },
+  {
+    id: 7,
+    code: 'la-repubblica',
+    name: 'La Repubblica - Finanza e Mercati',
+    url: 'https://finanza.repubblica.it/Company/?symbol=%symbol%',
+    info: [
+      {
+        name: 'webSite',
+        type: 'html',
+        path: '#ctl00_ContentLeft_companyContact_linkWebSite'
+      },
+      {
+        name: 'address',
+        type: 'html',
+        path: '#ctl00_ContentLeft_companyContact_lblIndirizzo'
+      }
+    ],
+    analyses: [],
+    news: {
+      type: 'html',
+      path: '.news-item a'
+    }
+  },
+  {
+    id: 8,
+    code: 'il-sole-24-ore',
+    name: 'Il Sole 24 Ore',
+    url: 'https://vwd-proxy.ilsole24ore.com/FinanzaMercati/WidgetSelector/header-dettaglio?topicName=%code%.MI',
+    info: [
+      {
+        name: 'profile',
+        type: 'html',
+        path: '.fmw-panel-description > p'
+      }
+    ],
+    analyses: []
+  },
+  {
+    id: 9,
+    code: 'il-sole-24-ore',
+    name: 'Il Sole 24 Ore',
+    url: 'https://vwd-proxy.ilsole24ore.com/FinanzaMercati/WidgetSelector/box-commento?widgetConfiguration=BoxCommentoBilancioSintetico&topicName=%code%.MI',
+    info: [
+      {
+        name: 'comment',
+        type: 'html',
+        path: '#rmjs-2 > p'
+      }
+    ],
+    analyses: []
+  },
+  {
+    id: 10,
+    code: 'il-sole-24-ore',
+    name: 'Il Sole 24 Ore',
+    url: 'https://vwd-proxy.ilsole24ore.com/FinanzaMercati/WidgetSelector/analisi-tecnica-dettaglio?topicName=%code%.MI&device=Desktop',
+    info: [
+      {
+        name: 'mm20days',
+        type: 'html',
+        path: '.left .boxDettaglioColumn > tbody > tr:nth-of-type(1) > td:nth-of-type(2)'
+      },
+      {
+        name: 'mm40days',
+        type: 'html',
+        path: '.left .boxDettaglioColumn > tbody > tr:nth-of-type(2) > td:nth-of-type(2)'
+      },
+      {
+        name: 'mm100days',
+        type: 'html',
+        path: '.left .boxDettaglioColumn > tbody > tr:nth-of-type(3) > td:nth-of-type(2)'
+      }
+    ],
+    analyses: [
+      {
+        name: 'shortTendency',
+        type: 'html',
+        path: '.vwdWidget > div:nth-of-type(2) > table > tbody > tr:nth-of-type(1) > td:nth-of-type(2)'
+      },
+      {
+        name: 'mediumTendency',
+        type: 'html',
+        path: '.vwdWidget > div:nth-of-type(2) > table > tbody > tr:nth-of-type(2) > td:nth-of-type(2)'
+      }
+    ]
   }
 ]

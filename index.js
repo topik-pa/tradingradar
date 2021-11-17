@@ -41,10 +41,61 @@ db.mongoose
 */
 
 //Routes
+app.get('/', (req, res) => {
+  res.json({ message: 'Welcome to tradingradar.net API service' })
+})
+app.get('/api', (req, res) => {
+  res.json({
+    title: 'Available routes',
+    routes: [
+      {
+        url: '/',
+        description: 'Welcome message'
+      },
+      {
+        url: '/api',
+        description: 'These informations (current route)'
+      },
+      {
+        url: '/api/info/:isin',
+        description: 'Stock informations'
+      },
+      {
+        url: '/api/analysis/:isin',
+        description: 'Stock analyses'
+      },
+      {
+        url: '/api/analysis/:isin/:media',
+        description: 'Stock analyses by media'
+      },
+      {
+        url: '/api/news/:isin',
+        description: 'Stock press release'
+      },
+      {
+        url: '/api/news/:isin/:media',
+        description: 'Stock press release by media'
+      },
+      {
+        url: '/api/stocks',
+        description: 'Stocks included in this release'
+      },
+      {
+        url: '/api/stocks/:analysis',
+        description: 'Stocks with analysis'
+      }
+    ]
+  })
+})
 require('./app/routes/info.routes')(app)
 require('./app/routes/analysis.routes')(app)
 require('./app/routes/news.routes')(app)
 require('./app/routes/stocks.routes')(app)
+app.use((req, res) => {
+  res.status(404).send({
+    error: '404 - not found'
+  })
+})
 
 // Start server
 //HTTPS
