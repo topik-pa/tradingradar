@@ -1,4 +1,4 @@
-/*module.exports = [
+const fsteMib = [
   {
     name: 'A2a',
     code: 'A2A',
@@ -239,9 +239,8 @@
     isin: 'IT0004810054',
     mf_code: '2ae002b'
   }
-]*/
-
-module.exports = [
+]
+const devStocks = [
   {
     name: 'Pirelli & C',
     code: 'PIRC',
@@ -273,3 +272,5 @@ module.exports = [
     mf_code: '2ae0022'
   }
 ]
+
+module.exports = process.env.NODE_ENV === 'production' ? fsteMib : devStocks
