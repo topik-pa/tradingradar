@@ -5,7 +5,6 @@ require('dotenv').config()
 
 const app = express()
 
-
 // Set CORS 
 var corsOptions = {
   origin: process.env.ORIGIN,
@@ -93,7 +92,17 @@ require('./app/routes/news.routes')(app)
 require('./app/routes/stocks.routes')(app)
 app.use((req, res) => {
   res.status(404).send({
-    error: '404 - not found'
+    error: 404,
+    message: 'Resource not found'
+  })
+})
+
+//Error handling
+// eslint-disable-next-line no-unused-vars
+app.use((err, req, res, next) => {
+  return res.status(err.status || 500).send({
+    error: err.status || 500,
+    message: err.message
   })
 })
 

@@ -19,7 +19,7 @@ GET http://localhost:8080/api/analysis/NL0000226223
 
 
 ### Stock analyses filtered by media (STM / borsa-italiana)
-GET http://localhost:8080/api/analysis/NL0000226223/borsa-italiana
+GET http://localhost:8080/api/analysis/NL0000226223/borsaIt
 
 
 ### Stock press release (STM)
@@ -27,15 +27,16 @@ GET http://localhost:8080/api/news/NL0000226223
 
 
 ### Stock press release filtered by media (STM / borsa-italiana)
-GET http://localhost:8080/api/news/NL0000226223/borsa-italiana
+GET http://localhost:8080/api/news/NL0000226223/borsaIt
 
+###
 
 ### Stocks included in this release"
 GET http://localhost:8080/api/stocks
 
 
 ### Stocks with analysis
-GET http://localhost:8080/api/stocks/perf1M
+GET http://localhost:8080/api/stocks/mfRisk
 
 
 ### Stocks with analysis

@@ -1,13 +1,13 @@
 const getData = require('./index')
 
 // GET stock generic info
-exports.getStockInfo = async (req, res) => {
+exports.getStockInfo = async (req, res, next) => {
   const isin = req.params.isin
   let info = {}
   try {
-    info = await getData('info', isin)
+    info = await getData.stock('info', isin)
   } catch (error) {
-    return res.json({error: error.message})
+    return next(error)
   }
   return res.json(info)
 }

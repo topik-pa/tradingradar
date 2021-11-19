@@ -1,7 +1,7 @@
 module.exports = [
   {
     id: 0,
-    code: 'borsa-italiana',
+    code: 'borsaIt',
     name: 'Borsa Italiana',
     url: 'https://www.borsaitaliana.it/borsa/azioni/scheda/%isin%.html?lang=it',
     info: [
@@ -31,11 +31,12 @@ module.exports = [
         path: '.cnt-summary > div:nth-of-type(4) > article > div > div:nth-of-type(2) > div:nth-of-type(2) > table > tbody > tr:nth-of-type(3) > td:nth-of-type(2) > span'
       }
     ],
-    analyses: []
+    analyses: [],
+    news: {}
   },
   {
     id: 1,
-    code: 'borsa-italiana',
+    code: 'borsaIt',
     name: 'Borsa Italiana',
     url: 'https://www.borsaitaliana.it/borsa/azioni/analisi-tecnica.html?isin=%isin%&lang=it',
     info: [
@@ -73,11 +74,12 @@ module.exports = [
         attribute: 'src',
         clean: ['/media/img/technicalanalysis/rank-fta', '.gif']
       }
-    ]
+    ],
+    news: {}
   },
   {
     id: 2,
-    code: 'borsa-italiana',
+    code: 'borsaIt',
     name: 'Borsa Italiana',
     url: 'https://www.borsaitaliana.it/borsa/azioni/elenco-completo-notizie.html?isin=%isin%&lang=it',
     info: [],
@@ -90,7 +92,7 @@ module.exports = [
   },
   {
     id: 3,
-    code: 'milano-finanza',
+    code: 'milFin',
     name: 'Milano Finanza',
     url: 'https://www.milanofinanza.it/Mercati/GetQuotazioni?codice=%mf_code%',
     info: [
@@ -131,11 +133,12 @@ module.exports = [
         value: '015f',
         target: 'Campo'
       }
-    ]
+    ],
+    news: {}
   },
   {
     id: 4,
-    code: 'milano-finanza',
+    code: 'milFin',
     name: 'Milano Finanza',
     url: 'https://www.milanofinanza.it/Mercati/GetMFRating?marketCodeRT=%marketCodeRT%&stockCodeRT=%stockCodeRT%',
     info: [],
@@ -145,13 +148,16 @@ module.exports = [
         type: 'text',
         path: ['|','0']
       }
-    ]
+    ],
+    news: {}
   },
   {
     id: 5,
-    code: 'milano-finanza',
+    code: 'milFin',
     name: 'Milano Finanza',
     url: 'https://www.milanofinanza.it/Mercati/BoxNewsTitolo?isin=%isin%&numNews=12',
+    info: [],
+    analyses: [],
     news: {
       type: 'json',
       title: 'TitoloNoHtml',
@@ -161,7 +167,7 @@ module.exports = [
   },
   {
     id: 6,
-    code: 'soldionline',
+    code: 'sol',
     name: 'Soldionline',
     url: 'https://www.soldionline.it/quotazioni/dettaglio/%isin%.html',
     info: [
@@ -198,7 +204,7 @@ module.exports = [
   },
   {
     id: 7,
-    code: 'la-repubblica',
+    code: 'rep',
     name: 'La Repubblica - Finanza e Mercati',
     url: 'https://finanza.repubblica.it/Company/?symbol=%symbol%',
     info: [
@@ -221,7 +227,7 @@ module.exports = [
   },
   {
     id: 8,
-    code: 'il-sole-24-ore',
+    code: 'sol24',
     name: 'Il Sole 24 Ore',
     url: 'https://vwd-proxy.ilsole24ore.com/FinanzaMercati/WidgetSelector/header-dettaglio?topicName=%code%.MI',
     info: [
@@ -231,11 +237,12 @@ module.exports = [
         path: '.fmw-panel-description > p'
       }
     ],
-    analyses: []
+    analyses: [],
+    news: {}
   },
   {
     id: 9,
-    code: 'il-sole-24-ore',
+    code: 'sol24',
     name: 'Il Sole 24 Ore',
     url: 'https://vwd-proxy.ilsole24ore.com/FinanzaMercati/WidgetSelector/box-commento?widgetConfiguration=BoxCommentoBilancioSintetico&topicName=%code%.MI',
     info: [
@@ -245,11 +252,12 @@ module.exports = [
         path: '#rmjs-2 > p'
       }
     ],
-    analyses: []
+    analyses: [],
+    news: {}
   },
   {
     id: 10,
-    code: 'il-sole-24-ore',
+    code: 'sol24',
     name: 'Il Sole 24 Ore',
     url: 'https://vwd-proxy.ilsole24ore.com/FinanzaMercati/WidgetSelector/analisi-tecnica-dettaglio?topicName=%code%.MI&device=Desktop',
     info: [
@@ -280,6 +288,7 @@ module.exports = [
         type: 'html',
         path: '.vwdWidget > div:nth-of-type(2) > table > tbody > tr:nth-of-type(2) > td:nth-of-type(2)'
       }
-    ]
+    ],
+    news: {}
   }
 ]
