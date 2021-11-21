@@ -290,5 +290,29 @@ module.exports = [
       }
     ],
     news: {}
+  },
+  {
+    id: 11,
+    code: 'teleb',
+    name: 'Teleborsa',
+    url: 'https://www.teleborsa.it/azioni/%teleb_code%/analisi?tab=2',
+    info: [],
+    analyses: [
+      {
+        name: 'support',
+        type: 'html',
+        path: '#ctl00_phContents_ctlAdditionalInfo_lblSupporto2'
+      },
+      {
+        name: 'resistance',
+        type: 'html',
+        path: '#ctl00_phContents_ctlAdditionalInfo_lblResistenza2'
+      },
+      {
+        name: 'trend',
+        type: 'html',
+        path: '#ctl00_phContents_ctlAnalysis_pnlAnalisiDiStatus > p'
+      }
+    ]
   }
 ]

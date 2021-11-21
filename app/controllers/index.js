@@ -9,8 +9,8 @@ const sources = require('../configs/sources.config')
 function removeWS (text) {
   if(!text) return
   text = text.replace(/\r?\n|\r/g, '').trim()
-  if(text.length > 180) {
-    text = text.substring(0, 180) + '...'
+  if(text.length > 280) {
+    text = text.substring(0, 280) + '...'
   }
   return text
 }
@@ -40,6 +40,7 @@ function getUrlCodes (isin) {
       const mf_code = stocks[i].mf_code
       const symbol = `${stocks[i].code}:IM`
       const code = stocks[i].code
+      const teleb_code = stocks[i].teleb_code
       return {
         name,
         isin,
@@ -47,7 +48,8 @@ function getUrlCodes (isin) {
         mf_code,
         stockCodeRT: mf_code.substr(-4),
         marketCodeRT: mf_code.substr(0,3),
-        symbol
+        symbol,
+        teleb_code
       }
     }
   }
@@ -253,6 +255,8 @@ module.exports = {
     } else {
       result = {}
       result.sources = []
+      result.isin = urlCodes.isin
+      result.name = urlCodes.name
     }
     _sources.forEach((source) => {
       const request = new Promise(function (resolve, reject) {
@@ -272,6 +276,7 @@ module.exports = {
                 result[key] = extractFromData(response.data, obj)
               })
             }
+            console.info(`Done: ${url}`)
             resolve()
           })
           .catch((err) => {
@@ -313,6 +318,7 @@ module.exports = {
               name: stock.name,
               [analysis]: extractFromData(response.data, criteria)
             })
+            console.info(`Done: ${stock.name} - ${actualUrl}`)
             resolve()
           })
           .catch((err) => {
