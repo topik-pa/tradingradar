@@ -1,0 +1,52 @@
+### Welcome message
+GET http://localhost:8080
+
+
+### API route informations
+GET http://localhost:8080/api
+
+
+### 404 response
+GET http://localhost:8080/api/info/
+
+
+### Stock general informations (STM)
+GET http://localhost:8080/api/info/NL0000226223
+
+
+### Stock analyses (STM)
+GET http://localhost:8080/api/analysis/NL0000226223
+
+
+### Stock analyses filtered by media (STM / borsa-italiana)
+GET http://localhost:8080/api/analysis/NL0000226223/borsaIt
+
+
+### Stock press release (STM)
+GET http://localhost:8080/api/news/NL0000226223
+
+
+### Stock press release filtered by media (STM / borsa-italiana)
+GET http://localhost:8080/api/news/NL0000226223/borsaIt
+
+###
+
+### Stocks included in this release"
+GET http://localhost:8080/api/stocks
+
+
+### Stocks with analysis
+GET http://localhost:8080/api/stocks/mfRisk
+
+
+### Stocks with analysis
+GET http://localhost:8080/api/stocks/perf1M?order=desc
+
+
+### TEST
+GET http://localhost:8080/api/analysis/IT0005278236/rep
+GET http://localhost:8080/api/analysis/IT0005278236/sol
+GET http://localhost:8080/api/analysis/IT0005278236/sol24
+
+
+GET http://localhost:8080/api/analysis/IT0005278236/rep

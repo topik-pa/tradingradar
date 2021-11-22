@@ -1,22 +1,24 @@
 {
   "name": "tradingradar.net-backend",
   "version": "3.0.0",
-  "description": "Bakend service for tradingradar.net",
+  "description": "Backend service for tradingradar.net",
   "main": "index.js",
   "scripts": {
-    "prod": "NODE_ENV=production node index.js",
+    "start": "NODE_ENV=production node index.js",
     "dev": "NODE_ENV=development nodemon index.js",
-    "test": "NODE_ENV=test mocha ./app/test/**/*.*"
+    "test": "NODE_ENV=test mocha app/tests/**/*.spec.js"
   },
   "author": "Marco Pavan",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.24.0",
     "bcrypt": "^5.0.0",
+    "cheerio": "^1.0.0-rc.10",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
-    "https": "^1.0.0",
+    "http": "^0.0.1-security",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.11.4"
   },

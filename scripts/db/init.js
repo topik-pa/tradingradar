@@ -1,12 +1,12 @@
 /* eslint-disable no-undef */
 
 /* TEST */
-db = new Mongo().getDB('tradingradar_test');
-db.dropDatabase();
+db = new Mongo().getDB('tradingradar_test')
+db.dropDatabase()
 
 adminUserTest = {
   user: 'tr_admin_test',
-  pwd: 'testdb', //passwordPrompt()
+  pwd: 'testdb',
   customData: {},
   roles: [
     {
@@ -14,21 +14,21 @@ adminUserTest = {
       db: 'tradingradar_test'
     }
   ]
-};
+}
 
-db.createUser(adminUserTest);
+db.createUser(adminUserTest)
 //mongodb://tr_admin_test:testdb@localhost:27017/?authSource=tradingradar_test&readPreference=primary&appname=MongoDB%20Compass&ssl=false
 
 
 
 
 /* DEVELOPMENT */
-db = new Mongo().getDB('tradingradar_dev');
-db.dropDatabase();
+db = new Mongo().getDB('tradingradar_dev')
+db.dropDatabase()
 
 adminUserDev = {
   user: 'tr_admin_dev',
-  pwd: 'devdb', //passwordPrompt()
+  pwd: 'devdb',
   customData: {},
   roles: [
     {
@@ -36,30 +36,30 @@ adminUserDev = {
       db: 'tradingradar_dev'
     }
   ]
-};
+}
 
-db.createUser(adminUserDev);
+db.createUser(adminUserDev)
 //mongodb://tr_admin_dev:devdb@localhost:27017/?authSource=tradingradar_dev&readPreference=primary&appname=MongoDB%20Compass&ssl=false
 
 
 
 
 /* PRODUCTION */
-db = new Mongo().getDB('tradingradar_prod');
-db.dropDatabase();
+/*db = new Mongo().getDB('tradingradar')
+db.dropDatabase()
 
 adminUserProd = {
   user: 'tr_admin_prod',
-  pwd: 'proddb', //passwordPrompt()
+  pwd: 'rxqZOno8YheFURYY',
   customData: {},
   roles: [
     {
       role: 'readWrite',
-      db: 'tradingradar_prod'
+      db: 'tradingradar'
     }
   ]
-};
+}
 
-db.createUser(adminUserProd);
+db.createUser(adminUserProd)*/
 //mongodb://tr_admin_prod:proddb@localhost:27017/?authSource=tradingradar_prod&readPreference=primary&appname=MongoDB%20Compass&ssl=false
 
