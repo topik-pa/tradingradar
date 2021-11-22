@@ -257,8 +257,12 @@ module.exports = {
       result.sources = []
       result.isin = urlCodes.isin
       result.name = urlCodes.name
+      result.code = urlCodes.code
     }
     _sources.forEach((source) => {
+      if(!source[type] || source[type].length === 0 || Object.keys(source[type]).length === 0) {
+        return
+      }
       const request = new Promise(function (resolve, reject) {
         const url = urlStringReplacer(source.url, urlCodes)
         axios.get(url)

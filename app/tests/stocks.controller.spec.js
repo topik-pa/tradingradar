@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
-
+const stocks = require('../configs/stocks.config')
 const chai = require('chai')
+const expect = chai.expect
 // eslint-disable-next-line no-unused-vars
 const should = chai.should()
 const chaiHttp = require('chai-http')
@@ -9,7 +10,7 @@ const server = require('../../index')
 chai.use(chaiHttp)
 
 
-describe('tradingradar.net - testing basic server functionality...', function () {
+describe('tradingradar.net - testing stocks routes...', function () {
 
   //Before all tests
   before(function(done) {
@@ -18,6 +19,7 @@ describe('tradingradar.net - testing basic server functionality...', function ()
 
   beforeEach(function(done) {
     // I do stuff like populating db
+    this.timeout(5000)
     done()
   })
 
@@ -32,19 +34,22 @@ describe('tradingradar.net - testing basic server functionality...', function ()
   })
 
 
-  describe('GET "/" route', () => {
-
-    it('it should reply with a specific string', (done) => {
+  describe('GET "/api/stocks/mfRisk" route', () => {
+    it('it should reply with an array of all stocks and the mfRisk analysis', (done) => {
       chai.request(server)
-        .get('/')
+        .get('/api/stocks/mfRisk')
         .end((err, res) => {
           res.should.have.status(200)
-          res.body.should.be.a('object')
-          res.body.should.have.property('message').include('Welcome to tradingradar.net backend service')
+          res.body.should.satisfy(function (value) {
+            expect(value).to.be.instanceof(Array)
+            expect(value).to.have.length(stocks.length)
+            return true
+          })
           done()
         })
     })
-
+    
   })
+
 
 })

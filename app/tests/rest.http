@@ -44,4 +44,9 @@ GET http://localhost:8080/api/stocks/perf1M?order=desc
 
 
 ### TEST
-GET http://localhost:8080/api/stocks/lastDiv?order=asc&page=1&size=4
+GET http://localhost:8080/api/analysis/IT0005278236/rep
+GET http://localhost:8080/api/analysis/IT0005278236/sol
+GET http://localhost:8080/api/analysis/IT0005278236/sol24
+
+
+GET http://localhost:8080/api/analysis/IT0005278236/rep
