@@ -5,9 +5,10 @@ require('dotenv').config()
 
 const app = express()
 
-// Set CORS 
+// Set CORS
+const allowlist = ['http://localhost:8081']
 var corsOptions = {
-  origin: process.env.ORIGIN,
+  origin: allowlist,
   credentials:  true
 }
 app.use(cors(corsOptions))
@@ -115,8 +116,9 @@ app.use((err, req, res, next) => {
   console.log(`Server is running on port ${process.env.PORT} over HTTPS in ${process.env.NODE_ENV} mode.\nAccepting requests from ${process.env.ORIGIN}.`)
 })*/
 //HTTP
-http.createServer(app).listen(process.env.PORT, () => {
-  console.log(`Server is running on port ${process.env.PORT} in ${process.env.NODE_ENV} mode.\nAccepting requests from ${process.env.ORIGIN}.`)
+const port = process.env.PORT || 8080
+http.createServer(app).listen(port, () => {
+  console.log(`Server is running on port ${port} in ${process.env.NODE_ENV} mode.\nAccepting requests from ${allowlist}.`)
 })
 
 module.exports = app
