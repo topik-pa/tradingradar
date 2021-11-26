@@ -203,6 +203,10 @@ function pagingStocks (stocks, page, size) {
   return stocks.slice(intervals[0], intervals[1])
 }
 
+function sizeStocks (stocks, size) {
+  return stocks.slice(0, size)
+}
+
 async function checkQueryParams (results, analysis, qps) {
   if(!qps) return results
 
@@ -221,10 +225,16 @@ async function checkQueryParams (results, analysis, qps) {
   if(qps.page && qps.size) {
     let page = Number(qps.page)
     let size = Number(qps.size)
-    if(isNaN(page) || isNaN(size)) {
-      return {}
+    if(!isNaN(page) && !isNaN(size)) {
+      results = pagingStocks(results, page, size)
     }
-    results = pagingStocks(results, page, size)
+  }
+  //Size
+  if(qps.size) {
+    let size = Number(qps.size)
+    if(!isNaN(size)) {
+      results = sizeStocks(results, size)
+    }
   }
   return results
 }

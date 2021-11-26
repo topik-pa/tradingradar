@@ -52,4 +52,22 @@ describe('tradingradar.net - testing stocks routes...', function () {
   })
 
 
+  describe('GET "/api/stocks/perf1M" route', () => {
+    it('it should reply with an array of 3 stocks and the perf1M analysis', (done) => {
+      chai.request(server)
+        .get('/api/stocks/perf1M?size=3')
+        .end((err, res) => {
+          res.should.have.status(200)
+          res.body.should.satisfy(function (value) {
+            expect(value).to.be.instanceof(Array)
+            expect(value).to.have.length(3)
+            return true
+          })
+          done()
+        })
+    })
+    
+  })
+
+
 })
