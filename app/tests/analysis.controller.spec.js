@@ -41,27 +41,63 @@ describe('tradingradar.net - testing analysis routes...', function () {
         .end((err, res) => {
           res.should.have.status(200)
           res.body.should.be.a('object')
-          res.body.should.have.property('sources').that.satisfy(function (value) {
-            expect(value).to.be.instanceof(Array)
-            expect(value).to.have.length.above(0)
-            return true
-          })
+          
           res.body.should.have.property('isin').include('IT0005278236')
           res.body.should.have.property('name').include('Pirelli & C')
           res.body.should.have.property('code').include('PIRC')
+
           res.body.should.have.property('sol24_shortTendency')
+          res.body.should.have.nested.property('sol24_shortTendency.value')
+          res.body.should.have.nested.property('sol24_shortTendency.source')
+
           res.body.should.have.property('sol24_mediumTendency')
+          res.body.should.have.nested.property('sol24_mediumTendency.value')
+          res.body.should.have.nested.property('sol24_mediumTendency.source')
+
           res.body.should.have.property('milFin_mfRanking')
+          res.body.should.have.nested.property('milFin_mfRanking.value')
+          res.body.should.have.nested.property('milFin_mfRanking.source')
+
           res.body.should.have.property('milFin_mfRisk')
+          res.body.should.have.nested.property('milFin_mfRisk.value')
+          res.body.should.have.nested.property('milFin_mfRisk.source')
+
           res.body.should.have.property('milFin_rsi')
+          res.body.should.have.nested.property('milFin_rsi.value')
+          res.body.should.have.nested.property('milFin_rsi.source')
+
           res.body.should.have.property('borsaIt_support')
+          res.body.should.have.nested.property('borsaIt_support.value')
+          res.body.should.have.nested.property('borsaIt_support.source')
+
           res.body.should.have.property('borsaIt_resistance')
+          res.body.should.have.nested.property('borsaIt_resistance.value')
+          res.body.should.have.nested.property('borsaIt_resistance.source')
+
           res.body.should.have.property('borsaIt_rsi')
+          res.body.should.have.nested.property('borsaIt_rsi.value')
+          res.body.should.have.nested.property('borsaIt_rsi.source')
+
           res.body.should.have.property('borsaIt_evaluation')
+          res.body.should.have.nested.property('borsaIt_evaluation.value')
+          res.body.should.have.nested.property('borsaIt_evaluation.source')
+
           res.body.should.have.property('borsaIt_rating')
+          res.body.should.have.nested.property('borsaIt_rating.value')
+          res.body.should.have.nested.property('borsaIt_rating.source')
+
           res.body.should.have.property('teleb_support')
+          res.body.should.have.nested.property('teleb_support.value')
+          res.body.should.have.nested.property('teleb_support.source')
+
           res.body.should.have.property('teleb_resistance')
+          res.body.should.have.nested.property('teleb_resistance.value')
+          res.body.should.have.nested.property('teleb_resistance.source')
+
           res.body.should.have.property('teleb_trend')
+          res.body.should.have.nested.property('teleb_trend.value')
+          res.body.should.have.nested.property('teleb_trend.source')
+
           done()
         })
     })
@@ -74,19 +110,31 @@ describe('tradingradar.net - testing analysis routes...', function () {
         .end((err, res) => {
           res.should.have.status(200)
           res.body.should.be.a('object')
-          res.body.should.have.property('sources').that.satisfy(function (value) {
-            expect(value).to.be.instanceof(Array)
-            expect(value).to.have.length.above(0)
-            return true
-          })
+
           res.body.should.have.property('isin').include('IT0005278236')
           res.body.should.have.property('name').include('Pirelli & C')
           res.body.should.have.property('code').include('PIRC')
+
           res.body.should.have.property('support')
+          res.body.should.have.nested.property('support.value')
+          res.body.should.have.nested.property('support.source')
+
           res.body.should.have.property('resistance')
+          res.body.should.have.nested.property('resistance.value')
+          res.body.should.have.nested.property('resistance.source')
+
           res.body.should.have.property('rsi')
+          res.body.should.have.nested.property('rsi.value')
+          res.body.should.have.nested.property('rsi.source')
+
           res.body.should.have.property('evaluation')
+          res.body.should.have.nested.property('evaluation.value')
+          res.body.should.have.nested.property('evaluation.source')
+
           res.body.should.have.property('rating')
+          res.body.should.have.nested.property('rating.value')
+          res.body.should.have.nested.property('rating.source')
+
           done()
         })
     })
@@ -99,17 +147,23 @@ describe('tradingradar.net - testing analysis routes...', function () {
         .end((err, res) => {
           res.should.have.status(200)
           res.body.should.be.a('object')
-          res.body.should.have.property('sources').that.satisfy(function (value) {
-            expect(value).to.be.instanceof(Array)
-            expect(value).to.have.length.above(0)
-            return true
-          })
+
           res.body.should.have.property('isin').include('IT0005278236')
           res.body.should.have.property('name').include('Pirelli & C')
           res.body.should.have.property('code').include('PIRC')
+
           res.body.should.have.property('support')
+          res.body.should.have.nested.property('support.value')
+          res.body.should.have.nested.property('support.source')
+
           res.body.should.have.property('resistance')
+          res.body.should.have.nested.property('resistance.value')
+          res.body.should.have.nested.property('resistance.source')
+
           res.body.should.have.property('trend')
+          res.body.should.have.nested.property('trend.value')
+          res.body.should.have.nested.property('trend.source')
+
           done()
         })
     })

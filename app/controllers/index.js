@@ -264,7 +264,7 @@ module.exports = {
       result = []
     } else {
       result = {}
-      result.sources = []
+      //result.sources = []
       result.isin = urlCodes.isin
       result.name = urlCodes.name
       result.code = urlCodes.code
@@ -282,12 +282,15 @@ module.exports = {
               appendNewsToResult(response.data, source.news, result)
             } else {
               //info/analysis
-              if(source[type] && source[type].length) {
+              /* if(source[type] && source[type].length) {
                 result.sources.push(url)
-              }
+              } */
               source[type].forEach(function(obj) {
                 const key = ( type === 'info' || media ) ? obj.name : source.code + '_' + obj.name
-                result[key] = extractFromData(response.data, obj)
+                result[key] = {
+                  value: extractFromData(response.data, obj),
+                  source: url
+                }
               })
             }
             console.info(`Done: ${url}`)
@@ -327,10 +330,16 @@ module.exports = {
         const actualUrl = urlStringReplacer(url, urlCodes)
         axios.get(actualUrl)
           .then((response) => {
-            results.push({
+            const result = {
               isin: stock.isin,
               name: stock.name,
-              [analysis]: extractFromData(response.data, criteria)
+              [analysis]: {
+                value: extractFromData(response.data, criteria),
+                source: actualUrl
+              }
+            }
+            results.push({
+              result
             })
             console.info(`Done: ${stock.name} - ${actualUrl}`)
             resolve()
