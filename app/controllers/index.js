@@ -2,6 +2,10 @@ const axios = require('axios')
 const cheerio = require('cheerio')
 const stocks = require('../configs/stocks.config')
 const sources = require('../configs/sources.config')
+const availableStockAnalyses = require('../configs/analyses.config')
+
+const db = require('../models')
+const FTSEMibStock = db.ftseMibStocks
 
 //COMMON
 
@@ -158,7 +162,7 @@ function toFloatNumber (str) {
 
 function orderStocks (stocks, key, order='desc') {
   function compare( a, b ) {
-    let {x, y} = {x: toFloatNumber(a[key]), y: toFloatNumber(b[key])}
+    let {x, y} = {x: toFloatNumber(a[key].value), y: toFloatNumber(b[key].value)}
     if ( x > y ){
       return -1
     }
@@ -168,7 +172,7 @@ function orderStocks (stocks, key, order='desc') {
     return 0
   }
   function compareAsc( a, b ) {
-    let {x, y} = {x: toFloatNumber(a[key]), y: toFloatNumber(b[key])}
+    let {x, y} = {x: toFloatNumber(a[key].value), y: toFloatNumber(b[key].value)}
     if ( x < y ){
       return -1
     }
@@ -310,8 +314,37 @@ module.exports = {
   },
 
   stocks: async function (analysis, qps) {
-    const availableAnalyses = ['perf1M', 'perf6M', 'perf1Y', 'volatility', 'rsi', 'divYield', 'lastDiv', 'mfRisk']
-    if (!availableAnalyses.includes(analysis)) {
+    if (!availableStockAnalyses.includes(analysis)) {
+      const err = new Error('Cant\'t find any content that conforms to the given criteria')
+      err.status = 406
+      throw err
+    }
+    //Setup the remote requests
+    const results = []
+    for (let i = 0; i < stocks.length; i++) {
+      const stock = stocks[i]
+      const dbStock = await FTSEMibStock.findOne({ isin: stock.isin })
+      if(dbStock) {
+        const result = {
+          isin: dbStock.isin,
+          name: dbStock.name,
+          [analysis]: {
+            value: dbStock[analysis].value,
+            source: dbStock[analysis].source
+          }
+        }
+        results.push(result)
+        console.info(`Done: ${stock.name}`)
+      } else {
+        console.error('Cant\'t find stock ' + stock.isin + ' on DB')
+      }
+    }
+    //Return results with qps elaboration
+    return checkQueryParams(results, analysis, qps)
+  },
+
+  cronStocks: async function (analysis) {
+    if (!availableStockAnalyses.includes(analysis)) {
       const err = new Error('Cant\'t find any content that conforms to the given criteria')
       err.status = 406
       throw err
@@ -338,9 +371,7 @@ module.exports = {
                 source: actualUrl
               }
             }
-            results.push({
-              result
-            })
+            results.push(result)
             console.info(`Done: ${stock.name} - ${actualUrl}`)
             resolve()
           })
@@ -355,7 +386,7 @@ module.exports = {
     //Launch the remote requests
     await Promise.allSettled(requests)
 
-    //Return results with qps elaboration
-    return checkQueryParams(results, analysis, qps)
+    //Return results
+    return results
   }
 }
