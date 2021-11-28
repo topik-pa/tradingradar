@@ -1,7 +1,6 @@
-//TODO: url must be taken from env variables
-let url = ''
-url = process.env.NODE_ENV === 'test' ? 'mongodb://tr_admin_test:testdb@localhost:27017/tradingradar_test' : process.env.NODE_ENV === 'development' ? 'mongodb://tr_admin_dev:devdb@localhost:27017/tradingradar_dev' : ''
+require('dotenv').config()
 
+let url = process.env.NODE_ENV === 'test' ? process.env.TEST_DB_URL : process.env.NODE_ENV === 'development' ? process.env.DEVELOPMENT_DB_URL : ''
 module.exports = {
   url
 }

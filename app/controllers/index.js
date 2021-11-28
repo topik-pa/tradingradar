@@ -376,7 +376,7 @@ module.exports = {
             resolve()
           })
           .catch((err) => {
-            const errorMsg = 'Error performing remote request: ' + url + '\n' + err
+            const errorMsg = 'Error performing remote request: ' + actualUrl + '\n' + err
             console.error(errorMsg)
             reject(errorMsg)
           })

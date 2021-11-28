@@ -2,6 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const http = require('http')
 const cron = require('node-cron')
+const schedule = require('./app/configs/cron.config')
 const updateStocksDB = require('./app/scripts/updateStocksDB')
 require('dotenv').config()
 
@@ -34,10 +35,9 @@ db.mongoose
   .then(() => {
     console.log('Connected to the database!')
     const FTSEMibStock = db.ftseMibStocks
-    //cron.schedule('* * * * *', () => {
-    setTimeout(async() => {
+    cron.schedule(schedule.cron, () => {
       updateStocksDB(FTSEMibStock)
-    }, 2000)
+    })
   })
   .catch(err => {
     console.log('Cannot connect to the database!', err)
