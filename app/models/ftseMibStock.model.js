@@ -17,23 +17,49 @@ module.exports = mongoose => {
         nullable: false,
         unique: true
       },
-      volatility: {
+      code:
+      {
+        type: String,
+        nullable: true,
+        unique: false
+      },
+      absMax: {
         type: Schema.Types.Mixed,
         nullable: true
       },
-      rsi: {
+      absMin: {
         type: Schema.Types.Mixed,
         nullable: true
       },
-      lastDiv: {
+      address: {
         type: Schema.Types.Mixed,
         nullable: true
       },
-      mfRisk: {
+      comment: {
         type: Schema.Types.Mixed,
         nullable: true
       },
-      divYield: {
+      currentYearMax: {
+        type: Schema.Types.Mixed,
+        nullable: true
+      },
+      currentYearMin: {
+        type: Schema.Types.Mixed,
+        nullable: true
+      },
+      mm100days: {
+        type: Schema.Types.Mixed,
+        nullable: true
+      },
+      mm20days: {
+        type: Schema.Types.Mixed,
+        nullable: true
+      },
+      mm40days: {
+        type: Schema.Types.Mixed,
+        nullable: true
+      },
+      perf1M: {
         type: Schema.Types.Mixed,
         nullable: true
       },
@@ -45,7 +71,59 @@ module.exports = mongoose => {
         type: Schema.Types.Mixed,
         nullable: true
       },
-      perf1M: {
+      profile: {
+        type: Schema.Types.Mixed,
+        nullable: true
+      },
+      volatility: {
+        type: Schema.Types.Mixed,
+        nullable: true
+      },
+      webSite: {
+        type: Schema.Types.Mixed,
+        nullable: true
+      },
+      borsaIt_evaluation: {
+        type: Schema.Types.Mixed,
+        nullable: true
+      },
+      borsaIt_rating: {
+        type: Schema.Types.Mixed,
+        nullable: true
+      },
+      borsaIt_resistance: {
+        type: Schema.Types.Mixed,
+        nullable: true
+      },
+      borsaIt_rsi: {
+        type: Schema.Types.Mixed,
+        nullable: true
+      },
+      borsaIt_support: {
+        type: Schema.Types.Mixed,
+        nullable: true
+      },
+      milFin_mfRanking: {
+        type: Schema.Types.Mixed,
+        nullable: true
+      },
+      sol24_mediumTendency: {
+        type: Schema.Types.Mixed,
+        nullable: true
+      },
+      sol24_shortTendency: {
+        type: Schema.Types.Mixed,
+        nullable: true
+      },
+      teleb_resistance: {
+        type: Schema.Types.Mixed,
+        nullable: true
+      },
+      teleb_support: {
+        type: Schema.Types.Mixed,
+        nullable: true
+      },
+      teleb_trend: {
         type: Schema.Types.Mixed,
         nullable: true
       }

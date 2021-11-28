@@ -145,7 +145,7 @@ module.exports = [
     id: 5,
     code: 'milFin',
     name: 'Milano Finanza',
-    url: 'https://www.milanofinanza.it/Mercati/BoxNewsTitolo?isin=%isin%&numNews=12',
+    url: 'https://www.milanofinanza.it/Mercati/BoxNewsTitolo?isin=%isin%&numNews=6',
     info: [],
     analyses: [],
     news: {

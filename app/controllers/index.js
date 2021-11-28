@@ -243,6 +243,20 @@ async function checkQueryParams (results, analysis, qps) {
   return results
 }
 
+async function updateStockOnDB(stock) {
+  const filter = { isin: stock.isin }
+  const update = stock
+  try {
+    await FTSEMibStock.findOneAndUpdate(filter, update, {
+      useFindAndModify: false, 
+      runValidators: true,
+      upsert: true
+    })
+  } catch (error) {
+    console.error('Error updating DB data with last requested stock: ' + stock.isin + '.\n' + error)
+  }
+}
+
 
 
 module.exports = {
@@ -310,6 +324,9 @@ module.exports = {
     })
     //Launch the remote requests and return results
     await Promise.allSettled(requests)
+    //Save on DB
+    updateStockOnDB(result)
+    //Return result
     return result
   },
 
