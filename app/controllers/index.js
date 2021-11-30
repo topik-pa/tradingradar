@@ -325,13 +325,23 @@ module.exports = {
     //Launch the remote requests and return results
     await Promise.allSettled(requests)
     //Save on DB
-    updateStockOnDB(result)
+    if(type !== 'news') {
+      updateStockOnDB(result)
+    }
     //Return result
     return result
   },
 
   stocks: async function (analysis, qps) {
-    if (!availableStockAnalyses.includes(analysis)) {
+    //Is analysis a valid parameter
+    let validReqAnalysis = false
+    for(let i = 0; i<availableStockAnalyses.length; i++) {
+      if(availableStockAnalyses[i].qp === analysis) {
+        validReqAnalysis = true
+        analysis = availableStockAnalyses[i].jsonKey
+      }
+    }
+    if(!validReqAnalysis) {
       const err = new Error('Cant\'t find any content that conforms to the given criteria')
       err.status = 406
       throw err
@@ -342,13 +352,13 @@ module.exports = {
       const stock = stocks[i]
       const dbStock = await FTSEMibStock.findOne({ isin: stock.isin })
       if(dbStock) {
-        const result = {
-          isin: dbStock.isin,
-          name: dbStock.name,
-          [analysis]: {
-            value: dbStock[analysis].value,
-            source: dbStock[analysis].source
-          }
+        const result = {}
+        result.isin = dbStock.isin
+        result.name = dbStock.name
+        result[analysis] = {}
+        if(dbStock[analysis]) { //TODO... else get from Web
+          result[analysis].value = dbStock[analysis].value
+          result[analysis].source = dbStock[analysis].source
         }
         results.push(result)
         console.info(`Done: ${stock.name}`)
@@ -361,14 +371,8 @@ module.exports = {
   },
 
   cronStocks: async function (analysis) {
-    if (!availableStockAnalyses.includes(analysis)) {
-      const err = new Error('Cant\'t find any content that conforms to the given criteria')
-      err.status = 406
-      throw err
-    }  //TODO: Add more criteria (string criteria, rating, lastDivDate...)
-
     //Get the url and the criteria to perform
-    const { url, criteria } = getCriteriaObjData(analysis)
+    const { url, criteria } = getCriteriaObjData(analysis.qp)
 
     //Setup the remote requests
     const results = []
@@ -383,7 +387,7 @@ module.exports = {
             const result = {
               isin: stock.isin,
               name: stock.name,
-              [analysis]: {
+              [analysis.jsonKey]: {
                 value: extractFromData(response.data, criteria),
                 source: actualUrl
               }

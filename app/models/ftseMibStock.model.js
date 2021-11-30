@@ -126,6 +126,26 @@ module.exports = mongoose => {
       teleb_trend: {
         type: Schema.Types.Mixed,
         nullable: true
+      },
+      divYield: {
+        type: Schema.Types.Mixed,
+        nullable: true
+      },
+      lastDiv: {
+        type: Schema.Types.Mixed,
+        nullable: true
+      },
+      lastDivDate: {
+        type: Schema.Types.Mixed,
+        nullable: true
+      },
+      milFin_mfRisk: {
+        type: Schema.Types.Mixed,
+        nullable: true
+      },
+      milFin_rsi: {
+        type: Schema.Types.Mixed,
+        nullable: true
       }
     },
     { timestamps: true }

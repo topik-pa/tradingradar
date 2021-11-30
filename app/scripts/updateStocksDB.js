@@ -11,21 +11,22 @@ module.exports = async (stockModel) => {
   let stocks = []
   for(let i = 0; i<availableStockAnalyses.length; i++) {
     const analysis = availableStockAnalyses[i]
+    //Get stock data from the Web
     try {      
       stocks = await getData.cronStocks(analysis)
     } catch (error) {
-      console.error('Error retrieving data for analysis: ' + analysis + '\n' + error)
+      console.error('Error retrieving data for analysis: ' + analysis.qp + '\n' + error)
     }
-
+    //Save stock data on DB
     for(let i = 0; i<stocks.length; i++) {
       const stock = stocks[i]
       const filter = { isin: stock.isin }
       const update = {}
       update.name = stock.name
-      update[analysis] = {}
-      if(stock[analysis]) {
-        update[analysis].value = stock[analysis].value
-        update[analysis].source = stock[analysis].source
+      update[analysis.jsonKey] = {}
+      if(stock[analysis.jsonKey]) {
+        update[analysis.jsonKey].value = stock[analysis.jsonKey].value
+        update[analysis.jsonKey].source = stock[analysis.jsonKey].source
       }
       try {
         await stockModel.findOneAndUpdate(filter, update, {
@@ -34,7 +35,7 @@ module.exports = async (stockModel) => {
           upsert: true
         })
       } catch (error) {
-        console.error('Error saving data for analysis: ' + analysis + '\n' + error)
+        console.error('Error saving data for analysis: ' + analysis.qp + '\n' + error)
       }
     }
     await sleep(3000)
