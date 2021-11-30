@@ -1,7 +1,6 @@
 /* eslint-disable no-undef */
 
 const chai = require('chai')
-const expect = chai.expect
 // eslint-disable-next-line no-unused-vars
 const should = chai.should()
 const chaiHttp = require('chai-http')
@@ -19,6 +18,7 @@ describe('tradingradar.net - testing info routes...', function () {
 
   beforeEach(function(done) {
     // I do stuff like populating db
+    this.timeout(5000)
     done()
   })
 
@@ -37,13 +37,13 @@ describe('tradingradar.net - testing info routes...', function () {
 
     it('it should reply with a JSON and all the informations about the given stock', (done) => {
       chai.request(server)
-        .get('/api/info/IT0005278236')
+        .get('/api/info/NL0000226223')
         .end((err, res) => {
           res.should.have.status(200)
           res.body.should.be.a('object')
-          res.body.should.have.property('isin').include('IT0005278236')
-          res.body.should.have.property('name').include('Pirelli & C')
-          res.body.should.have.property('code').include('PIRC')
+          res.body.should.have.property('isin').include('NL0000226223')
+          res.body.should.have.property('name').include('Stmicroelectronics')
+          res.body.should.have.property('code').include('STM')
           
           res.body.should.have.property('perf1M')
           res.body.should.have.nested.property('perf1M.value')

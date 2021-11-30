@@ -37,7 +37,7 @@ describe('tradingradar.net - testing news routes...', function () {
 
     it('it should reply with a JSON and all the news about the given stock', (done) => {
       chai.request(server)
-        .get('/api/news/IT0005278236')
+        .get('/api/news/NL0000226223')
         .end((err, res) => {
           res.should.have.status(200)
           res.body.should.satisfy(function (value) {
@@ -52,7 +52,7 @@ describe('tradingradar.net - testing news routes...', function () {
 
     it('it should reply with a JSON and all the news about the given stock for the givn media (Borsa Italiana)', (done) => {
       chai.request(server)
-        .get('/api/news/IT0005278236/borsaIt')
+        .get('/api/news/NL0000226223/borsaIt')
         .end((err, res) => {
           res.should.have.status(200)
           res.body.should.satisfy(function (value) {

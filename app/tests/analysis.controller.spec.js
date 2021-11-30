@@ -1,7 +1,6 @@
 /* eslint-disable no-undef */
 
 const chai = require('chai')
-const expect = chai.expect
 // eslint-disable-next-line no-unused-vars
 const should = chai.should()
 const chaiHttp = require('chai-http')
@@ -19,6 +18,7 @@ describe('tradingradar.net - testing analysis routes...', function () {
 
   beforeEach(function(done) {
     // I do stuff like populating db
+    this.timeout(5000)
     done()
   })
 
@@ -37,14 +37,14 @@ describe('tradingradar.net - testing analysis routes...', function () {
 
     it('it should reply with a JSON and all the analyses about the given stock', (done) => {
       chai.request(server)
-        .get('/api/analysis/IT0005278236')
+        .get('/api/analysis/NL0000226223')
         .end((err, res) => {
           res.should.have.status(200)
           res.body.should.be.a('object')
           
-          res.body.should.have.property('isin').include('IT0005278236')
-          res.body.should.have.property('name').include('Pirelli & C')
-          res.body.should.have.property('code').include('PIRC')
+          res.body.should.have.property('isin').include('NL0000226223')
+          res.body.should.have.property('name').include('Stmicroelectronics')
+          res.body.should.have.property('code').include('STM')
 
           res.body.should.have.property('sol24_shortTendency')
           res.body.should.have.nested.property('sol24_shortTendency.value')
@@ -106,14 +106,14 @@ describe('tradingradar.net - testing analysis routes...', function () {
 
     it('it should reply with a JSON and all the analyses about the given stock and given source (Borsa Italiana)', (done) => {
       chai.request(server)
-        .get('/api/analysis/IT0005278236/borsaIt')
+        .get('/api/analysis/NL0000226223/borsaIt')
         .end((err, res) => {
           res.should.have.status(200)
           res.body.should.be.a('object')
 
-          res.body.should.have.property('isin').include('IT0005278236')
-          res.body.should.have.property('name').include('Pirelli & C')
-          res.body.should.have.property('code').include('PIRC')
+          res.body.should.have.property('isin').include('NL0000226223')
+          res.body.should.have.property('name').include('Stmicroelectronics')
+          res.body.should.have.property('code').include('STM')
 
           res.body.should.have.property('support')
           res.body.should.have.nested.property('support.value')
