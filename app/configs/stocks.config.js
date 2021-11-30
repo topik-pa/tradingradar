@@ -282,13 +282,6 @@ const fsteMib = [
 ]
 const devStocks = [
   {
-    name: 'Intesa Sanpaolo',
-    code: 'ISP',
-    isin: 'IT0000072618',
-    mf_code: '2ae0056',
-    teleb_code: 'intesa-sanpaolo-isp-it0000072618-SVQwMDAwMDcyNjE4'
-  },
-  {
     name: 'Stmicroelectronics',
     code: 'STM',
     isin: 'NL0000226223',
@@ -304,4 +297,21 @@ const devStocks = [
   }
 ]
 
-module.exports = process.env.NODE_ENV === 'production' ? fsteMib : devStocks
+const testStocks = [
+  {
+    name: 'Pirelli & C',
+    code: 'PIRC',
+    isin: 'IT0005278236',
+    mf_code: '2ae10bc',
+    teleb_code: 'pirelli-c-pirc-it0005278236-SVQwMDA1Mjc4MjM2'
+  },
+  {
+    name: 'Stmicroelectronics',
+    code: 'STM',
+    isin: 'NL0000226223',
+    mf_code: '2ae0022',
+    teleb_code: 'stmicroelectronics-stm-nl0000226223-TkwwMDAwMjI2MjIz'
+  }
+]
+
+module.exports = process.env.NODE_ENV === 'production' ? fsteMib : process.env.NODE_ENV === 'development' ? devStocks : testStocks
