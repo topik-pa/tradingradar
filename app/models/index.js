@@ -7,6 +7,6 @@ db.mongoose = mongoose
 db.url = dbConfig.url
 
 //DB ENTITIES
-//...
+db.ftseMibStocks = require('./ftseMibStock.model.js')(mongoose)
 
 module.exports = db

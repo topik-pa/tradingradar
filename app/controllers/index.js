@@ -2,6 +2,10 @@ const axios = require('axios')
 const cheerio = require('cheerio')
 const stocks = require('../configs/stocks.config')
 const sources = require('../configs/sources.config')
+const availableStockAnalyses = require('../configs/analyses.config')
+
+const db = require('../models')
+const FTSEMibStock = db.ftseMibStocks
 
 //COMMON
 
@@ -158,7 +162,7 @@ function toFloatNumber (str) {
 
 function orderStocks (stocks, key, order='desc') {
   function compare( a, b ) {
-    let {x, y} = {x: toFloatNumber(a[key]), y: toFloatNumber(b[key])}
+    let {x, y} = {x: toFloatNumber(a[key].value), y: toFloatNumber(b[key].value)}
     if ( x > y ){
       return -1
     }
@@ -168,7 +172,7 @@ function orderStocks (stocks, key, order='desc') {
     return 0
   }
   function compareAsc( a, b ) {
-    let {x, y} = {x: toFloatNumber(a[key]), y: toFloatNumber(b[key])}
+    let {x, y} = {x: toFloatNumber(a[key].value), y: toFloatNumber(b[key].value)}
     if ( x < y ){
       return -1
     }
@@ -203,6 +207,10 @@ function pagingStocks (stocks, page, size) {
   return stocks.slice(intervals[0], intervals[1])
 }
 
+function sizeStocks (stocks, size) {
+  return stocks.slice(0, size)
+}
+
 async function checkQueryParams (results, analysis, qps) {
   if(!qps) return results
 
@@ -221,12 +229,32 @@ async function checkQueryParams (results, analysis, qps) {
   if(qps.page && qps.size) {
     let page = Number(qps.page)
     let size = Number(qps.size)
-    if(isNaN(page) || isNaN(size)) {
-      return {}
+    if(!isNaN(page) && !isNaN(size)) {
+      results = pagingStocks(results, page, size)
     }
-    results = pagingStocks(results, page, size)
+  }
+  //Size
+  if(qps.size) {
+    let size = Number(qps.size)
+    if(!isNaN(size)) {
+      results = sizeStocks(results, size)
+    }
   }
   return results
+}
+
+async function updateStockOnDB(stock) {
+  const filter = { isin: stock.isin }
+  const update = stock
+  try {
+    await FTSEMibStock.findOneAndUpdate(filter, update, {
+      useFindAndModify: false, 
+      runValidators: true,
+      upsert: true
+    })
+  } catch (error) {
+    console.error('Error updating DB data with last requested stock: ' + stock.isin + '.\n' + error)
+  }
 }
 
 
@@ -254,7 +282,7 @@ module.exports = {
       result = []
     } else {
       result = {}
-      result.sources = []
+      //result.sources = []
       result.isin = urlCodes.isin
       result.name = urlCodes.name
       result.code = urlCodes.code
@@ -272,12 +300,15 @@ module.exports = {
               appendNewsToResult(response.data, source.news, result)
             } else {
               //info/analysis
-              if(source[type] && source[type].length) {
+              /* if(source[type] && source[type].length) {
                 result.sources.push(url)
-              }
+              } */
               source[type].forEach(function(obj) {
                 const key = ( type === 'info' || media ) ? obj.name : source.code + '_' + obj.name
-                result[key] = extractFromData(response.data, obj)
+                result[key] = {
+                  value: extractFromData(response.data, obj),
+                  source: url
+                }
               })
             }
             console.info(`Done: ${url}`)
@@ -293,19 +324,55 @@ module.exports = {
     })
     //Launch the remote requests and return results
     await Promise.allSettled(requests)
+    //Save on DB
+    if(type !== 'news') {
+      updateStockOnDB(result)
+    }
+    //Return result
     return result
   },
 
   stocks: async function (analysis, qps) {
-    const availableAnalyses = ['perf1M', 'perf6M', 'perf1Y', 'volatility', 'rsi', 'divYield', 'lastDiv', 'mfRisk']
-    if (!availableAnalyses.includes(analysis)) {
+    //Is analysis a valid parameter
+    let validReqAnalysis = false
+    for(let i = 0; i<availableStockAnalyses.length; i++) {
+      if(availableStockAnalyses[i].qp === analysis) {
+        validReqAnalysis = true
+        analysis = availableStockAnalyses[i].jsonKey
+      }
+    }
+    if(!validReqAnalysis) {
       const err = new Error('Cant\'t find any content that conforms to the given criteria')
       err.status = 406
       throw err
-    }  //TODO: Add more criteria (string criteria, rating, lastDivDate...)
+    }
+    //Setup the remote requests
+    const results = []
+    for (let i = 0; i < stocks.length; i++) {
+      const stock = stocks[i]
+      const dbStock = await FTSEMibStock.findOne({ isin: stock.isin })
+      if(dbStock) {
+        const result = {}
+        result.isin = dbStock.isin
+        result.name = dbStock.name
+        result[analysis] = {}
+        if(dbStock[analysis]) { //TODO... else get from Web
+          result[analysis].value = dbStock[analysis].value
+          result[analysis].source = dbStock[analysis].source
+        }
+        results.push(result)
+        console.info(`Done: ${stock.name}`)
+      } else {
+        console.error('Cant\'t find stock ' + stock.isin + ' on DB')
+      }
+    }
+    //Return results with qps elaboration
+    return checkQueryParams(results, analysis, qps)
+  },
 
+  cronStocks: async function (analysis) {
     //Get the url and the criteria to perform
-    const { url, criteria } = getCriteriaObjData(analysis)
+    const { url, criteria } = getCriteriaObjData(analysis.qp)
 
     //Setup the remote requests
     const results = []
@@ -317,16 +384,20 @@ module.exports = {
         const actualUrl = urlStringReplacer(url, urlCodes)
         axios.get(actualUrl)
           .then((response) => {
-            results.push({
+            const result = {
               isin: stock.isin,
               name: stock.name,
-              [analysis]: extractFromData(response.data, criteria)
-            })
+              [analysis.jsonKey]: {
+                value: extractFromData(response.data, criteria),
+                source: actualUrl
+              }
+            }
+            results.push(result)
             console.info(`Done: ${stock.name} - ${actualUrl}`)
             resolve()
           })
           .catch((err) => {
-            const errorMsg = 'Error performing remote request: ' + url + '\n' + err
+            const errorMsg = 'Error performing remote request: ' + actualUrl + '\n' + err
             console.error(errorMsg)
             reject(errorMsg)
           })
@@ -336,7 +407,7 @@ module.exports = {
     //Launch the remote requests
     await Promise.allSettled(requests)
 
-    //Return results with qps elaboration
-    return checkQueryParams(results, analysis, qps)
+    //Return results
+    return results
   }
 }

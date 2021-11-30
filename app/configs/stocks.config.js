@@ -282,32 +282,28 @@ const fsteMib = [
 ]
 const devStocks = [
   {
+    name: 'Stmicroelectronics',
+    code: 'STM',
+    isin: 'NL0000226223',
+    mf_code: '2ae0022',
+    teleb_code: 'stmicroelectronics-stm-nl0000226223-TkwwMDAwMjI2MjIz'
+  },
+  {
+    name: 'Unipol',
+    code: 'UNI',
+    isin: 'IT0004810054',
+    mf_code: '2ae002b',
+    teleb_code: 'unipol-uni-it0004810054-SVQwMDA0ODEwMDU0'
+  }
+]
+
+const testStocks = [
+  {
     name: 'Pirelli & C',
     code: 'PIRC',
     isin: 'IT0005278236',
     mf_code: '2ae10bc',
     teleb_code: 'pirelli-c-pirc-it0005278236-SVQwMDA1Mjc4MjM2'
-  },
-  {
-    name: 'Poste Italiane',
-    code: 'PST',
-    isin: 'IT0003796171',
-    mf_code: '2ae1064',
-    teleb_code: 'poste-italiane-pst-it0003796171-SVQwMDAzNzk2MTcx'
-  },
-  {
-    name: 'Saipem',
-    code: 'SPM',
-    isin: 'IT0005252140',
-    mf_code: '2ae0193',
-    teleb_code: 'saipem-spm-it0005252140-SVQwMDA1MjUyMTQw'
-  },
-  {
-    name: 'Stellantis',
-    code: 'STLA',
-    isin: 'NL00150001Q9',
-    mf_code: '2ae00be',
-    teleb_code: 'stellantis-stla-nl00150001q9-TkwwMDE1MDAwMVE5'
   },
   {
     name: 'Stmicroelectronics',
@@ -318,4 +314,4 @@ const devStocks = [
   }
 ]
 
-module.exports = process.env.NODE_ENV === 'production' ? fsteMib : devStocks
+module.exports = process.env.NODE_ENV === 'production' ? fsteMib : process.env.NODE_ENV === 'development' ? devStocks : testStocks

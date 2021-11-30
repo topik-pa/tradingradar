@@ -1,13 +1,17 @@
 const express = require('express')
 const cors = require('cors')
 const http = require('http')
+const cron = require('node-cron')
+const schedule = require('./app/configs/cron.config')
+const updateStocksDB = require('./app/scripts/updateStocksDB')
 require('dotenv').config()
 
 const app = express()
 
-// Set CORS 
+// Set CORS
+const allowlist = ['http://localhost:8081']
 var corsOptions = {
-  origin: process.env.ORIGIN,
+  origin: allowlist,
   credentials:  true
 }
 app.use(cors(corsOptions))
@@ -20,9 +24,7 @@ app.use(express.urlencoded({
   extended: true
 }))
 
-
 //DATABASE 
-/*
 const db = require('./app/models')
 db.mongoose
   .connect(db.url, {
@@ -32,12 +34,15 @@ db.mongoose
   })
   .then(() => {
     console.log('Connected to the database!')
+    const FTSEMibStock = db.ftseMibStocks
+    cron.schedule(schedule.cron, () => {
+      updateStocksDB(FTSEMibStock)
+    })
   })
   .catch(err => {
     console.log('Cannot connect to the database!', err)
     process.exit()
   })
-*/
 
 //Routes
 app.get('/', (req, res) => {
@@ -115,8 +120,9 @@ app.use((err, req, res, next) => {
   console.log(`Server is running on port ${process.env.PORT} over HTTPS in ${process.env.NODE_ENV} mode.\nAccepting requests from ${process.env.ORIGIN}.`)
 })*/
 //HTTP
-http.createServer(app).listen(process.env.PORT, () => {
-  console.log(`Server is running on port ${process.env.PORT} in ${process.env.NODE_ENV} mode.\nAccepting requests from ${process.env.ORIGIN}.`)
+const port = process.env.PORT || 8080
+http.createServer(app).listen(port, () => {
+  console.log(`Server is running on port ${port} in ${process.env.NODE_ENV} mode.\nAccepting requests from ${allowlist}.`)
 })
 
 module.exports = app

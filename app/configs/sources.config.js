@@ -6,16 +6,6 @@ module.exports = [
     url: 'https://www.borsaitaliana.it/borsa/azioni/scheda/%isin%.html?lang=it',
     info: [
       {
-        name: 'name',
-        type: 'html',
-        path: '.-size-xlg > a'
-      },
-      {
-        name: 'code',
-        type: 'html',
-        path: '.cnt-summary > div:nth-of-type(4) > article > div > div:nth-of-type(2) > div:nth-of-type(2) > table > tbody > tr:nth-of-type(5) > td:nth-of-type(2) > span'
-      },
-      {
         name: 'perf1M',
         type: 'html',
         path: '.cnt-summary > div:nth-of-type(4) > article > div > div:nth-of-type(2) > div:nth-of-type(2) > table > tbody > tr:nth-of-type(1) > td:nth-of-type(2) > span'
@@ -155,7 +145,7 @@ module.exports = [
     id: 5,
     code: 'milFin',
     name: 'Milano Finanza',
-    url: 'https://www.milanofinanza.it/Mercati/BoxNewsTitolo?isin=%isin%&numNews=12',
+    url: 'https://www.milanofinanza.it/Mercati/BoxNewsTitolo?isin=%isin%&numNews=6',
     info: [],
     analyses: [],
     news: {
