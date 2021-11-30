@@ -361,7 +361,7 @@ module.exports = {
           result[analysis].source = dbStock[analysis].source
         }
         results.push(result)
-        console.info(`Done: ${stock.name}`)
+        console.info(`Done: ${analysis} - ${stock.name}`)
       } else {
         console.error('Cant\'t find stock ' + stock.isin + ' on DB')
       }
@@ -377,7 +377,7 @@ module.exports = {
     //Setup the remote requests
     const results = []
     const requests = []
-    stocks.forEach((stock) => {
+    stocks.forEach((stock, i) => {
       //Get url codes
       const urlCodes = getUrlCodes(stock.isin)
       const request = new Promise(function (resolve, reject) {
@@ -393,7 +393,7 @@ module.exports = {
               }
             }
             results.push(result)
-            console.info(`Done: ${stock.name} - ${actualUrl}`)
+            console.info(`Done: ${analysis.qp} - ${stock.name} - ${actualUrl}`)
             resolve()
           })
           .catch((err) => {
@@ -401,11 +401,41 @@ module.exports = {
             console.error(errorMsg)
             reject(errorMsg)
           })
+          .finally(() => {
+            setTimeout(() => {
+              console.log(`Waiting ${(i)} seconds...`)
+            }, 1000*i)
+          })
       })
       requests.push(request)
     })
+
     //Launch the remote requests
-    await Promise.allSettled(requests)
+    //await Promise.allSettled(requests)
+    
+    /*let sleep = function (ms) {
+      return new Promise((resolve) => {
+        setTimeout(resolve, ms)
+      })
+    }
+    let batchRequests = []
+    let batchRequestsIndex = -1
+    for(let i = 0; i<requests.length; i++) {
+      let current = requests[i]
+      if(i%1 === 0) {
+        batchRequestsIndex++
+        batchRequests[batchRequestsIndex] = []
+        batchRequests[batchRequestsIndex].push(current)
+      } else {
+        batchRequests[batchRequestsIndex].push(current)
+      }
+    }
+    for(let i = 0; i<batchRequests.length; i++) {
+      console.log('BAtch ' + i)
+      await Promise.allSettled(batchRequests[i])
+      await sleep(5000)
+      console.log('BAtch ' + i + ' done')
+    }*/
 
     //Return results
     return results
