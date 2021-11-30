@@ -38,6 +38,6 @@ module.exports = async (stockModel) => {
         console.error('Error saving data for analysis: ' + analysis.qp + '\n' + error)
       }
     }
-    await sleep(3000)
+    await sleep(5000)
   }
 }
