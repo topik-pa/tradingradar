@@ -7,7 +7,7 @@ const availableStockAnalyses = require('../configs/analyses.config')
 const db = require('../models')
 const FTSEMibStock = db.ftseMibStocks
 
-const SLEEP_TIME = 2000
+const SLEEP_TIME = 5000
 
 //COMMON
 function sleep(ms) {
@@ -415,6 +415,17 @@ module.exports = {
 
     //Wait for all requests to be finished
     await Promise.allSettled(requests)
+      .then((results) => {
+        console.log('*** START REPORT ***')
+        results.forEach((result) => {
+          console.log(result.status)
+        })
+        console.log('*** END REPORT ***')
+      })
+      .catch((err) => {
+        console.err('ERRORE:')
+        console.err(err)
+      })
 
     //Return results
     return results
