@@ -1,6 +1,8 @@
 const availableStockAnalyses = require('../configs/analyses.config')
 const getData = require('../controllers/index')
 
+const SLEEP_TIME = 10000
+
 function sleep(ms) {
   return new Promise((resolve) => {
     setTimeout(resolve, ms)
@@ -38,6 +40,6 @@ module.exports = async (stockModel) => {
         console.error('Error saving data for analysis: ' + analysis.qp + '\n' + error)
       }
     }
-    await sleep(5000)
+    await sleep(SLEEP_TIME)
   }
 }

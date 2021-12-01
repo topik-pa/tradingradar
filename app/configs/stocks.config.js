@@ -282,6 +282,13 @@ const fsteMib = [
 ]
 const devStocks = [
   {
+    name: 'Pirelli & C',
+    code: 'PIRC',
+    isin: 'IT0005278236',
+    mf_code: '2ae10bc',
+    teleb_code: 'pirelli-c-pirc-it0005278236-SVQwMDA1Mjc4MjM2'
+  },
+  {
     name: 'Stmicroelectronics',
     code: 'STM',
     isin: 'NL0000226223',

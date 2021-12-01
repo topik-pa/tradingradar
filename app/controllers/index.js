@@ -7,7 +7,14 @@ const availableStockAnalyses = require('../configs/analyses.config')
 const db = require('../models')
 const FTSEMibStock = db.ftseMibStocks
 
+const SLEEP_TIME = 2000
+
 //COMMON
+function sleep(ms) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms)
+  })
+}
 
 /*Clean text*/
 function removeWS (text) {
@@ -322,7 +329,7 @@ module.exports = {
       })
       requests.push(request)
     })
-    //Launch the remote requests and return results
+    //Wait the remote requests to be finished
     await Promise.allSettled(requests)
     //Save on DB
     if(type !== 'news') {
@@ -361,7 +368,7 @@ module.exports = {
           result[analysis].source = dbStock[analysis].source
         }
         results.push(result)
-        console.info(`Done: ${analysis} - ${stock.name}`)
+        console.info(`Done: ${stock.name}`)
       } else {
         console.error('Cant\'t find stock ' + stock.isin + ' on DB')
       }
@@ -373,11 +380,11 @@ module.exports = {
   cronStocks: async function (analysis) {
     //Get the url and the criteria to perform
     const { url, criteria } = getCriteriaObjData(analysis.qp)
-
     //Setup the remote requests
     const results = []
     const requests = []
-    stocks.forEach((stock, i) => {
+    for(let i = 0; i<stocks.length; i++) {
+      let stock = stocks[i]
       //Get url codes
       const urlCodes = getUrlCodes(stock.isin)
       const request = new Promise(function (resolve, reject) {
@@ -401,41 +408,13 @@ module.exports = {
             console.error(errorMsg)
             reject(errorMsg)
           })
-          .finally(() => {
-            setTimeout(() => {
-              console.log(`Waiting ${(i)} seconds...`)
-            }, 1000*i)
-          })
       })
       requests.push(request)
-    })
+      await sleep(SLEEP_TIME)
+    }
 
-    //Launch the remote requests
-    //await Promise.allSettled(requests)
-    
-    /*let sleep = function (ms) {
-      return new Promise((resolve) => {
-        setTimeout(resolve, ms)
-      })
-    }
-    let batchRequests = []
-    let batchRequestsIndex = -1
-    for(let i = 0; i<requests.length; i++) {
-      let current = requests[i]
-      if(i%1 === 0) {
-        batchRequestsIndex++
-        batchRequests[batchRequestsIndex] = []
-        batchRequests[batchRequestsIndex].push(current)
-      } else {
-        batchRequests[batchRequestsIndex].push(current)
-      }
-    }
-    for(let i = 0; i<batchRequests.length; i++) {
-      console.log('BAtch ' + i)
-      await Promise.allSettled(batchRequests[i])
-      await sleep(5000)
-      console.log('BAtch ' + i + ' done')
-    }*/
+    //Wait for all requests to be finished
+    await Promise.allSettled(requests)
 
     //Return results
     return results
