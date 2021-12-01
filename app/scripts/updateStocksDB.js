@@ -1,7 +1,7 @@
 const availableStockAnalyses = require('../configs/analyses.config')
 const getData = require('../controllers/index')
 
-const SLEEP_TIME = 10000
+const SLEEP_TIME = 15000
 
 function sleep(ms) {
   return new Promise((resolve) => {
