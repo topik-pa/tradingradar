@@ -296,6 +296,13 @@ const devStocks = [
     teleb_code: 'stmicroelectronics-stm-nl0000226223-TkwwMDAwMjI2MjIz'
   },
   {
+    name: 'Unicredit',
+    code: 'UCG',
+    isin: 'IT0005239360',
+    mf_code: '2ae0096',
+    teleb_code: 'unicredit-ucg-it0005239360-SVQwMDA1MjM5MzYw'
+  },
+  {
     name: 'Unipol',
     code: 'UNI',
     isin: 'IT0004810054',
