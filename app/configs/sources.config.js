@@ -117,7 +117,7 @@ module.exports = [
         target: 'Campo'
       },
       {
-        name: 'rsi',
+        name: 'mfRsi',
         type: 'json',
         path: 'Code',
         value: '015f',
