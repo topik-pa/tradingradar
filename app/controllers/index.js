@@ -7,7 +7,14 @@ const availableStockAnalyses = require('../configs/analyses.config')
 const db = require('../models')
 const FTSEMibStock = db.ftseMibStocks
 
+const SLEEP_TIME = 15000
+
 //COMMON
+function sleep(ms) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms)
+  })
+}
 
 /*Clean text*/
 function removeWS (text) {
@@ -322,7 +329,7 @@ module.exports = {
       })
       requests.push(request)
     })
-    //Launch the remote requests and return results
+    //Wait the remote requests to be finished
     await Promise.allSettled(requests)
     //Save on DB
     if(type !== 'news') {
@@ -373,11 +380,11 @@ module.exports = {
   cronStocks: async function (analysis) {
     //Get the url and the criteria to perform
     const { url, criteria } = getCriteriaObjData(analysis.qp)
-
     //Setup the remote requests
     const results = []
     const requests = []
-    stocks.forEach((stock) => {
+    for(let i = 0; i<stocks.length; i++) {
+      let stock = stocks[i]
       //Get url codes
       const urlCodes = getUrlCodes(stock.isin)
       const request = new Promise(function (resolve, reject) {
@@ -393,7 +400,7 @@ module.exports = {
               }
             }
             results.push(result)
-            console.info(`Done: ${stock.name} - ${actualUrl}`)
+            console.info(`Done: ${analysis.qp} - ${stock.name} - ${actualUrl}`)
             resolve()
           })
           .catch((err) => {
@@ -403,9 +410,22 @@ module.exports = {
           })
       })
       requests.push(request)
-    })
-    //Launch the remote requests
+      await sleep(SLEEP_TIME)
+    }
+
+    //Wait for all requests to be finished
     await Promise.allSettled(requests)
+      .then((results) => {
+        console.log('*** START REPORT ***')
+        results.forEach((result) => {
+          console.log(result.status)
+        })
+        console.log('*** END REPORT ***')
+      })
+      .catch((err) => {
+        console.err('ERRORE:')
+        console.err(err)
+      })
 
     //Return results
     return results

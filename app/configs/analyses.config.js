@@ -25,10 +25,14 @@ module.exports = [
   },
   {
     qp: 'rsi',
-    jsonKey: 'milFin_rsi'
+    jsonKey: 'borsaIt_rsi'
   },
   {
     qp: 'mfRisk',
     jsonKey: 'milFin_mfRisk'
+  },
+  {
+    qp: 'mfRsi',
+    jsonKey: 'milFin_rsi'
   }
 ]
