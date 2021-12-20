@@ -164,8 +164,9 @@ function getCriteriaObjData (criteria) {
 
 function toFloatNumber (str) {
   if(!str) return undefined
-  if(isNaN(str)) return str
-  return Number(parseFloat(str.replace(',', '.').replace('%', '')).toFixed(2))
+  let tryNum = Number(parseFloat(str.replace(',', '.').replace('%', '')).toFixed(2))
+  if(isNaN(tryNum)) return str
+  return tryNum
 }
 
 function orderStocks (stocks, key, order='desc') {
