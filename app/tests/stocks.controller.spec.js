@@ -19,6 +19,7 @@ describe('tradingradar.net - testing stocks routes...', function () {
 
   beforeEach(function(done) {
     // I do stuff like populating db
+    this.timeout(5000)
     done()
   })
 
@@ -42,24 +43,6 @@ describe('tradingradar.net - testing stocks routes...', function () {
           res.body.should.satisfy(function (value) {
             expect(value).to.be.instanceof(Array)
             expect(value).to.have.length(stocks.length)
-            return true
-          })
-          done()
-        })
-    })
-    
-  })
-
-
-  describe('GET "/api/stocks/perf1M" route', () => {
-    it('it should reply with an array of 3 stocks and the perf1M analysis', (done) => {
-      chai.request(server)
-        .get('/api/stocks/perf1M?size=1')
-        .end((err, res) => {
-          res.should.have.status(200)
-          res.body.should.satisfy(function (value) {
-            expect(value).to.be.instanceof(Array)
-            expect(value).to.have.length(1)
             return true
           })
           done()
