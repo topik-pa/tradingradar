@@ -164,6 +164,7 @@ function getCriteriaObjData (criteria) {
 
 function toFloatNumber (str) {
   if(!str) return undefined
+  if(isNaN(str)) return str
   return Number(parseFloat(str.replace(',', '.').replace('%', '')).toFixed(2))
 }
 

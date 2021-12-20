@@ -28,11 +28,19 @@ module.exports = [
     jsonKey: 'borsaIt_rsi'
   },
   {
+    qp: 'rating',
+    jsonKey: 'borsaIt_rating'
+  },
+  {
     qp: 'mfRisk',
     jsonKey: 'milFin_mfRisk'
   },
   {
     qp: 'mfRsi',
     jsonKey: 'milFin_rsi'
+  },
+  {
+    qp: 'mfRanking',
+    jsonKey: 'milFin_mfRanking'
   }
 ]

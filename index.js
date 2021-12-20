@@ -9,7 +9,7 @@ require('dotenv').config()
 const app = express()
 
 // Set CORS
-const allowlist = ['http://localhost:8085', 'https://tradingradar-v3-gui-staging.herokuapp.com']
+const allowlist = ['http://localhost:8081', 'https://tradingradar-v3-gui-staging.herokuapp.com']
 var corsOptions = {
   origin: allowlist,
   credentials:  true
