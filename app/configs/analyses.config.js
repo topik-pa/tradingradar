@@ -44,11 +44,11 @@ module.exports = [
     jsonKey: 'milFin_mfRanking'
   },
   {
-    qp: 's24ShortTendency',
+    qp: 'shortTendency',
     jsonKey: 'sol24_shortTendency'
   },
   {
-    qp: 's24MediumTendency',
+    qp: 'mediumTendency',
     jsonKey: 'sol24_mediumTendency'
   }
 ]
