@@ -1,5 +1,9 @@
 module.exports = [
   {
+    qp: 'lastPrice',
+    jsonKey: 'lastPrice'
+  },
+  {
     qp: 'perf1M',
     jsonKey: 'perf1M'
   },

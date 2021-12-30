@@ -44,6 +44,10 @@ describe('tradingradar.net - testing info routes...', function () {
           res.body.should.have.property('isin').include('NL0000226223')
           res.body.should.have.property('name').include('Stmicroelectronics')
           res.body.should.have.property('code').include('STM')
+
+          res.body.should.have.property('lastPrice')
+          res.body.should.have.nested.property('lastPrice.value')
+          res.body.should.have.nested.property('lastPrice.source')
           
           res.body.should.have.property('perf1M')
           res.body.should.have.nested.property('perf1M.value')
