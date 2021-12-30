@@ -6,6 +6,11 @@ module.exports = [
     url: 'https://www.borsaitaliana.it/borsa/azioni/scheda/%isin%.html?lang=it',
     info: [
       {
+        name: 'lastPrice',
+        type: 'html',
+        path: '.-black-warm-60 > strong'
+      },
+      {
         name: 'perf1M',
         type: 'html',
         path: '.cnt-summary > div:nth-of-type(4) > article > div > div:nth-of-type(2) > div:nth-of-type(2) > table > tbody > tr:nth-of-type(1) > td:nth-of-type(2) > span'
