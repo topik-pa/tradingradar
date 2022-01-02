@@ -8,7 +8,8 @@ module.exports = [
       {
         name: 'lastPrice',
         type: 'html',
-        path: '.-black-warm-60 > strong'
+        path: '.-black-warm-60 > strong',
+        numeric: true
       },
       {
         name: 'perf1M',
@@ -38,24 +39,28 @@ module.exports = [
       {
         name: 'volatility',
         type: 'html',
-        path: '.m-table > tbody > tr:nth-of-type(6) > td:nth-of-type(2) > span > strong'
+        path: '.m-table > tbody > tr:nth-of-type(6) > td:nth-of-type(2) > span > strong',
+        numeric: true
       }
     ],
     analyses: [
       {
         name: 'support',
         type: 'html',
-        path: 'span.-dato_techanalSup strong'
+        path: 'span.-dato_techanalSup strong',
+        numeric: true
       },
       {
         name: 'resistance',
         type: 'html',
-        path: 'span.-dato_techanalRes strong'
+        path: 'span.-dato_techanalRes strong',
+        numeric: true
       },
       {
         name: 'rsi',
         type: 'html',
-        path: '.m-table > tbody > tr:nth-of-type(5) > td:nth-of-type(2) > span > strong'
+        path: '.m-table > tbody > tr:nth-of-type(5) > td:nth-of-type(2) > span > strong',
+        numeric: true
       },
       {
         name: 'evaluation',
@@ -67,7 +72,8 @@ module.exports = [
         type: 'html',
         path: '.-md-5 .m-img',
         attribute: 'src',
-        clean: ['/media/img/technicalanalysis/rank-fta', '.gif']
+        clean: ['/media/img/technicalanalysis/rank-fta', '.gif'],
+        numeric: true
       }
     ],
     news: {}
@@ -96,14 +102,16 @@ module.exports = [
         type: 'json',
         path: 'Code',
         value: '015e',
-        target: 'Campo'
+        target: 'Campo',
+        numeric: true
       },
       {
         name: 'lastDiv',
         type: 'json',
         path: 'Code',
         value: '0683',
-        target: 'Campo'
+        target: 'Campo',
+        numeric: true
       },
       {
         name: 'lastDivDate',
@@ -119,14 +127,16 @@ module.exports = [
         type: 'json',
         path: 'Code',
         value: '0702',
-        target: 'Campo'
+        target: 'Campo',
+        numeric: true
       },
       {
         name: 'mfRsi',
         type: 'json',
         path: 'Code',
         value: '015f',
-        target: 'Campo'
+        target: 'Campo',
+        numeric: true
       }
     ],
     news: {}
@@ -259,17 +269,20 @@ module.exports = [
       {
         name: 'mm20days',
         type: 'html',
-        path: '.left .boxDettaglioColumn > tbody > tr:nth-of-type(1) > td:nth-of-type(2)'
+        path: '.left .boxDettaglioColumn > tbody > tr:nth-of-type(1) > td:nth-of-type(2)',
+        numeric: true
       },
       {
         name: 'mm40days',
         type: 'html',
-        path: '.left .boxDettaglioColumn > tbody > tr:nth-of-type(2) > td:nth-of-type(2)'
+        path: '.left .boxDettaglioColumn > tbody > tr:nth-of-type(2) > td:nth-of-type(2)',
+        numeric: true
       },
       {
         name: 'mm100days',
         type: 'html',
-        path: '.left .boxDettaglioColumn > tbody > tr:nth-of-type(3) > td:nth-of-type(2)'
+        path: '.left .boxDettaglioColumn > tbody > tr:nth-of-type(3) > td:nth-of-type(2)',
+        numeric: true
       }
     ],
     analyses: [
@@ -296,12 +309,14 @@ module.exports = [
       {
         name: 'support',
         type: 'html',
-        path: '#ctl00_phContents_ctlAdditionalInfo_lblSupporto2'
+        path: '#ctl00_phContents_ctlAdditionalInfo_lblSupporto2',
+        numeric: true
       },
       {
         name: 'resistance',
         type: 'html',
-        path: '#ctl00_phContents_ctlAdditionalInfo_lblResistenza2'
+        path: '#ctl00_phContents_ctlAdditionalInfo_lblResistenza2',
+        numeric: true
       },
       {
         name: 'trend',
