@@ -315,7 +315,7 @@ module.exports = {
               source[type].forEach(function(obj) {
                 const key = ( type === 'info' || media ) ? obj.name : source.code + '_' + obj.name
                 result[key] = {
-                  value: extractFromData(response.data, obj),
+                  value: obj.numeric ? parseFloat(extractFromData(response.data, obj).replace(',', '.')) : extractFromData(response.data, obj),
                   source: url
                 }
               })
@@ -397,7 +397,7 @@ module.exports = {
               isin: stock.isin,
               name: stock.name,
               [analysis.jsonKey]: {
-                value: extractFromData(response.data, criteria),
+                value: criteria.numeric ? parseFloat(extractFromData(response.data, criteria).replace(',', '.')) : extractFromData(response.data, criteria),
                 source: actualUrl
               }
             }
