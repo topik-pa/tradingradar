@@ -20,12 +20,12 @@ module.exports = [
     jsonKey: 'volatility'
   },
   {
-    qp: 'divYield',
-    jsonKey: 'divYield'
+    qp: 'support',
+    jsonKey: 'borsaIt_support'
   },
   {
-    qp: 'lastDiv',
-    jsonKey: 'lastDiv'
+    qp: 'resistance',
+    jsonKey: 'borsaIt_resistance'
   },
   {
     qp: 'rsi',
@@ -34,6 +34,14 @@ module.exports = [
   {
     qp: 'rating',
     jsonKey: 'borsaIt_rating'
+  },
+  {
+    qp: 'divYield',
+    jsonKey: 'divYield'
+  },
+  {
+    qp: 'lastDiv',
+    jsonKey: 'lastDiv'
   },
   {
     qp: 'mfRisk',
@@ -48,11 +56,31 @@ module.exports = [
     jsonKey: 'milFin_mfRanking'
   },
   {
+    qp: 'mm20days',
+    jsonKey: 'mm20days'
+  },
+  {
+    qp: 'mm40days',
+    jsonKey: 'mm40days'
+  },
+  {
+    qp: 'mm100days',
+    jsonKey: 'mm100days'
+  },
+  {
     qp: 'shortTendency',
     jsonKey: 'sol24_shortTendency'
   },
   {
     qp: 'mediumTendency',
     jsonKey: 'sol24_mediumTendency'
+  },
+  {
+    qp: 'tbSupport',
+    jsonKey: 'teleb_support'
+  },
+  {
+    qp: 'tbResistance',
+    jsonKey: 'teleb_resistance'
   }
 ]

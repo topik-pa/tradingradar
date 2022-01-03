@@ -307,13 +307,13 @@ module.exports = [
     info: [],
     analyses: [
       {
-        name: 'support',
+        name: 'tbSupport',
         type: 'html',
         path: '#ctl00_phContents_ctlAdditionalInfo_lblSupporto2',
         numeric: true
       },
       {
-        name: 'resistance',
+        name: 'tbResistance',
         type: 'html',
         path: '#ctl00_phContents_ctlAdditionalInfo_lblResistenza2',
         numeric: true

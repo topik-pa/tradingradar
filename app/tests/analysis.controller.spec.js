@@ -90,13 +90,13 @@ describe('tradingradar.net - testing analysis routes...', function () {
           res.body.should.have.nested.property('borsaIt_rating.value')
           res.body.should.have.nested.property('borsaIt_rating.source')
 
-          res.body.should.have.property('teleb_support')
-          res.body.should.have.nested.property('teleb_support.value')
-          res.body.should.have.nested.property('teleb_support.source')
+          res.body.should.have.property('teleb_tbSupport')
+          res.body.should.have.nested.property('teleb_tbSupport.value')
+          res.body.should.have.nested.property('teleb_tbSupport.source')
 
-          res.body.should.have.property('teleb_resistance')
-          res.body.should.have.nested.property('teleb_resistance.value')
-          res.body.should.have.nested.property('teleb_resistance.source')
+          res.body.should.have.property('teleb_tbResistance')
+          res.body.should.have.nested.property('teleb_tbResistance.value')
+          res.body.should.have.nested.property('teleb_tbResistance.source')
 
           res.body.should.have.property('teleb_trend')
           res.body.should.have.nested.property('teleb_trend.value')
@@ -156,13 +156,13 @@ describe('tradingradar.net - testing analysis routes...', function () {
           res.body.should.have.property('name').include('Pirelli & C')
           res.body.should.have.property('code').include('PIRC')
 
-          res.body.should.have.property('support')
-          res.body.should.have.nested.property('support.value')
-          res.body.should.have.nested.property('support.source')
+          res.body.should.have.property('tbSupport')
+          res.body.should.have.nested.property('tbSupport.value')
+          res.body.should.have.nested.property('tbSupport.source')
 
-          res.body.should.have.property('resistance')
-          res.body.should.have.nested.property('resistance.value')
-          res.body.should.have.nested.property('resistance.source')
+          res.body.should.have.property('tbResistance')
+          res.body.should.have.nested.property('tbResistance.value')
+          res.body.should.have.nested.property('tbResistance.source')
 
           res.body.should.have.property('trend')
           res.body.should.have.nested.property('trend.value')
