@@ -165,7 +165,7 @@ function getCriteriaObjData (criteria) {
 function toFloatNumber (str) {
   if(str === undefined || str === null) return str
   if(!isNaN(str)) return str
-  if(str instanceof String) {
+  if(typeof str === 'string') {
     let tryNum = Number(parseFloat(str.toString().replace(',', '.').replace('%', '')).toFixed(2))
     if(isNaN(tryNum)) return str
     return tryNum
