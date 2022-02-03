@@ -150,6 +150,14 @@ module.exports = mongoose => {
       milFin_rsi: {
         type: Schema.Types.Mixed,
         nullable: true
+      },
+      lastTargetPrice: {
+        type: Schema.Types.Mixed,
+        nullable: true
+      },
+      lastJudgment: {
+        type: Schema.Types.Mixed,
+        nullable: true
       }
     },
     { timestamps: true }

@@ -201,7 +201,18 @@ module.exports = [
         clean: ['Massimo anno corrente:']
       }
     ],
-    analyses: [],
+    analyses: [
+      {
+        name: 'lastTargetPrice',
+        type: 'html',
+        path: '.tabellaDati > tbody > tr:nth-of-type(1) > td:nth-of-type(4) > span'
+      },
+      {
+        name: 'lastJudgment',
+        type: 'html',
+        path: '.tabellaDati > tbody > tr:nth-of-type(1) > td:nth-of-type(3) > span'
+      }
+    ],
     news: {
       type: 'html',
       path: '.news-list-azioni > li > a'
