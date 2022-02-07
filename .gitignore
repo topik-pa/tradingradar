@@ -5,5 +5,7 @@ npm-debug.log
 .DS_Store
 *.log
 
-utils/query
+utils/
 temp
+utils/query.js
+utils/delta.js

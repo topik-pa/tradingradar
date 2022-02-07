@@ -158,6 +158,10 @@ module.exports = mongoose => {
       lastJudgment: {
         type: Schema.Types.Mixed,
         nullable: true
+      },
+      volume: {
+        type: Schema.Types.Mixed,
+        nullable: true
       }
     },
     { timestamps: true }

@@ -90,5 +90,9 @@ module.exports = [
   {
     qp: 'lastJudgment',
     jsonKey: 'lastJudgment'
+  },
+  {
+    qp: 'volume',
+    jsonKey: 'volume'
   }
 ]
