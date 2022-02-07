@@ -282,32 +282,11 @@ const fsteMib = [
 ]
 const devStocks = [
   {
-    name: 'Pirelli & C',
-    code: 'PIRC',
-    isin: 'IT0005278236',
-    mf_code: '2ae10bc',
-    teleb_code: 'pirelli-c-pirc-it0005278236-SVQwMDA1Mjc4MjM2'
-  },
-  {
     name: 'Stmicroelectronics',
     code: 'STM',
     isin: 'NL0000226223',
     mf_code: '2ae0022',
     teleb_code: 'stmicroelectronics-stm-nl0000226223-TkwwMDAwMjI2MjIz'
-  },
-  {
-    name: 'Unicredit',
-    code: 'UCG',
-    isin: 'IT0005239360',
-    mf_code: '2ae0096',
-    teleb_code: 'unicredit-ucg-it0005239360-SVQwMDA1MjM5MzYw'
-  },
-  {
-    name: 'Unipol',
-    code: 'UNI',
-    isin: 'IT0004810054',
-    mf_code: '2ae002b',
-    teleb_code: 'unipol-uni-it0004810054-SVQwMDA0ODEwMDU0'
   }
 ]
 

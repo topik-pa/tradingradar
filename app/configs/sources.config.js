@@ -199,6 +199,12 @@ module.exports = [
         type: 'html',
         path: '.scheda-titolo > div:nth-of-type(10) > ul > li > div > div > div:nth-of-type(4)',
         clean: ['Massimo anno corrente:']
+      },
+      {
+        name: 'volume',
+        type: 'html',
+        path: '.scheda-titolo > div:nth-of-type(4) > ul > li > div > div > div:nth-of-type(6)',
+        clean: ['Azioni scambiate:']
       }
     ],
     analyses: [

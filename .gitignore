@@ -4,3 +4,8 @@ npm-debug.log
 .env
 .DS_Store
 *.log
+
+utils/
+temp
+utils/query.js
+utils/delta.js
