@@ -339,7 +339,11 @@ module.exports = {
     await Promise.allSettled(requests)
     //Save on DB
     if(type !== 'news') {
-      updateStockOnDB(result)
+      //PATCH
+      let dataForDB = Object.create(result)
+      delete dataForDB.volume
+      //PATCH
+      updateStockOnDB(dataForDB)
     }
     //Return result
     return result
