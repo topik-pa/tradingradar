@@ -278,6 +278,181 @@ const fsteMib = [
     isin: 'IT0004810054',
     mf_code: '2ae002b',
     teleb_code: 'unipol-uni-it0004810054-SVQwMDA0ODEwMDU0'
+  },
+  {
+    name: 'Brembo',
+    code: 'BRE',
+    isin: 'IT0005252728',
+    mf_code: '2ae000c',
+    teleb_code: 'brembo-bre-it0005252728-SVQwMDA1MjUyNzI4'
+  },
+  {
+    name: 'Brunello Cucinelli',
+    code: 'BC',
+    isin: 'IT0004764699',
+    mf_code: '2ae1001',
+    teleb_code: 'brunello-cucinelli-bc-it0004764699-SVQwMDA0NzY0Njk5'
+  },
+  {
+    name: 'Cairo Communication',
+    code: 'CAI',
+    isin: 'IT0004329733',
+    mf_code: '2ae0163',
+    teleb_code: 'cairo-communication-cai-it0004329733-SVQwMDA0MzI5NzMz'
+  },
+  {
+    name: 'Cementir Holding',
+    code: 'CEM',
+    isin: 'NL0013995087',
+    mf_code: '2ae008d',
+    teleb_code: 'cementir-holding-cem-nl0013995087-TkwwMDEzOTk1MDg3'
+  },
+  {
+    name: 'Datalogic',
+    code: 'DAL',
+    isin: 'IT0004053440',
+    mf_code: '2ae01d4',
+    teleb_code: 'datalogic-dal-it0004053440-SVQwMDA0MDUzNDQw'
+  },
+  {
+    name: 'De Longhi',
+    code: 'DLG',
+    isin: 'IT0003115950',
+    mf_code: '2ae01f4',
+    teleb_code: 'de-longhi-dlg-it0003115950-SVQwMDAzMTE1OTUw'
+  },
+  {
+    name: 'Erg',
+    code: 'ERG',
+    isin: 'IT0001157020',
+    mf_code: '2ae0011',
+    teleb_code: 'erg-erg-it0001157020-SVQwMDAxMTU3MDIw'
+  },
+  {
+    name: 'EssilorLuxottica',
+    code: 'EL',
+    isin: 'FR0000121667',
+    mf_code: '2ae1082',
+    teleb_code: 'essilorluxottica-el-fr0000121667-RlIwMDAwMTIxNjY3'
+  },
+  {
+    name: 'Eurotech',
+    code: 'ETH',
+    isin: 'IT0003895668',
+    mf_code: '2ae03e0',
+    teleb_code: 'eurotech-eth-it0003895668-SVQwMDAzODk1NjY4'
+  },
+  {
+    name: 'Falck Renewables',
+    code: 'FKR',
+    isin: 'IT0003198790',
+    mf_code: '2ae0369',
+    teleb_code: 'falck-renewables-fkr-it0003198790-SVQwMDAzMTk4Nzkw'
+  },
+  {
+    name: 'Fiera Milano',
+    code: 'FM',
+    isin: 'IT0003365613',
+    mf_code: '2ae0382',
+    teleb_code: 'fiera-milano-fm-it0003365613-SVQwMDAzMzY1NjEz'
+  },
+  {
+    name: 'Geox',
+    code: 'GEO',
+    isin: 'IT0003697080',
+    mf_code: '2ae03c4',
+    teleb_code: 'geox-geo-it0003697080-SVQwMDAzNjk3MDgw'
+  },
+  {
+    name: 'Iveco Group',
+    code: 'IVG',
+    isin: 'NL0015000LU4',
+    mf_code: '2ae1186',
+    teleb_code: 'iveco-group-ivg-nl0015000lu4-TkwwMDE1MDAwTFU0'
+  },
+  {
+    name: 'Landi Renzo',
+    code: 'LR',
+    isin: 'IT0004210289',
+    mf_code: '2ae0429',
+    teleb_code: 'landi-renzo-lr-it0004210289-SVQwMDA0MjEwMjg5'
+  },
+  {
+    name: 'Mondadori Editore',
+    code: 'MN',
+    isin: 'IT0001469383',
+    mf_code: '2ae0154',
+    teleb_code: 'mondadori-mn-it0001469383-SVQwMDAxNDY5Mzgz'
+  },
+  {
+    name: 'OVS',
+    code: 'OVS',
+    isin: 'IT0005043507',
+    mf_code: '2ae104f',
+    teleb_code: 'ovs-ovs-it0005043507-SVQwMDA1MDQzNTA3'
+  },
+  {
+    name: 'Piaggio & C',
+    code: 'PIA',
+    isin: 'IT0003073266',
+    mf_code: '2ae000e',
+    teleb_code: 'piaggio-pia-it0003073266-SVQwMDAzMDczMjY2'
+  },
+  {
+    name: 'RCS Mediagroup',
+    code: 'RCS',
+    isin: 'IT0004931496',
+    mf_code: '2ae0069',
+    teleb_code: 'rcs-mediagroup-rcs-it0004931496-SVQwMDA0OTMxNDk2'
+  },
+  {
+    name: 'Safilo Group',
+    code: 'SFL',
+    isin: 'IT0004604762',
+    mf_code: '2ae03e2',
+    teleb_code: 'safilo-group-sfl-it0004604762-SVQwMDA0NjA0NzYy'
+  },
+  {
+    name: 'Salvatore Ferragamo',
+    code: 'SFER',
+    isin: 'IT0004712375',
+    mf_code: '2ae0049',
+    teleb_code: 'salvatore-ferragamo-sfer-it0004712375-SVQwMDA0NzEyMzc1'
+  },
+  {
+    name: 'Technogym',
+    code: 'TGYM',
+    isin: 'IT0005162406',
+    mf_code: '2ae1074',
+    teleb_code: 'technogym-tgym-it0005162406-SVQwMDA1MTYyNDA2'
+  },
+  {
+    name: 'Tod\'s',
+    code: 'TOD',
+    isin: 'IT0003007728',
+    mf_code: '2ae01ad',
+    teleb_code: 'tod-s-tod-it0003007728-SVQwMDAzMDA3NzI4'
+  },
+  {
+    name: 'Tinexta',
+    code: 'TNXT',
+    isin: 'IT0005037210',
+    mf_code: '2ae1046',
+    teleb_code: 'tinexta-tnxt-it0005037210-SVQwMDA1MDM3MjEw'
+  },
+  {
+    name: 'TXT E-Solutions',
+    code: 'TXT',
+    isin: 'IT0001454435',
+    mf_code: '2ae015e',
+    teleb_code: 'txt-e-solutions-txt-it0001454435-SVQwMDAxNDU0NDM1'
+  },
+  {
+    name: 'Zignago Vetro',
+    code: 'ZV',
+    isin: 'IT0004171440',
+    mf_code: '2ae0426',
+    teleb_code: 'zignago-vetro-zv-it0004171440-SVQwMDA0MTcxNDQw'
   }
 ]
 const devStocks = [
