@@ -96,62 +96,37 @@ module.exports = [
     code: 'milFin',
     name: 'Milano Finanza',
     url: 'https://www.milanofinanza.it/Mercati/GetQuotazioni?codice=%mf_code%',
-    info: [
-      {
-        name: 'divYield',
-        type: 'json',
-        path: 'Code',
-        value: '015e',
-        target: 'Campo',
-        numeric: true
-      },
-      {
-        name: 'lastDiv',
-        type: 'json',
-        path: 'Code',
-        value: '0683',
-        target: 'Campo',
-        numeric: true
-      },
-      {
-        name: 'lastDivDate',
-        type: 'json',
-        path: 'Code',
-        value: '0684',
-        target: 'Campo'
-      }
-    ],
-    analyses: [
-      {
-        name: 'mfRisk',
-        type: 'json',
-        path: 'Code',
-        value: '0702',
-        target: 'Campo',
-        numeric: true
-      },
-      {
-        name: 'mfRsi',
-        type: 'json',
-        path: 'Code',
-        value: '015f',
-        target: 'Campo',
-        numeric: true
-      }
-    ],
+    info: [],
+    analyses: [],
     news: {}
   },
   {
     id: 4,
     code: 'milFin',
     name: 'Milano Finanza',
-    url: 'https://www.milanofinanza.it/Mercati/GetMFRating?marketCodeRT=%marketCodeRT%&stockCodeRT=%stockCodeRT%',
-    info: [],
+    url: 'https://www.milanofinanza.it/quotazioni/dettaglio/%lowerCaseCode%-%mf_code%',
+    info: [
+      {
+        name: 'divYield',
+        type: 'html',
+        path: '.d-flex > div:nth-of-type(3) > table > tbody > tr:nth-of-type(5) > td:nth-of-type(2)'
+      },
+      {
+        name: 'lastDiv',
+        type: 'html',
+        path: '.d-flex > div:nth-of-type(3) > table > tbody > tr:nth-of-type(3) > td:nth-of-type(2)'
+      },
+      {
+        name: 'lastDivDate',
+        type: 'html',
+        path: '.d-flex > div:nth-of-type(3) > table > tbody > tr:nth-of-type(4) > td:nth-of-type(2)'
+      }
+    ],
     analyses: [
       {
         name: 'mfRanking',
-        type: 'text',
-        path: ['|','0']
+        type: 'html',
+        path: '.risk-mf > div > div:nth-of-type(3) > strong'
       }
     ],
     news: {}
