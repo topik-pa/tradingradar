@@ -219,9 +219,9 @@ const fsteMib = [
   {
     name: 'Saipem',
     code: 'SPM',
-    isin: 'IT0005252140',
+    isin: 'IT0005495616',
     mf_code: '2ae0193',
-    teleb_code: 'saipem-spm-it0005252140-SVQwMDA1MjUyMTQw'
+    teleb_code: 'saipem-spm-it0005495616-SVQwMDA1NDk1NjE2'
   },
   {
     name: 'Snam',
@@ -341,13 +341,6 @@ const fsteMib = [
     isin: 'IT0003895668',
     mf_code: '2ae03e0',
     teleb_code: 'eurotech-eth-it0003895668-SVQwMDAzODk1NjY4'
-  },
-  {
-    name: 'Falck Renewables',
-    code: 'FKR',
-    isin: 'IT0003198790',
-    mf_code: '2ae0369',
-    teleb_code: 'falck-renewables-fkr-it0003198790-SVQwMDAzMTk4Nzkw'
   },
   {
     name: 'Fiera Milano',
