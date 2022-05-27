@@ -51,11 +51,13 @@ function getUrlCodes (isin) {
       const mf_code = stocks[i].mf_code
       const symbol = `${stocks[i].code}:IM`
       const code = stocks[i].code
+      const lowerCaseCode = stocks[i].code.toLowerCase()
       const teleb_code = stocks[i].teleb_code
       return {
         name,
         isin,
         code,
+        lowerCaseCode,
         mf_code,
         stockCodeRT: mf_code.substr(-4),
         marketCodeRT: mf_code.substr(0,3),
