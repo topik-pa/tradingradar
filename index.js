@@ -35,9 +35,9 @@ db.mongoose
   .then(() => {
     console.log('Connected to the database!')
     const FTSEMibStock = db.ftseMibStocks
-    cron.schedule(schedule.cron, () => {
+    //cron.schedule(schedule.cron, () => {
       updateStocksDB(FTSEMibStock)
-    })
+    //})
   })
   .catch(err => {
     console.log('Cannot connect to the database!', err)

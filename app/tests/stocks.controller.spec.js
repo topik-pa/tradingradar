@@ -34,10 +34,10 @@ describe('tradingradar.net - testing stocks routes...', function () {
   })
 
 
-  describe('GET "/api/stocks/mfRisk" route', () => {
-    it('it should reply with an array of all stocks and the mfRisk analysis', (done) => {
+  describe('GET "/api/stocks/mfRank" route', () => {
+    it('it should reply with an array of all stocks and the mfRank analysis', (done) => {
       chai.request(server)
-        .get('/api/stocks/mfRisk')
+        .get('/api/stocks/mfRank')
         .end((err, res) => {
           res.should.have.status(200)
           res.body.should.satisfy(function (value) {

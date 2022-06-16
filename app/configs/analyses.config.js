@@ -44,10 +44,6 @@ module.exports = [
     jsonKey: 'lastDiv'
   },
   {
-    qp: 'mfRisk',
-    jsonKey: 'milFin_mfRisk'
-  },
-  {
     qp: 'mfRsi',
     jsonKey: 'milFin_rsi'
   },

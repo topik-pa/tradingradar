@@ -58,10 +58,6 @@ describe('tradingradar.net - testing analysis routes...', function () {
           res.body.should.have.nested.property('milFin_mfRanking.value')
           res.body.should.have.nested.property('milFin_mfRanking.source')
 
-          res.body.should.have.property('milFin_mfRisk')
-          res.body.should.have.nested.property('milFin_mfRisk.value')
-          res.body.should.have.nested.property('milFin_mfRisk.source')
-
           res.body.should.have.property('milFin_mfRsi')
           res.body.should.have.nested.property('milFin_mfRsi.value')
           res.body.should.have.nested.property('milFin_mfRsi.source')
