@@ -219,7 +219,7 @@ const fsteMib = [
   {
     name: 'Saipem',
     code: 'SPM',
-    isin: 'IT0005495616',
+    isin: 'IT0005495657',
     mf_code: '2ae0193',
     teleb_code: 'saipem-spm-it0005495657-SVQwMDA1NDk1NjU3'
   },
