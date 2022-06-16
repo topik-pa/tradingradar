@@ -58,14 +58,6 @@ describe('tradingradar.net - testing analysis routes...', function () {
           res.body.should.have.nested.property('milFin_mfRanking.value')
           res.body.should.have.nested.property('milFin_mfRanking.source')
 
-          res.body.should.have.property('milFin_mfRisk')
-          res.body.should.have.nested.property('milFin_mfRisk.value')
-          res.body.should.have.nested.property('milFin_mfRisk.source')
-
-          res.body.should.have.property('milFin_mfRsi')
-          res.body.should.have.nested.property('milFin_mfRsi.value')
-          res.body.should.have.nested.property('milFin_mfRsi.source')
-
           res.body.should.have.property('borsaIt_rsi')
           res.body.should.have.nested.property('borsaIt_rsi.value')
           res.body.should.have.nested.property('borsaIt_rsi.source')
@@ -102,13 +94,13 @@ describe('tradingradar.net - testing analysis routes...', function () {
           res.body.should.have.nested.property('teleb_trend.value')
           res.body.should.have.nested.property('teleb_trend.source')
 
-          res.body.should.have.property('lastTargetPrice')
-          res.body.should.have.nested.property('lastTargetPrice.value')
-          res.body.should.have.nested.property('lastTargetPrice.source')
+          res.body.should.have.property('sol_lastTargetPrice')
+          res.body.should.have.nested.property('sol_lastTargetPrice.value')
+          res.body.should.have.nested.property('sol_lastTargetPrice.source')
 
-          res.body.should.have.property('lastJudgment')
-          res.body.should.have.nested.property('lastJudgment.value')
-          res.body.should.have.nested.property('lastJudgment.source')
+          res.body.should.have.property('sol_lastJudgment')
+          res.body.should.have.nested.property('sol_lastJudgment.value')
+          res.body.should.have.nested.property('sol_lastJudgment.source')
 
           done()
         })

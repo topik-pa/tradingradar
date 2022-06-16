@@ -8,3 +8,14 @@
 
 ## Start application in test mode
   npm run test
+
+
+## Todo
+migliorare giudizi e target price
+Bug: BI + TB evaluations ???
+Ora modifica dato
+
+
+
+
+Versione v2
