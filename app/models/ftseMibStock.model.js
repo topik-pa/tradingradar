@@ -107,6 +107,10 @@ module.exports = mongoose => {
         type: Schema.Types.Mixed,
         nullable: true
       },
+      milFin_mfRisk: {
+        type: Schema.Types.Mixed,
+        nullable: true
+      },
       milFin_mfRanking: {
         type: Schema.Types.Mixed,
         nullable: true
