@@ -126,7 +126,14 @@ module.exports = [
       {
         name: 'mfRanking',
         type: 'html',
-        path: '.risk-mf > div > div:nth-of-type(3) > strong'
+        path: 'html > body > script:nth-of-type(15)',
+        clean: ['labels: "', '",']
+      },
+      {
+        name: 'mfRisk',
+        type: 'html',
+        path: 'html > body > script:nth-of-type(16)',
+        clean: ['value: "', '",']
       }
     ],
     news: {}

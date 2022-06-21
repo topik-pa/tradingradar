@@ -27,10 +27,18 @@ function removeWS (text) {
 }
 function cleanResult(result, dirts) {
   if(!result) return
-  if(dirts && dirts.length) {
+  /*if(dirts && dirts.length) {
     dirts.forEach((dirt) => {
       result = result.replace(dirt, '')
     })
+  }*/
+  if(dirts && dirts[0]) {
+    let leftIndex = result.indexOf(dirts[0])
+    result = result.substring(leftIndex + dirts[0].length)
+  }
+  if(dirts && dirts[1]) {
+    let rightIndex = result.indexOf(dirts[1])
+    result = result.substring(0, rightIndex)
   }
   return result
 }
@@ -110,7 +118,7 @@ function extractFromData (data, obj) {
   if(obj.type === 'html') {
     const html = data
     const $ = cheerio.load(html)
-    const value = obj.attribute ? $(obj.path).attr(obj.attribute) : $(obj.path).text()
+    const value = obj.attribute ? $(obj.path).attr(obj.attribute) : $(obj.path).text() !== '' ? $(obj.path).text() : $(obj.path).html()
     return value ? removeWS(cleanResult(value, obj.clean)) : ''
   }
   if(obj.type === 'json') {
