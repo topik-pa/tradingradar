@@ -126,13 +126,13 @@ module.exports = [
       {
         name: 'mfRanking',
         type: 'html',
-        path: 'html > body > script:nth-of-type(15)',
+        path: 'html > body > script:nth-of-type(14)',
         clean: ['labels: "', '",']
       },
       {
         name: 'mfRisk',
         type: 'html',
-        path: 'html > body > script:nth-of-type(16)',
+        path: 'html > body > script:nth-of-type(15)',
         clean: ['value: "', '",']
       }
     ],
