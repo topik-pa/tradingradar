@@ -316,6 +316,7 @@ module.exports = {
       }
       const request = new Promise(function (resolve, reject) {
         const url = urlStringReplacer(source.url, urlCodes)
+        const now = new Date().toLocaleString()
         axios.get(url)
           .then((response) => {
             if(type === 'news') {
@@ -330,7 +331,8 @@ module.exports = {
                 const key = ( type === 'info' || media ) ? obj.name : source.code + '_' + obj.name
                 result[key] = {
                   value: obj.numeric ? parseFloat(extractFromData(response.data, obj).replace(',', '.')) : extractFromData(response.data, obj),
-                  source: url
+                  source: url,
+                  now: now
                 }
               })
             }
@@ -409,6 +411,7 @@ module.exports = {
       const urlCodes = getUrlCodes(stock.isin)
       const request = new Promise(function (resolve, reject) {
         const actualUrl = urlStringReplacer(url, urlCodes)
+        const now = new Date().toLocaleString()
         axios.get(actualUrl)
           .then((response) => {
             const result = {
@@ -416,7 +419,8 @@ module.exports = {
               name: stock.name,
               [analysis.jsonKey]: {
                 value: criteria.numeric ? parseFloat(extractFromData(response.data, criteria).replace(',', '.')) : extractFromData(response.data, criteria),
-                source: actualUrl
+                source: actualUrl,
+                now: now
               }
             }
             results.push(result)
