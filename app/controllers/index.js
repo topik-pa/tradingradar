@@ -388,6 +388,7 @@ module.exports = {
         if(dbStock[analysis]) { //TODO... else get from Web
           result[analysis].value = dbStock[analysis].value
           result[analysis].source = dbStock[analysis].source
+          result[analysis].now = dbStock[analysis].now
         }
         results.push(result)
         console.info(`Done: ${stock.name}`)

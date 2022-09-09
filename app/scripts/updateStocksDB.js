@@ -29,6 +29,7 @@ module.exports = async (stockModel) => {
       if(stock[analysis.jsonKey]) {
         update[analysis.jsonKey].value = stock[analysis.jsonKey].value
         update[analysis.jsonKey].source = stock[analysis.jsonKey].source
+        update[analysis.jsonKey].now = stock[analysis.jsonKey].now
       }
       try {
         await stockModel.findOneAndUpdate(filter, update, {
