@@ -151,10 +151,6 @@ module.exports = mongoose => {
         type: Schema.Types.Mixed,
         nullable: true
       },
-      lastTargetPrice: {
-        type: Schema.Types.Mixed,
-        nullable: true
-      },
       lastJudgment: {
         type: Schema.Types.Mixed,
         nullable: true

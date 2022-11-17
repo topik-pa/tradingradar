@@ -80,10 +80,6 @@ module.exports = [
     jsonKey: 'teleb_resistance'
   },
   {
-    qp: 'lastTargetPrice',
-    jsonKey: 'lastTargetPrice'
-  },
-  {
     qp: 'lastJudgment',
     jsonKey: 'lastJudgment'
   },

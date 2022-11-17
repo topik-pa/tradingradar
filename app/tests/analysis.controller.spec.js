@@ -98,10 +98,6 @@ describe('tradingradar.net - testing analysis routes...', function () {
           res.body.should.have.nested.property('teleb_trend.value')
           res.body.should.have.nested.property('teleb_trend.source')
 
-          res.body.should.have.property('sol_lastTargetPrice')
-          res.body.should.have.nested.property('sol_lastTargetPrice.value')
-          res.body.should.have.nested.property('sol_lastTargetPrice.source')
-
           res.body.should.have.property('sol_lastJudgment')
           res.body.should.have.nested.property('sol_lastJudgment.value')
           res.body.should.have.nested.property('sol_lastJudgment.source')
