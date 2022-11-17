@@ -13,7 +13,6 @@
 ## Todo
 migliorare giudizi e target price
 Bug: BI + TB evaluations ???
-Ora modifica dato
 
 
 
