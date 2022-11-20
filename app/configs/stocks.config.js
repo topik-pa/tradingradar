@@ -42,6 +42,48 @@ const fsteMib = [
     teleb_code: 'aedes-aed-it0005350449-SVQwMDA1MzUwNDQ5'
   },
   {
+    name: 'Aeffe',
+    code: 'AEF',
+    isin: 'IT0001384590',
+    mf_code: '2ae0442',
+    teleb_code: 'aeffe-aef-it0001384590-SVQwMDAxMzg0NTkw'
+  },
+  {
+    name: 'Aeroporto Guglielmo Marconi Di Bologna',
+    code: 'ADB',
+    isin: 'IT0001006128',
+    mf_code: '2ae105e',
+    teleb_code: 'aeroporto-guglielmo-marconi-di-bologna-adb-it0001006128-SVQwMDAxMDA2MTI4'
+  },
+  {
+    name: 'Agatos',
+    code: 'AGA',
+    isin: 'IT0005421919',
+    mf_code: '2ae109d',
+    teleb_code: 'agatos-aga-it0005421919-SVQwMDA1NDIxOTE5'
+  },
+  {
+    name: 'Alerion Cleanpower',
+    code: 'ARN',
+    isin: 'IT0004720733',
+    mf_code: '2ae00c2',
+    teleb_code: 'alerion-arn-it0004720733-SVQwMDA0NzIwNzMz'
+  },
+  {
+    name: 'Algowatt',
+    code: 'ALW',
+    isin: 'IT0004359037',
+    mf_code: '2ae046d',
+    teleb_code: 'algowatt-alw-it0004359037-SVQwMDA0MzU5MDM3'
+  },
+  {
+    name: 'Alkemy',
+    code: 'ALK',
+    isin: 'IT0005314635',
+    mf_code: '2ae10d1',
+    teleb_code: 'alkemy-alk-it0005314635-SVQwMDA1MzE0NjM1'
+  },
+  {
     name: 'Amplifon',
     code: 'AMP',
     isin: 'IT0004056880',
@@ -49,11 +91,74 @@ const fsteMib = [
     teleb_code: 'amplifon-amp-it0004056880-SVQwMDA0MDU2ODgw'
   },
   {
+    name: 'Anima Holding',
+    code: 'ANIM',
+    isin: 'IT0004998065',
+    mf_code: '2ae1035',
+    teleb_code: 'anima-holding-anim-it0004998065-SVQwMDA0OTk4MDY1'
+  },
+  {
+    name: 'Antares Vision',
+    code: 'AV',
+    isin: 'IT0005366601',
+    mf_code: '2ae10d8',
+    teleb_code: 'antares-vision-av-it0005366601-SVQwMDA1MzY2NjAx'
+  },
+  {
+    name: 'Aquafil',
+    code: 'ECNL',
+    isin: 'IT0005241192',
+    mf_code: '2ae10a8',
+    teleb_code: 'aquafil-ecnl-it0005241192-SVQwMDA1MjQxMTky'
+  },
+  {
+    name: 'Ariston Holding',
+    code: 'ARIS',
+    isin: 'NL0015000N33',
+    mf_code: '2ae1172',
+    teleb_code: 'ariston-holding-aris-nl0015000n33-TkwwMDE1MDAwTjMz'
+  },
+  {
+    name: 'Ascopiave',
+    code: 'ASC',
+    isin: 'IT0004093263',
+    mf_code: '2ae040c',
+    teleb_code: 'ascopiave-asc-it0004093263-SVQwMDA0MDkzMjYz'
+  },
+  {
+    name: 'Askoll Eva',
+    code: 'EVA',
+    isin: 'IT0005337123',
+    mf_code: '2ae10e9',
+    teleb_code: 'askoll-eva-eva-it0005337123-SVQwMDA1MzM3MTIz'
+  },
+  {
     name: 'Atlantia',
     code: 'ATL',
     isin: 'IT0003506190',
     mf_code: '2ae003b',
     teleb_code: 'atlantia-atl-it0003506190-SVQwMDAzNTA2MTkw'
+  },
+  {
+    name: 'Autogrill',
+    code: 'AGL',
+    isin: 'IT0001137345',
+    mf_code: '2ae00a6',
+    teleb_code: 'autogrill-agl-it0001137345-SVQwMDAxMTM3MzQ1'
+  },
+  {
+    name: 'Autostrade Merid',
+    code: 'AUTME',
+    isin: 'IT0000084043',
+    mf_code: '2ae004d',
+    teleb_code: 'autostrade-merid-autme-it0000084043-SVQwMDAwMDg0MDQz'
+  },
+  {
+    name: 'Avio',
+    code: 'AVIO',
+    isin: 'IT0005119810',
+    mf_code: '2ae1060',
+    teleb_code: 'avio-avio-it0005119810-SVQwMDA1MTE5ODEw'
   },
   {
     name: 'Azimut Holding',

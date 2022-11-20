@@ -10,11 +10,13 @@
   npm run test
 
 
+# Quando aggiungo uno stock
+Aggiungere entry in stocks.config.js
+Aggiungere logo 
+Aggiungere og image
+Aggiornare sitemap.xml
+Resettare server api + resettare server gui
+
 ## Todo
-migliorare giudizi e target price
-Bug: BI + TB evaluations ???
-
-
-
 
 Versione v2
