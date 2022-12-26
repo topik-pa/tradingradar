@@ -168,11 +168,32 @@ const fsteMib = [
     teleb_code: 'azimut-azm-it0003261697-SVQwMDAzMjYxNjk3'
   },
   {
+    name: 'B&C Speakers',
+    code: 'BEC',
+    isin: 'IT0001268561',
+    mf_code: '2ae0444',
+    teleb_code: 'b-c-speakers-bec-it0001268561-SVQwMDAxMjY4NTYx'
+  },
+  {
+    name: 'B.F.',
+    code: 'BFG',
+    isin: 'IT0005187460',
+    mf_code: '2ae10ae',
+    teleb_code: 'b-f-bfg-it0005187460-SVQwMDA1MTg3NDYw'
+  },
+  {
     name: 'Banca Generali',
     code: 'BGN',
     isin: 'IT0001031084',
     mf_code: '2ae0405',
     teleb_code: 'banca-generali-bgn-it0001031084-SVQwMDAxMDMxMDg0'
+  },
+  {
+    name: 'Banca Ifis',
+    code: 'IF',
+    isin: 'IT0003188064',
+    mf_code: '2ae035e',
+    teleb_code: 'banca-ifis-if-it0003188064-SVQwMDAzMTg4MDY0'
   },
   {
     name: 'Banca Mediolanum',
@@ -182,11 +203,109 @@ const fsteMib = [
     teleb_code: 'banca-mediolanum-bmed-it0004776628-SVQwMDA0Nzc2NjI4'
   },
   {
+    name: 'Banca Monte Paschi Siena',
+    code: 'BMPS',
+    isin: 'IT0005508921',
+    mf_code: '2ae00bd',
+    teleb_code: 'banca-monte-paschi-siena-bmps-it0005508921-SVQwMDA1NTA4OTIx'
+  },
+  {
+    name: 'Banca Sistema',
+    code: 'BST',
+    isin: 'IT0003173629',
+    mf_code: '2ae105c',
+    teleb_code: 'banca-sistema-bst-it0003173629-SVQwMDAzMTczNjI5'
+  },
+  {
     name: 'Banco Bpm',
     code: 'BAMI',
     isin: 'IT0005218380',
     mf_code: '2ae10a2',
     teleb_code: 'banco-bpm-bami-it0005218380-SVQwMDA1MjE4Mzgw'
+  },
+  {
+    name: 'Basicnet',
+    code: 'BAN',
+    isin: 'IT0001033700',
+    mf_code: '2ae00ea',
+    teleb_code: 'basicnet-ban-it0001033700-SVQwMDAxMDMzNzAw'
+  },
+  {
+    name: 'Bastogi',
+    code: 'B',
+    isin: 'IT0004412497',
+    mf_code: '2ae0052',
+    teleb_code: 'bastogi-b-it0004412497-SVQwMDA0NDEyNDk3'
+  },
+  {
+    name: 'Bb Biotech',
+    code: 'BB',
+    isin: 'CH0038389992',
+    mf_code: '2ae01a5',
+    teleb_code: 'bb-biotech-bb-ch0038389992-Q0gwMDM4Mzg5OTky'
+  },
+  {
+    name: 'Bca Pop Sondrio',
+    code: 'BPSO',
+    isin: 'IT0000784196',
+    mf_code: '2ae0071',
+    teleb_code: 'banca-popolare-sondrio-bpso-it0000784196-SVQwMDAwNzg0MTk2'
+  },
+  {
+    name: 'Bca Profilo',
+    code: 'PRO',
+    isin: 'IT0001073045',
+    mf_code: '2ae0112',
+    teleb_code: 'banca-profilo-pro-it0001073045-SVQwMDAxMDczMDQ1'
+  },
+  {
+    name: 'Bco Desio Brianza',
+    code: 'BDB',
+    isin: 'IT0001041000',
+    mf_code: '2ae0005',
+    teleb_code: 'banco-di-desio-e-della-brianza-bdb-it0001041000-SVQwMDAxMDQxMDAw'
+  },
+  {
+    name: 'Be',
+    code: 'BEST',
+    isin: 'IT0001479523',
+    mf_code: '2ae0476',
+    teleb_code: 'be-best-it0001479523-SVQwMDAxNDc5NTIz'
+  },
+  {
+    name: 'Beghelli',
+    code: 'BE',
+    isin: 'IT0001223277',
+    mf_code: '2ae007b',
+    teleb_code: 'beghelli-be-it0001223277-SVQwMDAxMjIzMjc3'
+  },
+  {
+    name: 'Bff Bank',
+    code: 'BFF',
+    isin: 'IT0005244402',
+    mf_code: '2ae10a9',
+    teleb_code: 'bff-bank-bff-it0005244402-SVQwMDA1MjQ0NDAy'
+  },
+  {
+    name: 'Bialetti Industrie',
+    code: 'BIA',
+    isin: 'IT0004222102',
+    mf_code: '2ae0445',
+    teleb_code: 'bialetti-industrie-bia-it0004222102-SVQwMDA0MjIyMTAy'
+  },
+  {
+    name: 'Biesse',
+    code: 'BSS',
+    isin: 'IT0003097257',
+    mf_code: '2ae01ed',
+    teleb_code: 'biesse-bss-it0003097257-SVQwMDAzMDk3MjU3'
+  },
+  {
+    name: 'Borgosesia',
+    code: 'BO',
+    isin: 'IT0003217335',
+    mf_code: '2ae002e',
+    teleb_code: 'borgosesia-bo-it0003217335-SVQwMDAzMjE3MzM1'
   },
   {
     name: 'Bper Banca',
@@ -201,6 +320,13 @@ const fsteMib = [
     isin: 'IT0005252728',
     mf_code: '2ae000c',
     teleb_code: 'brembo-bre-it0005252728-SVQwMDA1MjUyNzI4'
+  },
+  {
+    name: 'Brioschi',
+    code: 'BRI',
+    isin: 'IT0000066180',
+    mf_code: '2ae0072',
+    teleb_code: 'brioschi-bri-it0000066180-SVQwMDAwMDY2MTgw'
   },
   {
     name: 'Brunello Cucinelli',
