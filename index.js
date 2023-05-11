@@ -95,6 +95,7 @@ require('./app/routes/info.routes')(app)
 require('./app/routes/analysis.routes')(app)
 require('./app/routes/news.routes')(app)
 require('./app/routes/stocks.routes')(app)
+require('./app/routes/custom.routes')(app)
 app.use((req, res) => {
   res.status(404).send({
     error: 404,
