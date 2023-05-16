@@ -35,13 +35,6 @@ const fsteMib = [
     teleb_code: 'acinque-ac5-it0001382024-SVQwMDAxMzgyMDI0'
   },
   {
-    name: 'Aedes',
-    code: 'AED',
-    isin: 'IT0005350449',
-    mf_code: '2ae110b',
-    teleb_code: 'aedes-aed-it0005350449-SVQwMDA1MzUwNDQ5'
-  },
-  {
     name: 'Aeffe',
     code: 'AEF',
     isin: 'IT0001384590',
@@ -131,13 +124,6 @@ const fsteMib = [
     isin: 'IT0005337123',
     mf_code: '2ae10e9',
     teleb_code: 'askoll-eva-eva-it0005337123-SVQwMDA1MzM3MTIz'
-  },
-  {
-    name: 'Atlantia',
-    code: 'ATL',
-    isin: 'IT0003506190',
-    mf_code: '2ae003b',
-    teleb_code: 'atlantia-atl-it0003506190-SVQwMDAzNTA2MTkw'
   },
   {
     name: 'Autogrill',
@@ -264,13 +250,6 @@ const fsteMib = [
     isin: 'IT0001041000',
     mf_code: '2ae0005',
     teleb_code: 'banco-di-desio-e-della-brianza-bdb-it0001041000-SVQwMDAxMDQxMDAw'
-  },
-  {
-    name: 'Be',
-    code: 'BEST',
-    isin: 'IT0001479523',
-    mf_code: '2ae0476',
-    teleb_code: 'be-best-it0001479523-SVQwMDAxNDc5NTIz'
   },
   {
     name: 'Beghelli',
@@ -617,14 +596,14 @@ const fsteMib = [
   },
   {
     name: 'Stellantis',
-    code: 'STLA',
+    code: 'STLAM',
     isin: 'NL00150001Q9',
     mf_code: '2ae00be',
     teleb_code: 'stellantis-stla-nl00150001q9-TkwwMDE1MDAwMVE5'
   },
   {
     name: 'Stmicroelectronics',
-    code: 'STM',
+    code: 'STMMI',
     isin: 'NL0000226223',
     mf_code: '2ae0022',
     teleb_code: 'stmicroelectronics-stm-nl0000226223-TkwwMDAwMjI2MjIz'
@@ -702,8 +681,15 @@ const fsteMib = [
 ]
 const devStocks = [
   {
+    name: 'Acinque',
+    code: 'AC5',
+    isin: 'IT0001382024',
+    mf_code: '2ae006a',
+    teleb_code: 'acinque-ac5-it0001382024-SVQwMDAxMzgyMDI0'
+  },
+  {
     name: 'Stmicroelectronics',
-    code: 'STM',
+    code: 'STMMI',
     isin: 'NL0000226223',
     mf_code: '2ae0022',
     teleb_code: 'stmicroelectronics-stm-nl0000226223-TkwwMDAwMjI2MjIz'
@@ -720,7 +706,7 @@ const testStocks = [
   },
   {
     name: 'Stmicroelectronics',
-    code: 'STM',
+    code: 'STMMI',
     isin: 'NL0000226223',
     mf_code: '2ae0022',
     teleb_code: 'stmicroelectronics-stm-nl0000226223-TkwwMDAwMjI2MjIz'
