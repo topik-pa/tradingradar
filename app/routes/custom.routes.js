@@ -2,8 +2,11 @@ module.exports = app => {
   const custom = require('../controllers/custom.controller.js')
   const router = require('express').Router()
 
-  //Stock info
-  router.get('/goldencross', custom.getGoldenCross)   
+  //Golden Cross Up
+  router.get('/goldencrossup', custom.getGoldenCrossUp) 
+  
+  //Golden Cross Down
+  router.get('/goldencrossdown', custom.getGoldenCrossDown)
 
   app.use('/api/custom', router)
 }
