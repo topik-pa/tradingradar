@@ -195,8 +195,8 @@ function toFloatNumber(str) {
 function orderStocks(stocks, key, order = 'desc') {
   function compare(a, b) {
     let { x, y } = {
-      x: toFloatNumber(a[key].value),
-      y: toFloatNumber(b[key].value)
+      x: Array.isArray(a[key]) ? toFloatNumber(a[key].value[0]) : toFloatNumber(a[key].value),
+      y: Array.isArray(b[key]) ? toFloatNumber(b[key].value[0]) : toFloatNumber(b[key].value)
     }
     if (x > y) {
       return -1
@@ -208,8 +208,8 @@ function orderStocks(stocks, key, order = 'desc') {
   }
   function compareAsc(a, b) {
     let { x, y } = {
-      x: toFloatNumber(a[key].value),
-      y: toFloatNumber(b[key].value)
+      x: Array.isArray(a[key]) ? toFloatNumber(a[key].value[0]) : toFloatNumber(a[key].value),
+      y: Array.isArray(b[key]) ? toFloatNumber(b[key].value[0]) : toFloatNumber(b[key].value)
     }
     if (x < y) {
       return -1
