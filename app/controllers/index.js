@@ -194,6 +194,23 @@ function toFloatNumber(str) {
 
 function toUnivDateValue(str) {
   if (str === undefined || str === null) return str
+  const dateTranslations = {
+    Gen: 'Jan',
+    Feb: 'Feb',
+    Mar: 'Mar',
+    Apr: 'Apr',
+    Mag: 'May',
+    Giu: 'Jun',
+    Lug: 'Jul',
+    Ago: 'Aug',
+    Set: 'Sep',
+    Ott: 'Oct',
+    Nov: 'Nov',
+    Dic: 'Dec'
+  }
+  for (const [key, value] of Object.entries(dateTranslations)) {
+    str.replace(key, value)
+  }
   if (new Date(str).toString() !== 'Invalid Date') {
     return new Date(str).getTime()
   }
