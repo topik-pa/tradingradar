@@ -209,7 +209,7 @@ function toUnivDateValue(str) {
     Dic: 'Dec'
   }
   for (const [key, value] of Object.entries(dateTranslations)) {
-    str.replace(key, value)
+    str = str.replace(key, value)
   }
   if (new Date(str).toString() !== 'Invalid Date') {
     return new Date(str).getTime()
