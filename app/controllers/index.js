@@ -182,9 +182,6 @@ function getCriteriaObjData(criteria) {
 function toFloatNumber(str) {
   if (str === undefined || str === null) return str
   if (!isNaN(str)) return str
-  if (new Date(str).toString() !== 'Invalid Date') {
-    return new Date(str).getTime()
-  }
   if (typeof str === 'string') {
     let tryNum = Number(
       parseFloat(str.toString().replace(',', '.').replace('%', '')).toFixed(2)
@@ -195,11 +192,34 @@ function toFloatNumber(str) {
   return str
 }
 
+function toUnivDateValue(str) {
+  if (str === undefined || str === null) return str
+  if (new Date(str).toString() !== 'Invalid Date') {
+    return new Date(str).getTime()
+  }
+  return ''
+}
+
+function fromLastDivDateDateToUnivDate(str) {
+  if (str === undefined || str === null) return str
+  let array = str.split('/')
+  let day = array[0]
+  array[0] = array[1]
+  array[1] = day
+  const date = array.join('/')
+  if (new Date(date).toString() !== 'Invalid Date') {
+    return new Date(date).getTime()
+  }
+  return ''
+}
+
 function orderStocks(stocks, key, order = 'desc') {
   function compare(a, b) {
+    const valX = (key === 'lastDivDate') ? fromLastDivDateDateToUnivDate(a[key].value) : (key === 'lastJudgment') ? toUnivDateValue(a[key].value) : toFloatNumber(a[key].value) 
+    const valY = (key === 'lastDivDate') ? fromLastDivDateDateToUnivDate(b[key].value) : (key === 'lastJudgment') ? toUnivDateValue(b[key].value) : toFloatNumber(b[key].value) 
     let { x, y } = {
-      x: Array.isArray(a[key]) ? toFloatNumber(a[key].value[0]) : toFloatNumber(a[key].value),
-      y: Array.isArray(b[key]) ? toFloatNumber(b[key].value[0]) : toFloatNumber(b[key].value)
+      x: valX,
+      y: valY
     }
     if (x > y) {
       return -1
@@ -210,9 +230,11 @@ function orderStocks(stocks, key, order = 'desc') {
     return 0
   }
   function compareAsc(a, b) {
+    const valX = (key === 'lastDivDate') ? fromLastDivDateDateToUnivDate(a[key].value) : (key === 'lastJudgment') ? fromLastDivDateDateToUnivDate(a[key].value) : toFloatNumber(a[key].value) 
+    const valY = (key === 'lastDivDate') ? fromLastDivDateDateToUnivDate(b[key].value) : (key === 'lastJudgment') ? fromLastDivDateDateToUnivDate(b[key].value) : toFloatNumber(b[key].value) 
     let { x, y } = {
-      x: Array.isArray(a[key]) ? toFloatNumber(a[key].value[0]) : toFloatNumber(a[key].value),
-      y: Array.isArray(b[key]) ? toFloatNumber(b[key].value[0]) : toFloatNumber(b[key].value)
+      x: valX,
+      y: valY
     }
     if (x < y) {
       return -1
