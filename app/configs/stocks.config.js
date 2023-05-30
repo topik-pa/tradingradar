@@ -1,4 +1,5 @@
 const fsteMib = [
+  // A
   {
     name: 'A2a',
     code: 'A2A',
@@ -153,6 +154,7 @@ const fsteMib = [
     mf_code: '2ae03ba',
     teleb_code: 'azimut-azm-it0003261697-SVQwMDAzMjYxNjk3'
   },
+  // B
   {
     name: 'B&C Speakers',
     code: 'BEC',
@@ -321,6 +323,7 @@ const fsteMib = [
     mf_code: '2ae0013',
     teleb_code: 'buzzi-unicem-bzu-it0001347308-SVQwMDAxMzQ3MzA4'
   },
+  // C
   {
     name: 'Cairo Communication',
     code: 'CAI',
@@ -329,9 +332,51 @@ const fsteMib = [
     teleb_code: 'cairo-communication-cai-it0004329733-SVQwMDA0MzI5NzMz'
   },
   {
+    name: 'Caleffi',
+    code: 'CLF',
+    isin: 'IT0003025019',
+    mf_code: '2ae01f2',
+    teleb_code: 'campari-cpr-nl0015435975-TkwwMDE1NDM1OTc1'
+  },
+  {
+    name: 'Caltagirone',
+    code: 'CALT',
+    isin: 'IT0003127930',
+    mf_code: '2ae01f2',
+    teleb_code: 'campari-cpr-nl0015435975-TkwwMDE1NDM1OTc1'
+  },
+  {
+    name: 'Carel Industries',
+    code: 'CRL',
+    isin: 'IT0005331019',
+    mf_code: '2ae01f2',
+    teleb_code: 'campari-cpr-nl0015435975-TkwwMDE1NDM1OTc1'
+  },
+  {
     name: 'Campari',
     code: 'CPR',
     isin: 'NL0015435975',
+    mf_code: '2ae01f2',
+    teleb_code: 'campari-cpr-nl0015435975-TkwwMDE1NDM1OTc1'
+  },
+  {
+    name: 'Casta Diva Group',
+    code: 'CDG',
+    isin: 'IT0005003782',
+    mf_code: '2ae01f2',
+    teleb_code: 'campari-cpr-nl0015435975-TkwwMDE1NDM1OTc1'
+  },
+  {
+    name: 'Cellularline',
+    code: 'CELL',
+    isin: 'IT0005244618',
+    mf_code: '2ae01f2',
+    teleb_code: 'campari-cpr-nl0015435975-TkwwMDE1NDM1OTc1'
+  },
+  {
+    name: 'Cembre',
+    code: 'CMB',
+    isin: 'IT0001128047',
     mf_code: '2ae01f2',
     teleb_code: 'campari-cpr-nl0015435975-TkwwMDE1NDM1OTc1'
   },
@@ -343,11 +388,81 @@ const fsteMib = [
     teleb_code: 'cementir-holding-cem-nl0013995087-TkwwMDEzOTk1MDg3'
   },
   {
+    name: 'Centrale Del Latte d\'Italia',
+    code: 'CLI',
+    isin: 'IT0003023980',
+    mf_code: '2ae01f2',
+    teleb_code: 'campari-cpr-nl0015435975-TkwwMDE1NDM1OTc1'
+  },
+  {
+    name: 'Cia',
+    code: 'CIA',
+    isin: 'IT0003389522',
+    mf_code: '2ae01f2',
+    teleb_code: 'campari-cpr-nl0015435975-TkwwMDE1NDM1OTc1'
+  },
+  {
+    name: 'Cir',
+    code: 'CIR',
+    isin: 'IT0000070786',
+    mf_code: '2ae01f2',
+    teleb_code: 'campari-cpr-nl0015435975-TkwwMDE1NDM1OTc1'
+  },
+  {
+    name: 'Clabo',
+    code: 'CLABO',
+    isin: 'IT0005091324',
+    mf_code: '2ae01f2',
+    teleb_code: 'campari-cpr-nl0015435975-TkwwMDE1NDM1OTc1'
+  },
+  {
+    name: 'Class Editori',
+    code: 'CLE',
+    isin: 'IT0005117848',
+    mf_code: '2ae01f2',
+    teleb_code: 'campari-cpr-nl0015435975-TkwwMDE1NDM1OTc1'
+  },
+  {
     name: 'Cnh Industrial',
     code: 'CNHI',
     isin: 'NL0010545661',
     mf_code: '2ae1025',
     teleb_code: 'cnh-industrial-cnhi-nl0010545661-TkwwMDEwNTQ1NjYx'
+  },
+  {
+    name: 'Comer Industries',
+    code: 'COM',
+    isin: 'IT0005246191',
+    mf_code: '2ae01f2',
+    teleb_code: 'campari-cpr-nl0015435975-TkwwMDE1NDM1OTc1'
+  },
+  {
+    name: 'Conafi',
+    code: 'CNF',
+    isin: 'IT0004105653',
+    mf_code: '2ae01f2',
+    teleb_code: 'campari-cpr-nl0015435975-TkwwMDE1NDM1OTc1'
+  },
+  {
+    name: 'Credem',
+    code: 'CE',
+    isin: 'IT0003121677',
+    mf_code: '2ae01f2',
+    teleb_code: 'campari-cpr-nl0015435975-TkwwMDE1NDM1OTc1'
+  },
+  {
+    name: 'Csp Int Ind Calze',
+    code: 'CSP',
+    isin: 'IT0001127874',
+    mf_code: '2ae01f2',
+    teleb_code: 'campari-cpr-nl0015435975-TkwwMDE1NDM1OTc1'
+  },
+  {
+    name: 'Cy4gate',
+    code: 'CY4',
+    isin: 'IT0005412504',
+    mf_code: '2ae01f2',
+    teleb_code: 'campari-cpr-nl0015435975-TkwwMDE1NDM1OTc1'
   },
   {
     name: 'Datalogic',
