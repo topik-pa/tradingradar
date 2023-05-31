@@ -192,7 +192,9 @@ function toFloatNumber(str) {
   return str
 }
 
-function toUnivDateValue(str) {
+function toUnivDateValue(arrStr) {
+  if (arrStr === undefined || arrStr === null) return arrStr
+  let str = arrStr[0]
   if (str === undefined || str === null) return str
   const dateTranslations = {
     Gen: 'Jan',
@@ -232,8 +234,8 @@ function fromLastDivDateDateToUnivDate(str) {
 
 function orderStocks(stocks, key, order = 'desc') {
   function compare(a, b) {
-    const valX = (key === 'lastDivDate') ? fromLastDivDateDateToUnivDate(a[key].value) : (key === 'lastJudgment') ? toUnivDateValue(a[key].value[0]) : toFloatNumber(a[key].value) 
-    const valY = (key === 'lastDivDate') ? fromLastDivDateDateToUnivDate(b[key].value) : (key === 'lastJudgment') ? toUnivDateValue(b[key].value[0]) : toFloatNumber(b[key].value) 
+    const valX = (key === 'lastDivDate') ? fromLastDivDateDateToUnivDate(a[key].value) : (key === 'lastJudgment') ? toUnivDateValue(a[key].value) : toFloatNumber(a[key].value) 
+    const valY = (key === 'lastDivDate') ? fromLastDivDateDateToUnivDate(b[key].value) : (key === 'lastJudgment') ? toUnivDateValue(b[key].value) : toFloatNumber(b[key].value) 
     let { x, y } = {
       x: valX,
       y: valY
