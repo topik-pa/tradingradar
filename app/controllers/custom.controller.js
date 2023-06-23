@@ -63,7 +63,7 @@ exports.getCustomData = async (req, res, next) => {
   // GET Trend inversion up
   try {
     const results = await FTSEMibStock.find( {$and: [ {$expr: {$gt: ['$lastPrice.value', '$mm20days.value']}}, {$expr: {$gt: ['$lastPrice.value', '$mm40days.value']}}, {$expr: {$lt: ['$mm20days.value', '$mm40days.value']}}, {$expr: {$lt: ['$mm40days.value', '$mm100days.value']}} ]} )
-    let returnings = []
+    /*let returnings = []
     const MIN_DELTA = 0.5
     const MAX_DELTA = 1.5
     results.forEach((stock) => {
@@ -73,7 +73,8 @@ exports.getCustomData = async (req, res, next) => {
         returnings.push(stock)
       }
     })
-    custom.tiup = returnings.sort( (a,b) => a.delta - b.delta )
+    custom.tiup = returnings.sort( (a,b) => a.delta - b.delta )*/
+    custom.tiup = results
   } catch (error) {
     return next(error)
   }
@@ -81,7 +82,7 @@ exports.getCustomData = async (req, res, next) => {
   // GET Trend inversion down
   try {
     const results = await FTSEMibStock.find( {$and: [ {$expr: {$lt: ['$lastPrice.value', '$mm20days.value']}}, {$expr: {$lt: ['$lastPrice.value', '$mm40days.value']}}, {$expr: {$gt: ['$mm20days.value', '$mm40days.value']}}, {$expr: {$gt: ['$mm40days.value', '$mm100days.value']}} ]} )
-    let returnings = []
+    /*let returnings = []
     const MIN_DELTA = 0.5
     const MAX_DELTA = 1.5
     results.forEach((stock) => {
@@ -91,7 +92,8 @@ exports.getCustomData = async (req, res, next) => {
         returnings.push(stock)
       }
     })
-    custom.tidown = returnings.sort( (a,b) => a.delta - b.delta )
+    custom.tidown = returnings.sort( (a,b) => a.delta - b.delta )*/
+    custom.tidown = results
   } catch (error) {
     return next(error)
   }
