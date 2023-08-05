@@ -84,11 +84,39 @@ module.exports = [
     jsonKey: 'teleb_resistance'
   },
   {
+    qp: 'trend',
+    jsonKey: 'teleb_trend'
+  },
+  {
     qp: 'lastJudgment',
     jsonKey: 'lastJudgment'
   },
   {
     qp: 'volume',
     jsonKey: 'volume'
+  },
+  {
+    qp: 'absMax',
+    jsonKey: 'absMax'
+  },
+  {
+    qp: 'absMin',
+    jsonKey: 'absMin'
+  },
+  {
+    qp: 'currentYearMax',
+    jsonKey: 'currentYearMax'
+  },
+  {
+    qp: 'currentYearMin',
+    jsonKey: 'currentYearMin'
+  },
+  {
+    qp: 'comment',
+    jsonKey: 'comment'
+  },
+  {
+    qp: 'evaluation',
+    jsonKey: 'borsaIt_evaluation'
   }
 ]
