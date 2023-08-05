@@ -426,8 +426,8 @@ module.exports = {
     //Save on DB
     if (type !== 'news') {
       //PATCH
-      let dataForDB = Object.create(result)
-      delete dataForDB.volume
+      let dataForDB = result
+      // delete dataForDB.volume
       //PATCH
       updateStockOnDB(dataForDB)
     }
