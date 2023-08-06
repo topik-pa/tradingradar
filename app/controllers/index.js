@@ -514,7 +514,17 @@ module.exports = {
             const errorMsg =
               'Error performing remote request: ' + actualUrl + '\n' + err
             console.error(errorMsg)
-            reject(errorMsg)
+            const result = {
+              isin: stock.isin,
+              name: stock.name,
+              [analysis.jsonKey]: {
+                value: null,
+                source: actualUrl,
+                now: now
+              }
+            }
+            results.push(result)
+            resolve()
           })
       })
       requests.push(request)
