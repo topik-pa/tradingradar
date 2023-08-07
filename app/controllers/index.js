@@ -7,7 +7,7 @@ const availableStockAnalyses = require('../configs/analyses.config')
 const db = require('../models')
 const FTSEMibStock = db.ftseMibStocks
 
-const SLEEP_TIME = 13000
+const SLEEP_TIME = 4000
 
 //COMMON
 function sleep(ms) {
