@@ -1,7 +1,40 @@
+const nodemailer = require('nodemailer')
 const db = require('../models')
 const FTSEMibStock = db.ftseMibStocks
 
+const transporter = nodemailer.createTransport({
+  host: 'authsmtp.securemail.pro',
+  port: 465,
+  secure: true,
+  auth: {
+    // TODO: replace `user` and `pass` values from <https://forwardemail.net>
+    user: process.env.MAIL_USER,
+    pass: process.env.MAIL_PWD
+  }
+})
+async function main(data) {
+  // send mail with defined transport object
+  const info = await transporter.sendMail({
+    from: '"Follow title 👻" <marco@tradingradar.net>', // sender address
+    to: 'marco@tradingradar.net', // list of receivers
+    subject: 'New follower ✔', // Subject line
+    html: `<h3>New follower</h3>
+            <p>Name: ${data.name}</p>
+            <p>Email: ${data.email}</p>
+            <p>Privacy: ${data.privacy}</p>
+            <p>Title: ${data.title}</p>
+    ` // html body
+  })
 
+  console.log('Message sent: %s', info.messageId)
+  // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+
+  //
+  // NOTE: You can go to https://forwardemail.net/my-account/emails to see your email delivery status and preview
+  //       Or you can use the "preview-email" npm package to preview emails locally in browsers and iOS Simulator
+  //       <https://github.com/forwardemail/preview-email>
+  //
+}
 
 exports.getCustomData = async (req, res, next) => {
   let custom = {}
@@ -100,4 +133,15 @@ exports.getCustomData = async (req, res, next) => {
 
 
   return res.json(custom)
+}
+
+
+exports.addFollower = async (req) => {
+  const mailData = {
+    name: req.body.name,
+    email: req.body.email,
+    privacy: req.body.privacy,
+    title: req.body.title
+  }
+  main(mailData).catch(console.error)
 }
