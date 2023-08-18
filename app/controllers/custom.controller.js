@@ -136,12 +136,12 @@ exports.getCustomData = async (req, res, next) => {
 }
 
 
-exports.addFollower = async (req) => {
+exports.addFollower = async (req, res, next) => {
   const mailData = {
     name: req.body.name,
     email: req.body.email,
     privacy: req.body.privacy,
     title: req.body.title
   }
-  main(mailData).catch(console.error)
+  main(mailData).then(() => {return res.json({result: 'OK'})}).catch(() => {console.error;return res.json({result: 'KO'})})
 }

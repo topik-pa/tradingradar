@@ -1,6 +1,5 @@
 ### Welcome message
 POST http://localhost:8080/api/custom/follow
 Content-Type: application/x-www-form-urlencoded
-Accept: application/json
 
 name=PippoBaudo&email=pippo@test.it&privacy=true&title=A2a
