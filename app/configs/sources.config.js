@@ -104,7 +104,7 @@ module.exports = [
     id: 4,
     code: 'milFin',
     name: 'Milano Finanza',
-    url: 'https://www.milanofinanza.it/quotazioni/dettaglio/%lowerCaseCode%-%mf_code%',
+    url: 'https://www.milanofinanza.it/quotazioni/dettaglio/%mf_code%',
     info: [
       {
         name: 'divYield',
