@@ -71,6 +71,14 @@ module.exports = mongoose => {
         type: Schema.Types.Mixed,
         nullable: true
       },
+      sector: {
+        type: Schema.Types.Mixed,
+        nullable: true
+      },
+      segment: {
+        type: Schema.Types.Mixed,
+        nullable: true
+      },
       perf6M: {
         type: Schema.Types.Mixed,
         nullable: true
@@ -144,6 +152,14 @@ module.exports = mongoose => {
         nullable: true
       },
       lastDivDate: {
+        type: Schema.Types.Mixed,
+        nullable: true
+      },
+      mfVolatility: {
+        type: Schema.Types.Mixed,
+        nullable: true
+      },
+      capitalizzazione: {
         type: Schema.Types.Mixed,
         nullable: true
       },

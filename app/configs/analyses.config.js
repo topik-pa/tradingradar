@@ -16,6 +16,14 @@ module.exports = [
     jsonKey: 'perf1Y'
   },
   {
+    qp: 'sector',
+    jsonKey: 'sector'
+  },
+  {
+    qp: 'segment',
+    jsonKey: 'segment'
+  },
+  {
     qp: 'volatility',
     jsonKey: 'volatility'
   },
@@ -46,6 +54,14 @@ module.exports = [
   {
     qp: 'lastDivDate',
     jsonKey: 'lastDivDate'
+  },
+  {
+    qp: 'mfVolatility',
+    jsonKey: 'mfVolatility'
+  },
+  {
+    qp: 'capitalizzazione',
+    jsonKey: 'capitalizzazione'
   },
   {
     qp: 'mfRisk',

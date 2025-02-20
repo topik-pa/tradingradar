@@ -25,12 +25,22 @@ module.exports = [
         name: 'perf1Y',
         type: 'html',
         path: '.cnt-summary > div:nth-of-type(4) > article > div > div:nth-of-type(2) > div:nth-of-type(2) > table > tbody > tr:nth-of-type(3) > td:nth-of-type(2) > span'
+      },
+      {
+        name: 'sector',
+        type: 'html',
+        path: '.cnt-summary > div:nth-of-type(4) > article > div > div:nth-of-type(2) > div:nth-of-type(2) > table > tbody > tr:nth-of-type(6) > td:nth-of-type(2) > span'
+      },
+      {
+        name: 'segment',
+        type: 'html',
+        path: '.cnt-summary > div:nth-of-type(4) > article > div > div:nth-of-type(2) > div:nth-of-type(1) > table > tbody > tr:nth-of-type(6) > td:nth-of-type(2) > span'
       }
     ],
     analyses: [],
     news: {}
   },
-  {
+  /*{
     id: 1,
     code: 'borsaIt',
     name: 'Borsa Italiana',
@@ -77,7 +87,7 @@ module.exports = [
       }
     ],
     news: {}
-  },
+  },*/
   {
     id: 2,
     code: 'borsaIt',
@@ -120,6 +130,16 @@ module.exports = [
         name: 'lastDivDate',
         type: 'html',
         path: '.d-flex > div:nth-of-type(3) > table > tbody > tr:nth-of-type(4) > td:nth-of-type(2)'
+      },
+      {
+        name: 'mfVolatility',
+        type: 'html',
+        path: '.d-flex > div:nth-of-type(2) > table > tbody > tr:nth-of-type(5) > td:nth-of-type(2)'
+      },
+      {
+        name: 'capitalizzazione',
+        type: 'html',
+        path: '.d-flex > div:nth-of-type(3) > table > tbody > tr:nth-of-type(1) > td:nth-of-type(2)'
       }
     ],
     analyses: [
