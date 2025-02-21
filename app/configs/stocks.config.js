@@ -8,6 +8,13 @@ const fsteMib = [
     teleb_code: 'a2a-a2a-it0001233417-SVQwMDAxMjMzNDE3'
   },
   {
+    name: 'A.B.P. Nocivelli',
+    code: 'ABP',
+    isin: 'IT0005439861',
+    mf_code: 'a-b-p-nocivelli-2ae1150',
+    teleb_code: 'a-b-p-nocivelli-abp-it0005439861-SVQwMDA1NDM5ODYx'
+  },
+  {
     name: 'Abitare In',
     code: 'ABT',
     isin: 'IT0005445280',
@@ -15,11 +22,46 @@ const fsteMib = [
     teleb_code: 'abitare-in-abt-it0005445280-SVQwMDA1NDQ1Mjgw'
   },
   {
+    name: 'Abbvie',
+    code: '1ABBV',
+    isin: 'US00287Y1091',
+    mf_code: 'abbvie-2ae13e4',
+    teleb_code: 'abbvie-1abbv-us00287y1091-VVMwMDI4N1kxMDkx'
+  },
+  {
     name: 'Acea',
     code: 'ACE',
     isin: 'IT0001207098',
     mf_code: 'acea-2ae00f8',
     teleb_code: 'acea-ace-it0001207098-SVQwMDAxMjA3MDk4'
+  },
+  {
+    name: 'Adidas',
+    code: '1ADS',
+    isin: 'DE000A1EWWW0',
+    mf_code: 'adidas-2ae107a',
+    teleb_code: 'adidas-1ads-de000a1ewww0-REUwMDBBMUVXV1cw'
+  },
+  {
+    name: 'Adobe',
+    code: '1ADBE',
+    isin: 'US00724F1012',
+    mf_code: 'adobe-2ae13e7',
+    teleb_code: 'adobe-1adbe-us00724f1012-VVMwMDcyNEYxMDEy'
+  },
+  {
+    name: 'Advanced Micro Devices',
+    code: '1AMD',
+    isin: 'US0079031078',
+    mf_code: 'advanced-micro-devices-2ae10ca',
+    teleb_code: 'advanced-micro-devices-1amd-us0079031078-VVMwMDc5MDMxMDc4'
+  },
+  {
+    name: 'Adventure',
+    code: 'ADV',
+    isin: 'IT0005607715',
+    mf_code: 'adventure-2ae1530',
+    teleb_code: 'adventure-adv-it0005607715-SVQwMDA1NjA3NzE1'
   },
   {
     name: 'Aedes',
@@ -43,6 +85,48 @@ const fsteMib = [
     teleb_code: 'aeroporto-guglielmo-marconi-di-bologna-adb-it0001006128-SVQwMDAxMDA2MTI4'
   },
   {
+    name: 'Ageas',
+    code: '1AGS',
+    isin: 'BE0974264930',
+    mf_code: 'ageas-2ae0422',
+    teleb_code: 'ageas-1ags-be0974264930-QkUwOTc0MjY0OTMw'
+  },
+  {
+    name: 'Air France-Klm',
+    code: '1AF',
+    isin: 'FR001400J770',
+    mf_code: 'air-france-klm-2ae10f5',
+    teleb_code: 'air-france-klm-1af-fr001400j770-RlIwMDE0MDBKNzcw'
+  },
+  {
+    name: 'Air Products And Chemicals',
+    code: '1APD',
+    isin: 'US0091581068',
+    mf_code: 'air-products-and-chemicals-2ae13f7',
+    teleb_code: 'air-products-and-chemicals-1apd-us0091581068-VVMwMDkxNTgxMDY4'
+  },
+  {
+    name: 'Airbus',
+    code: '1AIR',
+    isin: 'NL0000235190',
+    mf_code: 'airbus-2ae1078',
+    teleb_code: 'airbus-1air-nl0000235190-TkwwMDAwMjM1MTkw'
+  },
+  {
+    name: 'Ala',
+    code: 'ALA',
+    isin: 'IT0005446700',
+    mf_code: 'ala-2ae1161',
+    teleb_code: 'ala-ala-it0005446700-SVQwMDA1NDQ2NzAw'
+  },
+  {
+    name: 'Alcoa',
+    code: '1AA',
+    isin: 'US0138721065',
+    mf_code: 'alcoa-2ae13e0',
+    teleb_code: 'alcoa-1aa-us0138721065-VVMwMTM4NzIxMDY1'
+  },
+  {
     name: 'Alerion Cleanpower',
     code: 'ARN',
     isin: 'IT0004720733',
@@ -50,11 +134,81 @@ const fsteMib = [
     teleb_code: 'alerion-arn-it0004720733-SVQwMDA0NzIwNzMz'
   },
   {
+    name: 'Alfio Bardolla',
+    code: 'ABTG',
+    isin: 'IT0005244030',
+    mf_code: 'alfio-bardolla-2ae10b5',
+    teleb_code: 'alfio-bardolla-abtg-it0005244030-SVQwMDA1MjQ0MDMw'
+  },
+  {
+    name: 'Alfonsino',
+    code: 'ALFO',
+    isin: 'IT0005466039',
+    mf_code: 'alfonsino-2ae1170',
+    teleb_code: 'alfonsino-alfo-it0005466039-SVQwMDA1NDY2MDM5'
+  },
+  {
     name: 'Alkemy',
     code: 'ALK',
     isin: 'IT0005314635',
     mf_code: 'alkemy-2ae10d1',
     teleb_code: 'alkemy-alk-it0005314635-SVQwMDA1MzE0NjM1'
+  },
+  {
+    name: 'Allcore',
+    code: 'CORE',
+    isin: 'IT0005461303',
+    mf_code: 'allcore-2ae116c',
+    teleb_code: 'allcore-core-it0005461303-SVQwMDA1NDYxMzAz'
+  },
+  {
+    name: 'Allianz',
+    code: '1ALV',
+    isin: 'DE0008404005',
+    mf_code: 'allianz-2ae03f9',
+    teleb_code: 'allianz-1alv-de0008404005-REUwMDA4NDA0MDA1'
+  },
+  {
+    name: 'Almawave',
+    code: 'AIW',
+    isin: 'IT0005434615',
+    mf_code: 'almawave-2ae114e',
+    teleb_code: 'almawave-aiw-it0005434615-SVQwMDA1NDM0NjE1'
+  },
+  {
+    name: 'Altea Green Power',
+    code: 'AGP',
+    isin: 'IT0005472730',
+    mf_code: 'altea-green-power-2ae1187',
+    teleb_code: 'altea-green-power-agp-it0005472730-SVQwMDA1NDcyNzMw'
+  },
+  {
+    name: 'Amazon',
+    code: '1AMZN',
+    isin: 'US0231351067',
+    mf_code: 'amazon-2ae10cf',
+    teleb_code: 'amazon-1amzn-us0231351067-VVMwMjMxMzUxMDY3'
+  },
+  {
+    name: 'Ambromobiliare',
+    code: 'AMB',
+    isin: 'IT0004779515',
+    mf_code: 'ambromobiliare-2ae005b',
+    teleb_code: 'ambromobiliare-amb-it0004779515-SVQwMDA0Nzc5NTE1'
+  },
+  {
+    name: 'American Express',
+    code: '1AXP',
+    isin: 'US0258161092',
+    mf_code: 'american-express-2ae13fa',
+    teleb_code: 'american-express-1axp-us0258161092-VVMwMjU4MTYxMDky'
+  },
+  {
+    name: 'American Tower Reit',
+    code: '1AMT',
+    isin: 'US03027X1000',
+    mf_code: 'american-tower-reit-2ae13f5',
+    teleb_code: 'american-tower-reit-1amt-us03027x1000-VVMwMzAyN1gxMDAw'
   },
   {
     name: 'Amplifon',
