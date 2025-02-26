@@ -275,6 +275,13 @@ const fsteMib = [
     teleb_code: 'b-c-speakers-bec-it0001268561-SVQwMDAxMjY4NTYx'
   },
   {
+    name: 'B.F.',
+    code: 'BFG',
+    isin: 'IT0005187460',
+    mf_code: 'b-f-2ae10ae',
+    teleb_code: 'b-f-bfg-it0005187460-SVQwMDA1MTg3NDYw'
+  },
+  {
     name: 'Banca Generali',
     code: 'BGN',
     isin: 'IT0001031084',
@@ -317,6 +324,34 @@ const fsteMib = [
     teleb_code: 'banco-bpm-bami-it0005218380-SVQwMDA1MjE4Mzgw'
   },
   {
+    name: 'Banco De Sabadell',
+    code: '1SAB',
+    isin: 'ES0113860A34',
+    mf_code: 'banco-de-sabadell-2ae14bf',
+    teleb_code: 'banco-de-sabadell-1sab-es0113860a34-RVMwMTEzODYwQTM0'
+  },
+  {
+    name: 'Banco Santander',
+    code: '1SANX',
+    isin: 'ES0113900J37',
+    mf_code: 'banco-santander-2ae10f6',
+    teleb_code: 'banco-santander-1sanx-es0113900j37-RVMwMTEzOTAwSjM3'
+  },
+  {
+    name: 'Bank Of America',
+    code: '1BAC',
+    isin: 'US0605051046',
+    mf_code: 'bank-of-america-2ae13fd',
+    teleb_code: 'bank-of-america-1bac-us0605051046-VVMwNjA1MDUxMDQ2'
+  },
+  {
+    name: 'Basf',
+    code: '1BAS',
+    isin: 'DE000BASF111',
+    mf_code: 'basf-2ae043e',
+    teleb_code: 'basf-1bas-de000basf111-REUwMDBCQVNGMTEx'
+  },
+  {
     name: 'Basicnet',
     code: 'BAN',
     isin: 'IT0001033700',
@@ -329,6 +364,27 @@ const fsteMib = [
     isin: 'IT0004412497',
     mf_code: 'bastogi-spa-2ae0052',
     teleb_code: 'bastogi-b-it0004412497-SVQwMDA0NDEyNDk3'
+  },
+  {
+    name: 'Baxter International',
+    code: '1BAX',
+    isin: 'US0718131099',
+    mf_code: 'baxter-international-2ae13fe',
+    teleb_code: 'baxter-international-1bax-us0718131099-VVMwNzE4MTMxMDk5'
+  },
+  {
+    name: 'Bayer',
+    code: '1BAYN',
+    isin: 'DE000BAY0017',
+    mf_code: 'bayer-2ae0443',
+    teleb_code: 'bayer-1bayn-de000bay0017-REUwMDBCQVkwMDE3'
+  },
+  {
+    name: 'Bbva',
+    code: '1BBVA',
+    isin: 'ES0113211835',
+    mf_code: 'bbva-2ae10f7',
+    teleb_code: 'bbva-1bbva-es0113211835-RVMwMTEzMjExODM1'
   },
   {
     name: 'Bca Pop Sondrio',
@@ -352,6 +408,13 @@ const fsteMib = [
     teleb_code: 'banco-di-desio-e-della-brianza-bdb-it0001041000-SVQwMDAxMDQxMDAw'
   },
   {
+    name: 'Beewize',
+    code: 'BWZ',
+    isin: 'IT0001487047',
+    mf_code: 'beewize-2ae016e',
+    teleb_code: 'beewize-bwz-it0001487047-SVQwMDAxNDg3MDQ3'
+  },
+  {
     name: 'Beghelli',
     code: 'BE',
     isin: 'IT0001223277',
@@ -359,11 +422,39 @@ const fsteMib = [
     teleb_code: 'beghelli-be-it0001223277-SVQwMDAxMjIzMjc3'
   },
   {
+    name: 'Beiersdorf',
+    code: '1BEI',
+    isin: 'DE0005200000',
+    mf_code: 'beiersdorf-2ae107c',
+    teleb_code: 'beiersdorf-1bei-de0005200000-REUwMDA1MjAwMDAw'
+  },
+  {
+    name: 'Bellini Nautica',
+    code: 'BELL',
+    isin: 'IT0005497042',
+    mf_code: 'bellini-nautica-2ae1190',
+    teleb_code: 'bellini-nautica-bell-it0005497042-SVQwMDA1NDk3MDQy'
+  },
+  {
+    name: 'Berkshire Hathaway',
+    code: '1BRK',
+    isin: 'US0846707026',
+    mf_code: 'berkshire-hathaway-2ae1408',
+    teleb_code: 'berkshire-hathaway-1brk-us0846707026-VVMwODQ2NzA3MDI2'
+  },
+  {
     name: 'Bestbe Holding',
     code: 'BES',
     isin: 'IT0005611642',
     mf_code: 'bestbe-holding-2ae00c9',
     teleb_code: 'bestbe-holding-bes-it0005611642-SVQwMDA1NjExNjQy'
+  },
+  {
+    name: 'Beyond Meat',
+    code: '1BYND',
+    isin: 'US08862E1091',
+    mf_code: 'beyond-meat-2ae140a',
+    teleb_code: 'beyond-meat-1bynd-us08862e1091-VVMwODg2MkUxMDkx'
   },
   {
     name: 'Bff Bank',
@@ -387,11 +478,74 @@ const fsteMib = [
     teleb_code: 'biesse-bss-it0003097257-SVQwMDAzMDk3MjU3'
   },
   {
+    name: 'Bifire',
+    code: 'FIRE',
+    isin: 'IT0005495335',
+    mf_code: 'bifire-2ae118c',
+    teleb_code: 'bifire-fire-it0005495335-SVQwMDA1NDk1MzM1'
+  },
+  {
+    name: 'Biogen',
+    code: '1BIIB',
+    isin: 'US09062X1037',
+    mf_code: 'biogen-2ae1400',
+    teleb_code: 'biogen-1biib-us09062x1037-VVMwOTA2MlgxMDM3'
+  },
+  {
+    name: 'Bitcoin Group',
+    code: '1ADE',
+    isin: 'DE000A1TNV91',
+    mf_code: 'bitcoin-group-2ae13e8',
+    teleb_code: 'bitcoin-group-1ade-de000a1tnv91-REUwMDBBMVROVjkx'
+  },
+  {
+    name: 'Blackrock',
+    code: '1BLK',
+    isin: 'US09290D1019',
+    mf_code: 'blackrock-2ae1403',
+    teleb_code: 'blackrock-1blk-us09290d1019-VVMwOTI5MEQxMDE5'
+  },
+  {
+    name: 'Block',
+    code: '1SQ',
+    isin: 'US8522341036',
+    mf_code: 'block-2ae14d1',
+    teleb_code: 'block-1sq-us8522341036-VVM4NTIyMzQxMDM2'
+  },
+  {
+    name: 'Bmw',
+    code: '1BMW',
+    isin: 'DE0005190003',
+    mf_code: 'bmw-2ae0446',
+    teleb_code: 'bmw-1bmw-de0005190003-REUwMDA1MTkwMDAz'
+  },
+  {
+    name: 'Bnp Paribas',
+    code: '1BNP',
+    isin: 'FR0000131104',
+    mf_code: 'bnp-paribas-2ae0014',
+    teleb_code: 'bnp-paribas-1bnp-fr0000131104-RlIwMDAwMTMxMTA0'
+  },
+  {
+    name: 'Boeing',
+    code: '1BA',
+    isin: 'US0970231058',
+    mf_code: 'boeing-2ae13fc',
+    teleb_code: 'boeing-1ba-us0970231058-VVMwOTcwMjMxMDU4'
+  },
+  {
     name: 'Borgosesia',
     code: 'BO',
     isin: 'IT0003217335',
     mf_code: 'borgosesia-2ae002e',
     teleb_code: 'borgosesia-bo-it0003217335-SVQwMDAzMjE3MzM1'
+  },
+  {
+    name: 'Boston Scientific',
+    code: '1BSX',
+    isin: 'US1011371077',
+    mf_code: 'boston-scientific-2ae1409',
+    teleb_code: 'boston-scientific-1bsx-us1011371077-VVMxMDExMzcxMDc3'
   },
   {
     name: 'Bper Banca',
@@ -413,6 +567,13 @@ const fsteMib = [
     isin: 'IT0000066180',
     mf_code: 'brioschi-2ae0072',
     teleb_code: 'brioschi-bri-it0000066180-SVQwMDAwMDY2MTgw'
+  },
+  {
+    name: 'Broadcom',
+    code: '1AVGO',
+    isin: 'US11135F1012',
+    mf_code: 'broadcom-2ae13f8',
+    teleb_code: 'broadcom-1avgo-us11135f1012-VVMxMTEzNUYxMDEy'
   },
   {
     name: 'Brunello Cucinelli',
