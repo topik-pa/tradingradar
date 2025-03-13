@@ -243,7 +243,7 @@ module.exports = [
       path: '.news-item a'
     }
   },
-  {
+/*   {
     id: 8,
     code: 'sol24',
     name: 'Il Sole 24 Ore',
@@ -257,17 +257,17 @@ module.exports = [
     ],
     analyses: [],
     news: {}
-  },
+  }, */
   {
     id: 9,
     code: 'sol24',
     name: 'Il Sole 24 Ore',
-    url: 'https://vwd-proxy.ilsole24ore.com/FinanzaMercati/WidgetSelector/box-commento?widgetConfiguration=BoxCommentoBilancioSintetico&topicName=%code%.MI',
+    url: 'https://mercati.ilsole24ore.com/azioni/borsa-italiana/dettaglio-completo/%code%.MI',
     info: [
       {
         name: 'comment',
         type: 'html',
-        path: '#rmjs-2 > p'
+        path: 'div.fmw-aianchor-box'
       }
     ],
     analyses: [],
@@ -277,7 +277,7 @@ module.exports = [
     id: 10,
     code: 'sol24',
     name: 'Il Sole 24 Ore',
-    url: 'https://vwd-proxy.ilsole24ore.com/FinanzaMercati/WidgetSelector/analisi-tecnica-dettaglio?topicName=%code%.MI&device=Desktop',
+    url: 'https://mercatiwdg.ilsole24ore.com/FinanzaMercati/WidgetSelector/analisi-tecnica-dettaglio?topicName=%code%.MI&device=Desktop',
     info: [
       {
         name: 'mm20days',
