@@ -128,6 +128,10 @@ module.exports = [
     jsonKey: 'currentYearMax'
   },
   {
+    qp: 'profile',
+    jsonKey: 'profile'
+  },
+  {
     qp: 'currentYearMin',
     jsonKey: 'currentYearMin'
   },

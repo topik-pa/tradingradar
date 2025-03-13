@@ -43,6 +43,10 @@ module.exports = mongoose => {
         type: Schema.Types.Mixed,
         nullable: true
       },
+      profile: {
+        type: Schema.Types.Mixed,
+        nullable: true
+      },
       currentYearMin: {
         type: Schema.Types.Mixed,
         nullable: true

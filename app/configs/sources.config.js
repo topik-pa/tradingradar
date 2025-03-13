@@ -211,6 +211,11 @@ module.exports = [
         type: 'html',
         path: '.scheda-titolo > div:nth-of-type(4) > ul > li > div > div > div:nth-of-type(6)',
         clean: ['Azioni scambiate:']
+      },
+      {
+        name: 'profile',
+        type: 'html',
+        path: '#profilo p'
       }
     ],
     analyses: [
