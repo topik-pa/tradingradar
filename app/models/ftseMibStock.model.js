@@ -123,6 +123,10 @@ module.exports = mongoose => {
         type: Schema.Types.Mixed,
         nullable: true
       },
+      milFin_mfComment: {
+        type: Schema.Types.Mixed,
+        nullable: true
+      },
       sol24_mediumTendency: {
         type: Schema.Types.Mixed,
         nullable: true

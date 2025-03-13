@@ -72,6 +72,10 @@ module.exports = [
     jsonKey: 'milFin_mfRanking'
   },
   {
+    qp: 'mfComment',
+    jsonKey: 'milFin_mfComment'
+  },
+  {
     qp: 'mm20days',
     jsonKey: 'mm20days'
   },

@@ -153,6 +153,11 @@ module.exports = [
         type: 'html',
         path: 'html > body > script:nth-of-type(14)',
         clean: ['value: "', '",']
+      },
+      {
+        name: 'mfComment',
+        type: 'html',
+        path: '#analisi-tecnica p'
       }
     ],
     news: {}
