@@ -39,17 +39,17 @@ function generaEmailHTML(stock) {
   
   
             <!-- Prezzo -->
-            <tr ${(Math.abs( parseInt(stock.perf1M.value.replace('%', '')) ) > 3) ? 'style="display:block"' : 'style="display:none"'}>
+            <tr ${(Math.abs( parseInt(stock.perf1M.value.replace('%', '')) ) > 10) ? 'style="display:block"' : 'style="display:none"'}>
               <td style="padding:30px 20px 10px 20px; font-size:20px; font-weight:bold;">
                 Performance ultimo mese
               </td>
             </tr>
-            <tr ${(Math.abs( parseInt(stock.perf1M.value.replace('%', '')) ) > 3) ?  'style="display:block"' : 'style="display:none"'}>
+            <tr ${(Math.abs( parseInt(stock.perf1M.value.replace('%', '')) ) > 10) ?  'style="display:block"' : 'style="display:none"'}>
               <td style="padding:0px 20px 10px 20px; font-size:20px;">
                 € ${stock.perf1M.value}
               </td>
             </tr>
-            <tr ${(Math.abs( parseInt(stock.perf1M.value.replace('%', '')) ) > 3) ?  'style="display:block"' : 'style="display:none"'}>
+            <tr ${(Math.abs( parseInt(stock.perf1M.value.replace('%', '')) ) > 10) ?  'style="display:block"' : 'style="display:none"'}>
               <td style="padding:0px 20px 10px 20px; font-size:16px; color: #c0242e; font-style: italic;">
                 Attenzione: il titolo sta generando ampi movimenti di prezzo!
               </td>
