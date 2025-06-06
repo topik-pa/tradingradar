@@ -8,5 +8,6 @@ db.url = dbConfig.url
 
 //DB ENTITIES
 db.ftseMibStocks = require('./ftseMibStock.model.js')(mongoose)
+db.users = require('./user.model.js')(mongoose)
 
 module.exports = db

@@ -33,11 +33,16 @@ db.mongoose
     useUnifiedTopology: true
   })
   .then(() => {
-    console.log('Connected to the database!')
+    console.log('Connected to the database:', db.url)
     const FTSEMibStock = db.ftseMibStocks
+    const User = db.users
     cron.schedule(schedule.cron, () => {
       updateStocksDB(FTSEMibStock)
     })
+
+    //FOLLOW THE TITLE
+    require('./app/scripts/ftt/ftt')(User, FTSEMibStock)
+    
   })
   .catch(err => {
     console.log('Cannot connect to the database!', err)

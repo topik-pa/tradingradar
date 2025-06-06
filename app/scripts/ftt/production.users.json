@@ -1,0 +1,66 @@
+[{
+  "_id": {
+    "$oid": "684066d644bfe93be1458a25"
+  },
+  "name": "Marco",
+  "surname": "Pavan",
+  "email": "marcopavan.mp@gmail.com",
+  "subscriptions": [
+    {
+      "stock": "Stmicroelectronics",
+      "sent": 10,
+      "active": false,
+      "isin": "NL0000226223"
+    },
+    {
+      "stock": "Saipem",
+      "sent": 21,
+      "active": true,
+      "isin": "IT0005495657"
+    }
+  ],
+  "updatedAt": {
+    "$date": "2025-06-06T06:48:20.500Z"
+  },
+  "__v": 65
+},
+{
+  "_id": {
+    "$oid": "6840988544bfe93be1458a2b"
+  },
+  "name": "Elisa",
+  "surname": "Pavan",
+  "email": "marco@progweb.it",
+  "subscriptions": [
+    {
+      "stock": "Saipem",
+      "sent": 10,
+      "active": false,
+      "isin": "IT0005495657"
+    }
+  ],
+  "__v": 12,
+  "updatedAt": {
+    "$date": "2025-06-05T09:25:45.740Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6841e8bf4ce651103ad3283d"
+  },
+  "name": "Francesco",
+  "surname": "Morbi",
+  "email": "francesco.morbi@alice.it",
+  "subscriptions": [
+    {
+      "stock": "Valsoia",
+      "sent": 4,
+      "active": false,
+      "isin": "IT0001018362"
+    }
+  ],
+  "__v": 3,
+  "updatedAt": {
+    "$date": "2025-06-06T06:46:30.483Z"
+  }
+}]
