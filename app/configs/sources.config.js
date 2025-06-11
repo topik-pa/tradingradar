@@ -8,8 +8,13 @@ module.exports = [
       {
         name: 'lastPrice',
         type: 'html',
-        path: '.-black-warm-60 > strong',
+        path: '.-formatPrice > strong',
         numeric: true
+      },
+      {
+        name: 'priceVariation',
+        type: 'html',
+        path: '.-percPrice > strong'
       },
       {
         name: 'perf1M',

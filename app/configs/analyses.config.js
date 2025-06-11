@@ -4,6 +4,10 @@ module.exports = [
     jsonKey: 'lastPrice'
   },
   {
+    qp: 'priceVariation',
+    jsonKey: 'priceVariation'
+  },
+  {
     qp: 'perf1M',
     jsonKey: 'perf1M'
   },
