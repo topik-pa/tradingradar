@@ -6,7 +6,7 @@ const { generaEmailHTML } = require('./generaEmailHTML')
 const BATCH = 10
 
 module.exports = (User, Stocks) => {
-  cron.schedule('0 21 * * 1,2,3,4,5', async () => {
+  cron.schedule('0 19 * * 1,2,3,4,5', async () => {
   //cron.schedule('*/5 * * * * *', async () => {
     for await (const user of User.find()) {
       for (const subscription of user.subscriptions) {

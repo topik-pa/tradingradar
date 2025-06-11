@@ -1,4 +1,35 @@
+function formatData(stock) {
+  const ND = 'ND'
+  return {
+    name: stock.name || ND,
+    isin: stock.isin || ND,
+    segment: stock.segment.value || ND,
+    today: new Date().toLocaleDateString('it-IT', {day: 'numeric', month: 'long', year: 'numeric'}),
+    price: stock.lastPrice.value || ND,
+    isPerf1MShocking: (Math.abs( parseInt(stock.perf1M.value.replace('%', '')) ) > 10) ? 'style="display:block"' : 'style="display:none"',
+    perf1M: stock.perf1M.value || ND,
+    divYield: stock.divYield.value || ND,
+    lastDiv: stock.lastDiv.value || ND,
+    lastDivDate: stock.lastDivDate.value || ND,
+    lastJudgmentDate: stock.lastJudgment.value[0] || ND,
+    lastJudgmentBank: stock.lastJudgment.value[1] || ND,
+    lastJudgmentValue: stock.lastJudgment.value[2] || ND,
+    lastJudgmentTP: stock.lastJudgment.value[3] || ND,
+    sol24_shortTendency: stock.sol24_shortTendency.value || ND,
+    sol24_mediumTendency: stock.sol24_mediumTendency.value || ND,
+    milFin_mfRanking: stock.milFin_mfRanking.value || ND,
+    milFin_mfRisk: stock.milFin_mfRisk.value || ND,
+    milFin_source: stock.milFin_mfRisk.source || '#',
+    teleb_resistance: stock.teleb_resistance.value || ND,
+    teleb_support: stock.teleb_support.value || ND,
+    teleb_source: stock.teleb_support.source || '#',
+    ctaUrl: `https://www.tradingradar.net/analisi/${encodeURI(stock.name.toLowerCase().replace(/ /g, '-').replace(/&/g, 'and').replace(/'/g, '-'))}?isin=${stock.isin}&ftt`
+  }
+}
+
+
 function generaEmailHTML(stock) {
+  const data = formatData(stock)
   return `
   <!DOCTYPE html>
   <html>
@@ -15,12 +46,12 @@ function generaEmailHTML(stock) {
             <!-- Header -->
             <tr>
               <td style="background:#fff; color:#222; padding:20px; font-size:26px; text-align:left;border-bottom:1px solid #222; font-weight:bold;">
-                ${stock.name}
+                ${data.name}
                 <div style="color: #888;font-size:16px;font-weight:normal;">
                   <br>
-                  Codice ISIN: ${stock.isin}<br>
-                  Mercato: ${stock.segment.value}<br>
-                  Data rapporto: ${new Date().toLocaleDateString('it-IT', {day: 'numeric', month: 'long', year: 'numeric'})}<br>
+                  Codice ISIN: ${data.isin}<br>
+                  Mercato: ${data.segment}<br>
+                  Data rapporto: ${data.today}<br>
                 </div>
               </td>
             </tr>
@@ -33,23 +64,23 @@ function generaEmailHTML(stock) {
             </tr>
             <tr>
               <td style="padding:0px 20px 10px 20px; font-size:20px;">
-                € ${stock.lastPrice.value}
+                € ${data.price}
               </td>
             </tr>
   
   
             <!-- Prezzo -->
-            <tr ${(Math.abs( parseInt(stock.perf1M.value.replace('%', '')) ) > 10) ? 'style="display:block"' : 'style="display:none"'}>
+            <tr ${data.isPerf1MShocking}>
               <td style="padding:30px 20px 10px 20px; font-size:20px; font-weight:bold;">
                 Performance ultimo mese
               </td>
             </tr>
-            <tr ${(Math.abs( parseInt(stock.perf1M.value.replace('%', '')) ) > 10) ?  'style="display:block"' : 'style="display:none"'}>
+            <tr ${data.isPerf1MShocking}>
               <td style="padding:0px 20px 10px 20px; font-size:20px;">
-                € ${stock.perf1M.value}
+                ${data.perf1M}
               </td>
             </tr>
-            <tr ${(Math.abs( parseInt(stock.perf1M.value.replace('%', '')) ) > 10) ?  'style="display:block"' : 'style="display:none"'}>
+            <tr ${data.isPerf1MShocking}>
               <td style="padding:0px 20px 10px 20px; font-size:16px; color: #c0242e; font-style: italic;">
                 Attenzione: il titolo sta generando ampi movimenti di prezzo!
               </td>
@@ -63,17 +94,17 @@ function generaEmailHTML(stock) {
             </tr>
             <tr>
               <td style="padding:0px 20px 10px 20px; font-size:20px;">
-                Div. Yield: ${stock.divYield.value}
+                Div. Yield: ${data.divYield}%
               </td>
             </tr>
             <tr>
               <td style="padding:0px 20px 10px 20px; font-size:20px;">
-                Valore dividendo: ${stock.lastDiv.value}
+                Valore dividendo: ${data.lastDiv}€
               </td>
             </tr>
             <tr>
               <td style="padding:0px 20px 10px 20px; font-size:20px;">
-                Data dividendo: ${stock.lastDivDate.value}
+                Data dividendo: ${data.lastDivDate}
               </td>
             </tr>
   
@@ -86,22 +117,22 @@ function generaEmailHTML(stock) {
             </tr>
             <tr>
               <td style="padding:0px 20px 10px 20px; font-size:20px;">
-                Data: ${stock.lastJudgment.value[0]}
+                Data: ${data.lastJudgmentDate}
               </td>
             </tr>
             <tr>
               <td style="padding:0px 20px 10px 20px; font-size:20px;">
-                Istituto: ${stock.lastJudgment.value[1]}
+                Istituto: ${data.lastJudgmentBank}
               </td>
             </tr>
             <tr>
               <td style="padding:0px 20px 10px 20px; font-size:20px;">
-                Giudizio: ${stock.lastJudgment.value[2]}
+                Giudizio: ${data.lastJudgmentValue}
               </td>
             </tr>
             <tr>
               <td style="padding:0px 20px 10px 20px; font-size:20px;">
-                Target price: ${stock.lastJudgment.value[3]}
+                Target price: ${data.lastJudgmentTP}€
               </td>
             </tr>
   
@@ -119,12 +150,12 @@ function generaEmailHTML(stock) {
             </tr>
             <tr>
               <td style="padding:0px 20px 10px 20px; font-size:18px;">
-                Tendenza breve periodo: ${stock.sol24_shortTendency.value}
+                Tendenza breve periodo: ${data.sol24_shortTendency}
               </td>
             </tr>
             <tr>
               <td style="padding:0px 20px 10px 20px; font-size:18px;">
-                Tendenza medio periodo: ${stock.sol24_mediumTendency.value}
+                Tendenza medio periodo: ${data.sol24_mediumTendency}
               </td>
             </tr>
             
@@ -136,17 +167,17 @@ function generaEmailHTML(stock) {
             </tr>
             <tr>
               <td style="padding:0px 20px 10px 20px; font-size:18px;">
-                Rating [A-E]: ${stock.milFin_mfRanking.value}
+                Rating [A-E]: ${data.milFin_mfRanking}
               </td>
             </tr>
             <tr>
               <td style="padding:0px 20px 10px 20px; font-size:18px;">
-                Risk [0-100]: ${stock.milFin_mfRisk.value}
+                Risk [0-100]: ${data.milFin_mfRisk}
               </td>
             </tr>
             <tr>
               <td style="padding:0px 20px 10px 20px; font-size:16px;font-style: italic;">
-                <a href="${stock.milFin_mfRisk.source}">Analisi completa ${stock.name} sul Milano Finanza</a>
+                <a href="${data.milFin_source}">Analisi completa ${data.name} su Milano Finanza</a>
               </td>
             </tr>
   
@@ -157,17 +188,17 @@ function generaEmailHTML(stock) {
             </tr>
             <tr>
               <td style="padding:0px 20px 10px 20px; font-size:18px;">
-                Resistenza: ${stock.teleb_resistance.value}
+                Resistenza: ${data.teleb_resistance}€
               </td>
             </tr>
             <tr>
               <td style="padding:0px 20px 10px 20px; font-size:18px;">
-                Supporto: ${stock.teleb_support.value}
+                Supporto: ${data.teleb_support}€
               </td>
             </tr>
             <tr>
               <td style="padding:0px 20px 10px 20px; font-size:16px;font-style: italic;">
-                <a href="${stock.teleb_support.source}">Analisi completa ${stock.name} sul Teleborsa</a>
+                <a href="${data.teleb_source}">Analisi completa ${data.name} su Teleborsa</a>
               </td>
             </tr>
   
@@ -176,9 +207,17 @@ function generaEmailHTML(stock) {
             <!-- CTA -->
             <tr>
               <td align="center" style="padding:60px 20px 10px 20px; font-size:20px">
-                <a href="https://www.tradingradar.net/analisi/${encodeURI(stock.name.toLowerCase().replace(/ /g, '-').replace(/&/g, 'and').replace(/'/g, '-'))}?isin=${stock.isin}&ftt" style="background:#d82e2b; color:white; padding:12px 20px; text-decoration:none; border-radius:5px;">
+                <a href="${data.ctaUrl}" style="background:#d82e2b; color:white; padding:12px 20px; text-decoration:none; border-radius:5px;">
                   Leggi l'articolo completo
                 </a>
+              </td>
+            </tr>
+
+
+            <!-- DISCLAIMER -->
+            <tr style="color: #888;font-size:14px;font-weight:normal;font-style:italic">
+              <td align="center" style="padding:60px 20px 10px 20px">
+              Attenzione: operare in Borsa e fare trading costituiscono azioni ad alto rischio. Le informazioni qui presentate non costituiscono una sollecitazione di acquisto o vendita di titoli azionari e si intendono per puro uso informativo. Il Portale Web tradingradar.net non si dichiara responsabile di un utilizzo improprio delle informazioni qui ottenute.
               </td>
             </tr>
   
