@@ -97,7 +97,9 @@
                   <td style="padding:30px 20px;font-weight:bold;">Analisi<br>Il Sole 24 Ore</td>
                   <td style="text-align:center;padding:30px 20px;">
                     <p style="letter-spacing:1px;color:#777;">Tendenza breve periodo:
-                      ${data.sol24_shortTendency} <br>Tendenza medio periodo: ${data.sol24_mediumTendency}</p>
+                      ${data.sol24_shortTendency} <br>Tendenza medio periodo: ${data.sol24_mediumTendency}<br><br>
+                      <a
+                      href="${data.sol24_source}">Analisi completa ${data.name} su Il Sole 24 Ore</a></p>
                   </td>
                 </tr>
               </table>
@@ -133,13 +135,29 @@
               </table>
             </td>
           </tr>
+          <!--POSIZIONAMENTO PREZZI-->
+          <tr>
+            <td style="padding:20px;border-bottom:1px solid #777;font-size:21px">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td style="padding:30px 20px;font-weight:bold;">Posizionamento dei prezzi<br>nell'anno corrente</td>
+                  <td style="text-align:center;padding:30px 20px;">
+                    <p style="letter-spacing:1px;color:#777;">
+                      €${data.currentYearMin}<br><br>
+                      €${data.currentYearMax}</p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
           <!--CTA-->
           <tr>
             <td align="center" style="padding:60px 20px 10px;">
               Maggiori dettagli su ${data.name} sono disponibili <strong>in tempo reale</strong> su tradingradar.net
               <br><br><br>
               <a href="${data.ctaUrl}"
-                style="background:#d82e2b;color:#fff;padding:15px 22px;text-decoration:none;border-radius:5px;font-size:27px;">Scopri
+                style="background:#c0242e;color:#fff;padding:15px 22px;text-decoration:none;border-radius:5px;font-size:27px;">Scopri
                 ulteriori dettagli
               </a>
             </td>
@@ -151,7 +169,7 @@
 
           <!--3 BOXES-->
           <tr>
-            <td align="center" style="padding:60px 20px 10px;font-size:21px;font-weight: bold">
+            <td align="center" style="padding:60px 20px 10px;font-size:27px;font-weight: bold">
               In evidenza oggi
             </td>
           </tr>
@@ -159,36 +177,73 @@
             <td style="padding:20px;">
               <table width="100%" cellpadding="0" cellspacing="0" border="0">
                 <tr>
+
                   <td width="33.33%" align="center" valign="center">
                     <div
                       style="width:200px;height:200px;border:1px solid #777;font-weight:bold;font-size:250%;color:#007e3d">
                       <br>
-                      <span style="text-transform: uppercase; color: #777; font-weight: bold;font-size: 60%;">Mondo
-                        TV</span>
-                      <br>+302,65%
+                      <span style="text-transform: uppercase;font-size: 60%;">Class Editori</span>
+                      <br>+8,33%
+                    </div>
+                    <p style="font-weight:bold;padding:5px;font-size:21px">Migliore performance giornaliera</p>
+                  </td>
+                  
+                  <td width="33.33%" align="center" valign="center">
+                    <div
+                      style="width:200px;height:200px;border:1px solid #777;font-weight:bold;font-size:250%;color:#c0242e">
+                      <br>
+                      <span style="text-transform: uppercase;font-size: 60%;">Mondo TV</span>
+                      <br>-9,73%
+                    </div>
+                    <p style="font-weight:bold;padding:5px;font-size:21px">Peggiore performance giornaliera</p>
+                  </td>
+
+                </tr>
+                <tr>
+                  <td width="33.33%" align="center" valign="center">
+                    <div
+                      style="width:200px;height:200px;border:1px solid #777;font-weight:bold;font-size:250%;color:#007e3d">
+                      <br>
+                      <span style="text-transform: uppercase;font-size: 60%;">Mondo TV</span>
+                      <br>+285,84%
                     </div>
                     <p style="font-weight:bold;padding:5px;font-size:21px">Migliore performance mensile</p>
                   </td>
+                  
+                  <td width="33.33%" align="center" valign="center">
+                    <div
+                      style="width:200px;height:200px;border:1px solid #777;font-weight:bold;font-size:250%;color:#c0242e">
+                      <br>
+                      <span style="text-transform: uppercase;font-size: 60%;">Esprinet</span>
+                      <br>-29,06%
+                    </div>
+                    <p style="font-weight:bold;padding:5px;font-size:21px">Peggiore performance mensile</p>
+                  </td>
+                </tr>
+
+                <tr>
                   <td width="33.33%" align="center" valign="top">
                     <div
                       style="width:200px;height:200px;border:1px solid #777;color:#777;font-weight:bold;font-size:250%;">
                       <br>
                       <span
-                        style="text-transform: uppercase; color: #777; font-weight: bold;font-size: 60%;">Ferretti</span>
+                        style="text-transform: uppercase;font-size: 60%;">Ferretti</span>
                       <br>16/06/25
                     </div>
                     <p style="font-weight:bold;padding:5px;font-size:21px">Il prossimo dividendo</p>
                   </td>
+
                   <td width="33.33%" align="center" valign="top">
                     <div
-                      style="width:200px;height:200px;border:1px solid #777;font-weight:bold;font-size:250%;color:#007e3d">
+                      style="width:200px;height:200px;border:1px solid #777;font-weight:bold;font-size:250%;">
                       <br>
                       <span
-                        style="text-transform: uppercase; color: #777; font-weight: bold;font-size: 60%;">Banca Ifis</span>
-                      <br>▲ 25.50€
+                        style="text-transform: uppercase;font-size: 60%;">Enel</span>
+                      <br>▲ 8.80€
                     </div>
                     <p style="font-weight:bold;padding:5px;font-size:21px">Ultimo target price</p>
                   </td>
+
                 </tr>
               </table>
             </td>
@@ -199,7 +254,7 @@
               Le statistiche complete, gli ultimi giudizi e target price sono disponibili su tradingradar.net
               <br><br><br>
               <a href="http://www.tradingradar.net?ftt"
-                style="background:#d82e2b;color:#fff;padding:15px 22px;text-decoration:none;border-radius:5px;font-size:27px;">Scopri tutte
+                style="background:#c0242e;color:#fff;padding:15px 22px;text-decoration:none;border-radius:5px;font-size:27px;">Scopri tutte
                 le statistiche</a></td>
           </tr>
 
