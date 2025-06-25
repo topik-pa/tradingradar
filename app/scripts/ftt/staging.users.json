@@ -1,0 +1,21 @@
+[{
+  "_id": {
+    "$oid": "6840988544bfe93be1458a2b"
+  },
+  "name": "Elisa",
+  "surname": "Pavan",
+  "email": "marcopavan.mp@gmail.com",
+  "subscriptions": [
+    {
+      "stock": "Eni",
+      "sent": 32,
+      "active": true,
+      "isin": "IT0003132476",
+      "sl": 1
+    }
+  ],
+  "__v": 44,
+  "updatedAt": {
+    "$date": "2025-06-24T16:41:35.765Z"
+  }
+}]

@@ -8,21 +8,23 @@
   "subscriptions": [
     {
       "stock": "Stmicroelectronics",
-      "sent": 10,
-      "active": false,
-      "isin": "NL0000226223"
+      "sent": 1,
+      "active": true,
+      "isin": "NL0000226223",
+      "sl": 1
     },
     {
       "stock": "Saipem",
-      "sent": 21,
-      "active": true,
-      "isin": "IT0005495657"
+      "sent": 10,
+      "active": false,
+      "isin": "IT0005495657",
+      "sl": 1
     }
   ],
   "updatedAt": {
-    "$date": "2025-06-06T06:48:20.500Z"
+    "$date": "2025-06-24T17:00:00.179Z"
   },
-  "__v": 65
+  "__v": 75
 },
 {
   "_id": {
@@ -33,15 +35,16 @@
   "email": "marco@progweb.it",
   "subscriptions": [
     {
-      "stock": "Saipem",
+      "stock": "Netweek",
       "sent": 10,
       "active": false,
-      "isin": "IT0005495657"
+      "isin": "IT0005545675",
+      "sl": 1
     }
   ],
-  "__v": 12,
+  "__v": 22,
   "updatedAt": {
-    "$date": "2025-06-05T09:25:45.740Z"
+    "$date": "2025-06-20T17:00:00.981Z"
   }
 },
 {
@@ -54,13 +57,49 @@
   "subscriptions": [
     {
       "stock": "Valsoia",
-      "sent": 4,
+      "sent": 10,
       "active": false,
-      "isin": "IT0001018362"
+      "isin": "IT0001018362",
+      "sl": 1
     }
   ],
-  "__v": 3,
+  "__v": 9,
   "updatedAt": {
-    "$date": "2025-06-06T06:46:30.483Z"
+    "$date": "2025-06-13T17:00:00.231Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "685ad6b4c2a870bb2ddb53bf"
+  },
+  "name": "Ale",
+  "surname": "",
+  "email": "alealepink@gmail.com",
+  "subscriptions": [
+    {
+      "stock": "Unicredit",
+      "sent": 1,
+      "active": true,
+      "isin": "IT0005239360",
+      "sl": 1
+    },
+    {
+      "stock": "Enel",
+      "sent": 1,
+      "active": true,
+      "isin": "IT0003128367",
+      "sl": 1
+    },
+    {
+      "stock": "Intesa Sanpaolo",
+      "sent": 1,
+      "active": true,
+      "isin": "IT0000072618",
+      "sl": 1
+    }
+  ],
+  "__v": 11,
+  "updatedAt": {
+    "$date": "2025-06-24T17:00:00.255Z"
   }
 }]
