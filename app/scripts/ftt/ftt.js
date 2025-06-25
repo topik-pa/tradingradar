@@ -3,7 +3,7 @@ const FormData = require('form-data')
 const Mailgun = require('mailgun.js')
 const { generaEmailHTML } = require('./generaEmailHTML')
 
-const BATCH = 10
+const SERVICE_LEVELS = [5, 10, 20]
 
 module.exports = (User, Stocks) => {
   cron.schedule('0 17 * * 1,2,3,4,5', async () => {
@@ -12,6 +12,7 @@ module.exports = (User, Stocks) => {
       for (const subscription of user.subscriptions) {
         if(subscription.active) {
           const stock = await Stocks.findOne({ isin: subscription.isin })
+          let sl = SERVICE_LEVELS[subscription.sl]
           let sent = subscription.sent
           let html
           try {
@@ -22,13 +23,12 @@ module.exports = (User, Stocks) => {
           const maildata = {
             from: 'tradingradar.net <followthetitle@ftt.tradingradar.net>',
             to: `${user.name} <${user.email}>`,
-            subject: `Segui il titolo: ${subscription.stock} - email ${sent+1}/${ (parseInt(sent/BATCH)+1)*BATCH}`,
+            subject: `Segui il titolo: ${subscription.stock} - email ${++sent}/${sl}`,
             html: html
           }
-          sent++
           sendSimpleMessage(maildata)
           subscription.sent = sent
-          subscription.active = (sent % BATCH)!==0
+          subscription.active = sent !== sl
 
           user.markModified('subscriptions')
           user.save(err => console.log(err))
