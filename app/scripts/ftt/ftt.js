@@ -9,28 +9,30 @@ const SERVICE_LEVELS = [5, 10, 20]
 
 module.exports = (User, Stocks) => {
   cron.schedule('0 17 * * 1,2,3,4,5', async () => {
-  //cron.schedule('*/5 * * * * *', async () => {
+  //cron.schedule('*/10 * * * * *', async () => {
     const yetDone = new Set()
     for await (const user of User.find()) {
       for (const subscription of user.subscriptions) {
         if(subscription.active) {
-          const stock = await Stocks.findOne({ isin: subscription.isin })
+          let stock = await Stocks.findOne({ isin: subscription.isin })
 
           if(!yetDone.has(subscription.isin)) {
             try {
+              console.log('UPDATE STOCK TO SEND')
               await getData.stock('info', subscription.isin)
               await getData.stock('analyses', subscription.isin)
             } catch (error) {
               console.error(error)
             }
             yetDone.add(subscription.isin)
+            stock = await Stocks.findOne({ isin: subscription.isin })
           }
           
           let sl = SERVICE_LEVELS[subscription.sl]
           let sent = subscription.sent
           let html
           try {
-            html = generaEmailHTML(stock)
+            html = generaEmailHTML(stock, user._id)
           } catch (error) {
             console.error(error)
           }
